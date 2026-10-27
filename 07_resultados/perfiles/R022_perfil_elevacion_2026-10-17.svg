@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500">
+<rect width="100%" height="100%" fill="white"/>
+<text x="500" y="30" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold">R022 – Camino a la Cruz del Ilaló desde Los Olivos</text>
+<text x="500" y="52" text-anchor="middle" font-family="Arial" font-size="13">Perfil Copernicus DEM GLO-30 · muestreo cada 30 m</text>
+<line x1="85" y1="410.0" x2="935" y2="410.0" stroke="#dddddd"/>
+<text x="75" y="414.0" text-anchor="end" font-family="Arial" font-size="11">2519</text>
+<line x1="85" y1="342.0" x2="935" y2="342.0" stroke="#dddddd"/>
+<text x="75" y="346.0" text-anchor="end" font-family="Arial" font-size="11">2641</text>
+<line x1="85" y1="274.0" x2="935" y2="274.0" stroke="#dddddd"/>
+<text x="75" y="278.0" text-anchor="end" font-family="Arial" font-size="11">2763</text>
+<line x1="85" y1="206.0" x2="935" y2="206.0" stroke="#dddddd"/>
+<text x="75" y="210.0" text-anchor="end" font-family="Arial" font-size="11">2885</text>
+<line x1="85" y1="138.0" x2="935" y2="138.0" stroke="#dddddd"/>
+<text x="75" y="142.0" text-anchor="end" font-family="Arial" font-size="11">3007</text>
+<line x1="85" y1="70.0" x2="935" y2="70.0" stroke="#dddddd"/>
+<text x="75" y="74.0" text-anchor="end" font-family="Arial" font-size="11">3128</text>
+<line x1="85.0" y1="70" x2="85.0" y2="410" stroke="#eeeeee"/>
+<text x="85.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">0.0</text>
+<line x1="255.0" y1="70" x2="255.0" y2="410" stroke="#eeeeee"/>
+<text x="255.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">0.4</text>
+<line x1="425.0" y1="70" x2="425.0" y2="410" stroke="#eeeeee"/>
+<text x="425.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">0.9</text>
+<line x1="595.0" y1="70" x2="595.0" y2="410" stroke="#eeeeee"/>
+<text x="595.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">1.3</text>
+<line x1="765.0" y1="70" x2="765.0" y2="410" stroke="#eeeeee"/>
+<text x="765.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">1.7</text>
+<line x1="935.0" y1="70" x2="935.0" y2="410" stroke="#eeeeee"/>
+<text x="935.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">2.2</text>
+<polyline points="85.0,386.6 96.6,383.7 108.3,381.5 119.9,376.5 131.6,370.3 143.2,367.1 154.9,365.6 166.5,359.8 178.2,355.1 189.8,352.4 201.4,346.1 213.1,342.0 224.7,338.1 236.4,338.1 248.0,333.1 259.7,330.3 271.3,331.1 282.9,323.3 294.6,317.3 306.2,317.3 317.9,314.1 329.5,308.1 341.2,307.3 352.8,298.6 364.5,299.3 376.1,291.2 387.7,284.6 399.4,284.6 411.0,278.9 422.7,276.6 434.3,270.7 446.0,268.2 457.6,261.9 469.2,258.7 480.9,250.4 492.5,250.4 504.2,240.6 515.8,238.7 527.5,236.1 539.1,232.6 550.8,227.4 562.4,220.9 574.0,208.8 585.7,210.6 597.3,208.7 609.0,203.3 620.6,203.8 632.3,197.9 643.9,199.2 655.5,192.6 667.2,192.6 678.8,186.9 690.5,186.1 702.1,184.5 713.8,175.6 725.4,174.5 737.1,167.5 748.7,161.5 760.3,160.2 772.0,152.9 783.6,152.9 795.3,147.5 806.9,141.0 818.6,134.3 830.2,128.1 841.8,121.2 853.5,120.8 865.1,114.5 876.8,112.1 888.4,110.9 900.1,103.5 911.7,100.6 923.4,93.4 935.0,95.7" fill="none" stroke="#999999" stroke-width="1.5" opacity="0.8"/>
+<polyline points="85.0,386.6 96.6,383.7 108.3,381.5 119.9,376.5 131.6,370.3 143.2,367.1 154.9,365.6 166.5,359.8 178.2,355.1 189.8,352.4 201.4,346.1 213.1,342.0 224.7,338.1 236.4,338.1 248.0,333.1 259.7,331.1 271.3,330.3 282.9,323.3 294.6,317.3 306.2,317.3 317.9,314.1 329.5,308.1 341.2,307.3 352.8,299.3 364.5,298.6 376.1,291.2 387.7,284.6 399.4,284.6 411.0,278.9 422.7,276.6 434.3,270.7 446.0,268.2 457.6,261.9 469.2,258.7 480.9,250.4 492.5,250.4 504.2,240.6 515.8,238.7 527.5,236.1 539.1,232.6 550.8,227.4 562.4,220.9 574.0,210.6 585.7,208.8 597.3,208.7 609.0,203.8 620.6,203.3 632.3,199.2 643.9,197.9 655.5,192.6 667.2,192.6 678.8,186.9 690.5,186.1 702.1,184.5 713.8,175.6 725.4,174.5 737.1,167.5 748.7,161.5 760.3,160.2 772.0,152.9 783.6,152.9 795.3,147.5 806.9,141.0 818.6,134.3 830.2,128.1 841.8,121.2 853.5,120.8 865.1,114.5 876.8,112.1 888.4,110.9 900.1,103.5 911.7,100.6 923.4,95.7 935.0,95.7" fill="none" stroke="#1769aa" stroke-width="2.5"/>
+<line x1="85" y1="410" x2="935" y2="410" stroke="#333333"/>
+<line x1="85" y1="70" x2="85" y2="410" stroke="#333333"/>
+<text x="510" y="480" text-anchor="middle" font-family="Arial" font-size="13">Distancia del trazado (km)</text>
+<text x="20" y="240" text-anchor="middle" transform="rotate(-90 20 240)" font-family="Arial" font-size="13">Elevación (m)</text>
+<line x1="665" y1="85" x2="705" y2="85" stroke="#999999" stroke-width="2"/><text x="715" y="89" font-family="Arial" font-size="12">Raw</text>
+<line x1="785" y1="85" x2="825" y2="85" stroke="#1769aa" stroke-width="3"/><text x="835" y="89" font-family="Arial" font-size="12">Mediana 3</text>
+</svg>

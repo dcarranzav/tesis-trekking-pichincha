@@ -1,0 +1,21 @@
+﻿lugar,destino_exacto,id_ruta,criterio
+Cascada Cóndor Machay,Cascada Cóndor Machay,R003,Única alternativa elegible; llega a la cascada
+Cerro Pondoña,Circuito Pondoña (recorrido circular),R004,Circuito cerrado: no tiene un punto de llegada distinto del inicio
+Cerro Pondoña,Parte alta del Pondoña desde la base oriental,R008,Llega a un punto alto distinto del circuito (a unos 630 m del inicio del circuito)
+Cerro Ilaló,Cima del Cerro Ilaló,R006,Llega a la cima según el inventario
+Cerro Ilaló,Cruz del Ilaló,R022,La Cruz del Ilaló no es la cima: llegada a unos 1300 m de R006
+Reserva Yanacocha,Extremo común de los senderos de Yanacocha,R011,Llegada coincidente con R013 (0 m); recorrido completo por confirmar
+Reserva Yanacocha,Extremo común de los senderos de Yanacocha,R013,Llegada coincidente con R011 (0 m); recorrido completo por confirmar
+Mindo,Cascada Corazón (Mindo Hermit Trail),R015,Llegada propia a la cascada
+Mindo,Mirador (Mindo Hermit Trail),R016,Llegada propia al mirador; a unos 690 m de la cascada Corazón
+Mindo,Yellow House,R017,Llegada coincidente con R020 y R021 (0 m)
+Mindo,Yellow House,R020,Llegada coincidente con R017 y R021 (0 m)
+Mindo,Yellow House,R021,Llegada coincidente con R017 y R020 (0 m)
+Reserva Maquipucuna,Cascada de Maquipucuna,R018,Única alternativa elegible
+Cascada La Reina,Cascada La Reina,R019,Única alternativa elegible
+Cascada Guagrapamba,Cascada Guagrapamba,R023,Única alternativa elegible
+Rucu Pichincha,Cumbre del Rucu Pichincha por el sendero del arenal,R001,Única alternativa elegible; llega a la cumbre (4678 m en el DEM); no es la ruta de arista
+Cerro de la Luz (Puéllaro),Mirador Cerro de la Luz,R024,"Llegada al mismo mirador por el sendero directo (0,5 km)"
+Cerro de la Luz (Puéllaro),Mirador Cerro de la Luz,R025,"Llegada al mismo mirador por el sendero superior (1,3 km); comparte solo el inicio y 51 m finales con R024"
+Cascada Guarumos,Cascada Guarumos,R026,Única alternativa elegible; Cascada Colibríes queda 44 m más allá del nodo de bifurcación y no se modela aparte
+Pululahua - Moraspungo,Sector recreativo del Sendero del Viento,R027,"Única alternativa al sector recreativo al final de la footway; el POI mirador OSM queda separado 1.7 m y no es el destino exacto declarado"

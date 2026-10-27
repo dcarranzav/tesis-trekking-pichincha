@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1325 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="2624530252" visible="true" version="1" changeset="20031356" timestamp="2014-01-16T10:52:41Z" user="LLAQWA" uid="77114" lat="-0.5579328" lon="-78.6701792"/>
+ <node id="3615213167" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5519360" lon="-78.6703870"/>
+ <node id="3615213169" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5371340" lon="-78.6684770"/>
+ <node id="3615213170" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5360310" lon="-78.6667530"/>
+ <node id="3615213172" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5517360" lon="-78.6704210"/>
+ <node id="3615213173" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5515230" lon="-78.6703180"/>
+ <node id="3615213177" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5564870" lon="-78.6707490"/>
+ <node id="3615213179" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5504620" lon="-78.6702160"/>
+ <node id="3615213181" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5503210" lon="-78.6702420"/>
+ <node id="3615213182" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5573600" lon="-78.6704500"/>
+ <node id="3615213183" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5564010" lon="-78.6708380"/>
+ <node id="3615213184" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5342800" lon="-78.6621720"/>
+ <node id="3615213185" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5570120" lon="-78.6706470"/>
+ <node id="3615213186" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5562440" lon="-78.6709470"/>
+ <node id="3615213187" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5436220" lon="-78.6708660"/>
+ <node id="3615213191" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5557920" lon="-78.6710170"/>
+ <node id="3615213192" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5558630" lon="-78.6710630"/>
+ <node id="3615213393" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5516270" lon="-78.6703950"/>
+ <node id="3615213394" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5435340" lon="-78.6709080"/>
+ <node id="3615213395" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5546950" lon="-78.6709350"/>
+ <node id="3615213396" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5571230" lon="-78.6705510"/>
+ <node id="3615213398" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5509610" lon="-78.6702370"/>
+ <node id="3615213400" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5355350" lon="-78.6655450"/>
+ <node id="3615213401" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5350940" lon="-78.6636110"/>
+ <node id="3615213402" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5500910" lon="-78.6701800"/>
+ <node id="3615213403" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5434410" lon="-78.6708920"/>
+ <node id="3615213405" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5353920" lon="-78.6649890"/>
+ <node id="3615213407" visible="true" version="2" changeset="123156439" timestamp="2022-07-03T15:52:44Z" user="erickdeoliveiraleal" uid="463504" lat="-0.5437555" lon="-78.6708486"/>
+ <node id="3615213409" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5395130" lon="-78.6698950"/>
+ <node id="3615213411" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5361520" lon="-78.6672290"/>
+ <node id="3615213413" visible="true" version="2" changeset="123156439" timestamp="2022-07-03T15:52:44Z" user="erickdeoliveiraleal" uid="463504" lat="-0.5428307" lon="-78.6710734"/>
+ <node id="3615213414" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5366130" lon="-78.6682700"/>
+ <node id="3615213416" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5498120" lon="-78.6702880"/>
+ <node id="3615213419" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5359590" lon="-78.6664920"/>
+ <node id="3615213421" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5512540" lon="-78.6703510"/>
+ <node id="3615213426" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5361630" lon="-78.6670820"/>
+ <node id="3615213427" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5374050" lon="-78.6686580"/>
+ <node id="3615213428" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5368450" lon="-78.6683260"/>
+ <node id="3615213429" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:37Z" user="Ecuador Tur" uid="72349" lat="-0.5387050" lon="-78.6691960"/>
+ <node id="3615213431" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5353650" lon="-78.6645200"/>
+ <node id="3615213432" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5507640" lon="-78.6702590"/>
+ <node id="3615213433" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5385040" lon="-78.6691140"/>
+ <node id="3615213434" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5381190" lon="-78.6689590"/>
+ <node id="3615213437" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5398610" lon="-78.6701980"/>
+ <node id="3615213440" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5350310" lon="-78.6634590"/>
+ <node id="3615213441" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5511240" lon="-78.6703150"/>
+ <node id="3615213442" visible="true" version="2" changeset="123156439" timestamp="2022-07-03T15:52:44Z" user="erickdeoliveiraleal" uid="463504" lat="-0.5424254" lon="-78.6714392"/>
+ <node id="3615213443" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5389670" lon="-78.6693630"/>
+ <node id="3615213445" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5343170" lon="-78.6622320"/>
+ <node id="3615213448" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5360600" lon="-78.6670300"/>
+ <node id="3615213449" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5320500" lon="-78.6605910"/>
+ <node id="3615213450" visible="true" version="2" changeset="123156439" timestamp="2022-07-03T15:52:44Z" user="erickdeoliveiraleal" uid="463504" lat="-0.5432393" lon="-78.6710180"/>
+ <node id="3615213452" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5351440" lon="-78.6636410"/>
+ <node id="3615213453" visible="true" version="2" changeset="123156439" timestamp="2022-07-03T15:52:44Z" user="erickdeoliveiraleal" uid="463504" lat="-0.5419410" lon="-78.6715635"/>
+ <node id="3615213454" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5342620" lon="-78.6620790"/>
+ <node id="3615213455" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5366720" lon="-78.6681730"/>
+ <node id="3615213456" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5323450" lon="-78.6607760"/>
+ <node id="3615213458" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5360970" lon="-78.6670850"/>
+ <node id="3615213460" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5398370" lon="-78.6701400"/>
+ <node id="3615213461" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5344010" lon="-78.6624160"/>
+ <node id="3615213462" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5352890" lon="-78.6639980"/>
+ <node id="3615213463" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5356400" lon="-78.6657140"/>
+ <node id="3615213464" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5370370" lon="-78.6684870"/>
+ <node id="3615213466" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5352830" lon="-78.6638730"/>
+ <node id="3615213467" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5372740" lon="-78.6685540"/>
+ <node id="3615213468" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5323910" lon="-78.6608670"/>
+ <node id="3615213469" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5415660" lon="-78.6713300"/>
+ <node id="3615213470" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5352540" lon="-78.6639370"/>
+ <node id="3615213473" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5416640" lon="-78.6713380"/>
+ <node id="3615213474" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5364390" lon="-78.6682300"/>
+ <node id="3615213475" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5354050" lon="-78.6652870"/>
+ <node id="3615213476" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5412400" lon="-78.6711490"/>
+ <node id="3615213477" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5321790" lon="-78.6607190"/>
+ <node id="3615213478" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5352240" lon="-78.6638210"/>
+ <node id="3615213480" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5353310" lon="-78.6643980"/>
+ <node id="3615213481" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5359730" lon="-78.6664200"/>
+ <node id="3615213483" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5363430" lon="-78.6681550"/>
+ <node id="3615213484" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5323460" lon="-78.6608300"/>
+ <node id="3615213485" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5371730" lon="-78.6685220"/>
+ <node id="3615213486" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5410090" lon="-78.6711250"/>
+ <node id="3615213487" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5353100" lon="-78.6642370"/>
+ <node id="3615213488" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5344070" lon="-78.6622530"/>
+ <node id="3615213489" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5322380" lon="-78.6607210"/>
+ <node id="3615213490" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5353880" lon="-78.6650720"/>
+ <node id="3615213493" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5344700" lon="-78.6625210"/>
+ <node id="3615213494" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5408490" lon="-78.6710100"/>
+ <node id="3615213495" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:38Z" user="Ecuador Tur" uid="72349" lat="-0.5319810" lon="-78.6604790"/>
+ <node id="3615213496" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5324860" lon="-78.6608390"/>
+ <node id="3615213498" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5407090" lon="-78.6709720"/>
+ <node id="3615213500" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5353340" lon="-78.6651450"/>
+ <node id="3615213502" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5352590" lon="-78.6640870"/>
+ <node id="3615213504" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5353480" lon="-78.6652580"/>
+ <node id="3615213505" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5362110" lon="-78.6671090"/>
+ <node id="3615213506" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5367860" lon="-78.6683540"/>
+ <node id="3615213507" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5352970" lon="-78.6643520"/>
+ <node id="3615213508" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5392180" lon="-78.6696290"/>
+ <node id="3615213509" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5377820" lon="-78.6686070"/>
+ <node id="3615213511" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5353540" lon="-78.6648390"/>
+ <node id="3615213512" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5338920" lon="-78.6620850"/>
+ <node id="3615213515" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5538880" lon="-78.6706160"/>
+ <node id="3615213516" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5346170" lon="-78.6629650"/>
+ <node id="3615213517" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5338180" lon="-78.6620590"/>
+ <node id="3615213519" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5337600" lon="-78.6619900"/>
+ <node id="3615213520" visible="true" version="2" changeset="123156439" timestamp="2022-07-03T15:52:44Z" user="erickdeoliveiraleal" uid="463504" lat="-0.5493306" lon="-78.6701986"/>
+ <node id="3615213522" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5537210" lon="-78.6706310"/>
+ <node id="3615213523" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5336880" lon="-78.6619800"/>
+ <node id="3615213524" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5487550" lon="-78.6704050"/>
+ <node id="3615213526" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5362990" lon="-78.6679310"/>
+ <node id="3615213528" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5536000" lon="-78.6705520"/>
+ <node id="3615213529" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5335720" lon="-78.6618460"/>
+ <node id="3615213530" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5536580" lon="-78.6706110"/>
+ <node id="3615213533" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5485150" lon="-78.6704300"/>
+ <node id="3615213534" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5403950" lon="-78.6708590"/>
+ <node id="3615213535" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5384250" lon="-78.6690510"/>
+ <node id="3615213537" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5369520" lon="-78.6684410"/>
+ <node id="3615213538" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5375720" lon="-78.6686680"/>
+ <node id="3615213539" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5360310" lon="-78.6666290"/>
+ <node id="3615213540" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5534450" lon="-78.6705640"/>
+ <node id="3615213541" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5481980" lon="-78.6705250"/>
+ <node id="3615213542" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5481710" lon="-78.6705760"/>
+ <node id="3615213544" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5483340" lon="-78.6704990"/>
+ <node id="3615213545" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5531590" lon="-78.6704540"/>
+ <node id="3615213546" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5334950" lon="-78.6617980"/>
+ <node id="3615213547" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5357830" lon="-78.6659190"/>
+ <node id="3615213550" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5529080" lon="-78.6703070"/>
+ <node id="3615213551" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5333650" lon="-78.6615930"/>
+ <node id="3615213557" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5402660" lon="-78.6707280"/>
+ <node id="3615213558" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5479100" lon="-78.6707210"/>
+ <node id="3615213559" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5383280" lon="-78.6690480"/>
+ <node id="3615213560" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5477720" lon="-78.6708270"/>
+ <node id="3615213562" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:39Z" user="Ecuador Tur" uid="72349" lat="-0.5332570" lon="-78.6613640"/>
+ <node id="3615213564" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5476130" lon="-78.6708620"/>
+ <node id="3615213569" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5473730" lon="-78.6709860"/>
+ <node id="3615213572" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5471980" lon="-78.6710250"/>
+ <node id="3615213573" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5332510" lon="-78.6614210"/>
+ <node id="3615213574" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5520900" lon="-78.6703130"/>
+ <node id="3615213575" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5357060" lon="-78.6657550"/>
+ <node id="3615213576" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5470850" lon="-78.6710910"/>
+ <node id="3615213580" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5469630" lon="-78.6711260"/>
+ <node id="3615213581" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5331140" lon="-78.6613230"/>
+ <node id="3615213582" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5362610" lon="-78.6681480"/>
+ <node id="3615213583" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5467550" lon="-78.6711870"/>
+ <node id="3615213584" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5555150" lon="-78.6710340"/>
+ <node id="3615213585" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5329670" lon="-78.6611420"/>
+ <node id="3615213586" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5465990" lon="-78.6712150"/>
+ <node id="3615213588" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5328890" lon="-78.6611550"/>
+ <node id="3615213590" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5360890" lon="-78.6668280"/>
+ <node id="3615213592" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5468950" lon="-78.6710990"/>
+ <node id="3615213593" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5553230" lon="-78.6709850"/>
+ <node id="3615213595" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5348470" lon="-78.6631630"/>
+ <node id="3615213597" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5328710" lon="-78.6610980"/>
+ <node id="3615213599" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5550890" lon="-78.6710150"/>
+ <node id="3615213600" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5362780" lon="-78.6680790"/>
+ <node id="3615213602" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5327420" lon="-78.6610100"/>
+ <node id="3615213603" visible="true" version="2" changeset="123156439" timestamp="2022-07-03T15:52:44Z" user="erickdeoliveiraleal" uid="463504" lat="-0.5461453" lon="-78.6709837"/>
+ <node id="3615213604" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5347930" lon="-78.6631670"/>
+ <node id="3615213605" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5549000" lon="-78.6709950"/>
+ <node id="3615213606" visible="true" version="2" changeset="123156439" timestamp="2022-07-03T15:52:44Z" user="erickdeoliveiraleal" uid="463504" lat="-0.5456617" lon="-78.6709873"/>
+ <node id="3615213608" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5327110" lon="-78.6609550"/>
+ <node id="3615213610" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5347200" lon="-78.6631080"/>
+ <node id="3615213611" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5376330" lon="-78.6687510"/>
+ <node id="3615213614" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5359090" lon="-78.6663510"/>
+ <node id="3615213615" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5359190" lon="-78.6662970"/>
+ <node id="3615213617" visible="true" version="2" changeset="123156439" timestamp="2022-07-03T15:52:44Z" user="erickdeoliveiraleal" uid="463504" lat="-0.5452134" lon="-78.6707436"/>
+ <node id="3615213618" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5543760" lon="-78.6707660"/>
+ <node id="3615213619" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5406520" lon="-78.6708870"/>
+ <node id="3615213621" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5405750" lon="-78.6708590"/>
+ <node id="3615213622" visible="true" version="2" changeset="123156439" timestamp="2022-07-03T15:52:44Z" user="erickdeoliveiraleal" uid="463504" lat="-0.5447838" lon="-78.6710552"/>
+ <node id="3615213623" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5362640" lon="-78.6680050"/>
+ <node id="3615213624" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5363060" lon="-78.6675860"/>
+ <node id="3615213625" visible="true" version="1" changeset="32183725" timestamp="2015-06-24T13:40:40Z" user="Ecuador Tur" uid="72349" lat="-0.5325330" lon="-78.6609410"/>
+ <node id="3674114168" visible="true" version="1" changeset="32995270" timestamp="2015-07-30T22:03:43Z" user="CHARLIECAHR" uid="1869511" lat="-0.5319652" lon="-78.6605179"/>
+ <way id="356041538" visible="true" version="5" changeset="123156439" timestamp="2022-07-03T15:52:44Z" user="erickdeoliveiraleal" uid="463504">
+  <nd ref="2624530252"/>
+  <nd ref="3615213182"/>
+  <nd ref="3615213396"/>
+  <nd ref="3615213185"/>
+  <nd ref="3615213177"/>
+  <nd ref="3615213183"/>
+  <nd ref="3615213186"/>
+  <nd ref="3615213192"/>
+  <nd ref="3615213191"/>
+  <nd ref="3615213584"/>
+  <nd ref="3615213593"/>
+  <nd ref="3615213599"/>
+  <nd ref="3615213605"/>
+  <nd ref="3615213395"/>
+  <nd ref="3615213618"/>
+  <nd ref="3615213515"/>
+  <nd ref="3615213522"/>
+  <nd ref="3615213530"/>
+  <nd ref="3615213528"/>
+  <nd ref="3615213540"/>
+  <nd ref="3615213545"/>
+  <nd ref="3615213550"/>
+  <nd ref="3615213574"/>
+  <nd ref="3615213167"/>
+  <nd ref="3615213172"/>
+  <nd ref="3615213393"/>
+  <nd ref="3615213173"/>
+  <nd ref="3615213421"/>
+  <nd ref="3615213441"/>
+  <nd ref="3615213398"/>
+  <nd ref="3615213432"/>
+  <nd ref="3615213179"/>
+  <nd ref="3615213181"/>
+  <nd ref="3615213402"/>
+  <nd ref="3615213416"/>
+  <nd ref="3615213520"/>
+  <nd ref="3615213524"/>
+  <nd ref="3615213533"/>
+  <nd ref="3615213544"/>
+  <nd ref="3615213541"/>
+  <nd ref="3615213542"/>
+  <nd ref="3615213558"/>
+  <nd ref="3615213560"/>
+  <nd ref="3615213564"/>
+  <nd ref="3615213569"/>
+  <nd ref="3615213572"/>
+  <nd ref="3615213576"/>
+  <nd ref="3615213580"/>
+  <nd ref="3615213592"/>
+  <nd ref="3615213583"/>
+  <nd ref="3615213586"/>
+  <nd ref="3615213603"/>
+  <nd ref="3615213606"/>
+  <nd ref="3615213617"/>
+  <nd ref="3615213622"/>
+  <nd ref="3615213407"/>
+  <nd ref="3615213187"/>
+  <nd ref="3615213394"/>
+  <nd ref="3615213403"/>
+  <nd ref="3615213450"/>
+  <nd ref="3615213413"/>
+  <nd ref="3615213442"/>
+  <nd ref="3615213453"/>
+  <nd ref="3615213473"/>
+  <nd ref="3615213469"/>
+  <nd ref="3615213476"/>
+  <nd ref="3615213486"/>
+  <nd ref="3615213494"/>
+  <nd ref="3615213498"/>
+  <nd ref="3615213619"/>
+  <nd ref="3615213621"/>
+  <nd ref="3615213534"/>
+  <nd ref="3615213557"/>
+  <nd ref="3615213437"/>
+  <nd ref="3615213460"/>
+  <nd ref="3615213409"/>
+  <nd ref="3615213508"/>
+  <nd ref="3615213443"/>
+  <nd ref="3615213429"/>
+  <nd ref="3615213433"/>
+  <nd ref="3615213535"/>
+  <nd ref="3615213559"/>
+  <nd ref="3615213434"/>
+  <nd ref="3615213509"/>
+  <nd ref="3615213611"/>
+  <nd ref="3615213538"/>
+  <nd ref="3615213427"/>
+  <nd ref="3615213467"/>
+  <nd ref="3615213485"/>
+  <nd ref="3615213169"/>
+  <nd ref="3615213464"/>
+  <nd ref="3615213537"/>
+  <nd ref="3615213428"/>
+  <nd ref="3615213506"/>
+  <nd ref="3615213455"/>
+  <nd ref="3615213414"/>
+  <nd ref="3615213474"/>
+  <nd ref="3615213483"/>
+  <nd ref="3615213582"/>
+  <nd ref="3615213600"/>
+  <nd ref="3615213623"/>
+  <nd ref="3615213526"/>
+  <nd ref="3615213624"/>
+  <nd ref="3615213411"/>
+  <nd ref="3615213505"/>
+  <nd ref="3615213426"/>
+  <nd ref="3615213458"/>
+  <nd ref="3615213448"/>
+  <nd ref="3615213590"/>
+  <nd ref="3615213170"/>
+  <nd ref="3615213539"/>
+  <nd ref="3615213419"/>
+  <nd ref="3615213481"/>
+  <nd ref="3615213614"/>
+  <nd ref="3615213615"/>
+  <nd ref="3615213547"/>
+  <nd ref="3615213575"/>
+  <nd ref="3615213463"/>
+  <nd ref="3615213400"/>
+  <nd ref="3615213475"/>
+  <nd ref="3615213504"/>
+  <nd ref="3615213500"/>
+  <nd ref="3615213490"/>
+  <nd ref="3615213405"/>
+  <nd ref="3615213511"/>
+  <nd ref="3615213431"/>
+  <nd ref="3615213480"/>
+  <nd ref="3615213507"/>
+  <nd ref="3615213487"/>
+  <nd ref="3615213502"/>
+  <nd ref="3615213462"/>
+  <nd ref="3615213470"/>
+  <nd ref="3615213466"/>
+  <nd ref="3615213478"/>
+  <nd ref="3615213452"/>
+  <nd ref="3615213401"/>
+  <nd ref="3615213440"/>
+  <nd ref="3615213595"/>
+  <nd ref="3615213604"/>
+  <nd ref="3615213610"/>
+  <nd ref="3615213516"/>
+  <nd ref="3615213493"/>
+  <nd ref="3615213461"/>
+  <nd ref="3615213488"/>
+  <nd ref="3615213445"/>
+  <nd ref="3615213184"/>
+  <nd ref="3615213454"/>
+  <nd ref="3615213512"/>
+  <nd ref="3615213517"/>
+  <nd ref="3615213519"/>
+  <nd ref="3615213523"/>
+  <nd ref="3615213529"/>
+  <nd ref="3615213546"/>
+  <nd ref="3615213551"/>
+  <nd ref="3615213562"/>
+  <nd ref="3615213573"/>
+  <nd ref="3615213581"/>
+  <nd ref="3615213585"/>
+  <nd ref="3615213588"/>
+  <nd ref="3615213597"/>
+  <nd ref="3615213602"/>
+  <nd ref="3615213608"/>
+  <nd ref="3615213625"/>
+  <nd ref="3615213496"/>
+  <nd ref="3615213468"/>
+  <nd ref="3615213484"/>
+  <nd ref="3615213456"/>
+  <nd ref="3615213489"/>
+  <nd ref="3615213477"/>
+  <nd ref="3615213449"/>
+  <nd ref="3615213495"/>
+  <nd ref="3674114168"/>
+  <tag k="highway" v="path"/>
+ </way>
+</osm>

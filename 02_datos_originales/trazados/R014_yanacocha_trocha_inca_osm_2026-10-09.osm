@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1322 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="1052496027" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:25Z" user="agranizo" uid="1799232" lat="-0.1267870" lon="-78.5901830"/>
+ <node id="1052496071" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:25Z" user="agranizo" uid="1799232" lat="-0.1280950" lon="-78.5891320"/>
+ <node id="1052496082" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1170210" lon="-78.5894890"/>
+ <node id="1052496115" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1219720" lon="-78.5893230"/>
+ <node id="1052496123" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1172400" lon="-78.5862870"/>
+ <node id="1052496174" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1222240" lon="-78.5893100"/>
+ <node id="1052496192" visible="true" version="3" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1172083" lon="-78.5867468"/>
+ <node id="1052496208" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1193730" lon="-78.5899620"/>
+ <node id="1052496246" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:25Z" user="agranizo" uid="1799232" lat="-0.1243190" lon="-78.5894090"/>
+ <node id="1052496270" visible="true" version="3" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1169105" lon="-78.5873510"/>
+ <node id="1052496314" visible="true" version="3" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1167413" lon="-78.5877922"/>
+ <node id="1052496364" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1201980" lon="-78.5898200"/>
+ <node id="1052496390" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1172500" lon="-78.5862190"/>
+ <node id="1052496396" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:25Z" user="agranizo" uid="1799232" lat="-0.1272640" lon="-78.5903420"/>
+ <node id="1052496428" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1174580" lon="-78.5896390"/>
+ <node id="1052496455" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1176200" lon="-78.5896720"/>
+ <node id="1052496485" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1226920" lon="-78.5895360"/>
+ <node id="1052496490" visible="true" version="3" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1169501" lon="-78.5870790"/>
+ <node id="1052496514" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1196690" lon="-78.5900230"/>
+ <node id="1052496522" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:25Z" user="agranizo" uid="1799232" lat="-0.1256700" lon="-78.5897480"/>
+ <node id="1052496528" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1199490" lon="-78.5898630"/>
+ <node id="1052496549" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:25Z" user="agranizo" uid="1799232" lat="-0.1269360" lon="-78.5902280"/>
+ <node id="1052496591" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:25Z" user="agranizo" uid="1799232" lat="-0.1281830" lon="-78.5888950"/>
+ <node id="1052496598" visible="true" version="3" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1162729" lon="-78.5888717"/>
+ <node id="1052496634" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1206140" lon="-78.5899750"/>
+ <node id="1052496637" visible="true" version="3" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1172670" lon="-78.5863712"/>
+ <node id="1052496646" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:25Z" user="agranizo" uid="1799232" lat="-0.1276400" lon="-78.5898880"/>
+ <node id="1052496657" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1223030" lon="-78.5893340"/>
+ <node id="1052496677" visible="true" version="3" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1173702" lon="-78.5865252"/>
+ <node id="1052496708" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1188310" lon="-78.5898570"/>
+ <node id="1052496745" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:23Z" user="agranizo" uid="1799232" lat="-0.1234280" lon="-78.5894910"/>
+ <node id="1052496754" visible="true" version="3" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1168201" lon="-78.5874317"/>
+ <node id="1052496819" visible="true" version="3" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1162826" lon="-78.5888146"/>
+ <node id="1052496845" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1202990" lon="-78.5898290"/>
+ <node id="1052496855" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:25Z" user="agranizo" uid="1799232" lat="-0.1273270" lon="-78.5903160"/>
+ <node id="1052496918" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1167510" lon="-78.5893450"/>
+ <node id="1052496980" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1217240" lon="-78.5894060"/>
+ <node id="1052496983" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1186250" lon="-78.5897480"/>
+ <node id="1052497056" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:23Z" user="agranizo" uid="1799232" lat="-0.1232280" lon="-78.5895050"/>
+ <node id="1052497063" visible="true" version="3" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1173771" lon="-78.5867004"/>
+ <node id="1052497129" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1191580" lon="-78.5899610"/>
+ <node id="1052497158" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:25Z" user="agranizo" uid="1799232" lat="-0.1241280" lon="-78.5894500"/>
+ <node id="1052497308" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1165750" lon="-78.5891510"/>
+ <node id="1052497384" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1214730" lon="-78.5895640"/>
+ <node id="1052497393" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1173070" lon="-78.5861210"/>
+ <node id="1052497424" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:25Z" user="agranizo" uid="1799232" lat="-0.1278840" lon="-78.5894050"/>
+ <node id="1052497484" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1171570" lon="-78.5895210"/>
+ <node id="1052497501" visible="true" version="3" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1173991" lon="-78.5866101"/>
+ <node id="1052497561" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1190370" lon="-78.5899350"/>
+ <node id="1052497609" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:23Z" user="agranizo" uid="1799232" lat="-0.1236410" lon="-78.5895090"/>
+ <node id="1052497647" visible="true" version="3" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1170731" lon="-78.5869403"/>
+ <node id="1052497700" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1195990" lon="-78.5900250"/>
+ <node id="1052497710" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:25Z" user="agranizo" uid="1799232" lat="-0.1248240" lon="-78.5894160"/>
+ <node id="1052497747" visible="true" version="2" changeset="34560236" timestamp="2015-10-10T23:54:24Z" user="agranizo" uid="1799232" lat="-0.1197340" lon="-78.5900000"/>
+ <node id="3781497964" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:22Z" user="agranizo" uid="1799232" lat="-0.1230450" lon="-78.5894750"/>
+ <node id="3781497965" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:22Z" user="agranizo" uid="1799232" lat="-0.1224840" lon="-78.5894480"/>
+ <node id="3781497966" visible="true" version="2" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1164628" lon="-78.5883366"/>
+ <node id="3781497977" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:22Z" user="agranizo" uid="1799232" lat="-0.1227840" lon="-78.5895550"/>
+ <node id="3781497978" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:22Z" user="agranizo" uid="1799232" lat="-0.1213260" lon="-78.5896250"/>
+ <node id="3781497980" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:22Z" user="agranizo" uid="1799232" lat="-0.1187290" lon="-78.5897900"/>
+ <node id="3781497981" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:22Z" user="agranizo" uid="1799232" lat="-0.1163550" lon="-78.5886980"/>
+ <node id="3781497982" visible="true" version="2" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1167836" lon="-78.5876517"/>
+ <node id="3781497983" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:22Z" user="agranizo" uid="1799232" lat="-0.1229700" lon="-78.5894870"/>
+ <node id="3781497984" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:22Z" user="agranizo" uid="1799232" lat="-0.1228510" lon="-78.5895420"/>
+ <node id="3781497985" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:22Z" user="agranizo" uid="1799232" lat="-0.1216460" lon="-78.5894460"/>
+ <node id="3781497986" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:22Z" user="agranizo" uid="1799232" lat="-0.1206920" lon="-78.5899900"/>
+ <node id="3781497990" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:22Z" user="agranizo" uid="1799232" lat="-0.1205140" lon="-78.5899140"/>
+ <node id="3781497991" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:22Z" user="agranizo" uid="1799232" lat="-0.1194590" lon="-78.5899750"/>
+ <node id="3781497992" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:22Z" user="agranizo" uid="1799232" lat="-0.1177390" lon="-78.5896710"/>
+ <node id="3781497993" visible="true" version="2" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1165945" lon="-78.5882303"/>
+ <node id="3781497996" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:23Z" user="agranizo" uid="1799232" lat="-0.1276040" lon="-78.5899490"/>
+ <node id="3781497997" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:23Z" user="agranizo" uid="1799232" lat="-0.1264350" lon="-78.5901360"/>
+ <node id="3781497998" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:23Z" user="agranizo" uid="1799232" lat="-0.1258200" lon="-78.5898120"/>
+ <node id="3781497999" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:23Z" user="agranizo" uid="1799232" lat="-0.1246040" lon="-78.5894290"/>
+ <node id="3781498001" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:23Z" user="agranizo" uid="1799232" lat="-0.1277130" lon="-78.5896900"/>
+ <node id="3781498002" visible="true" version="2" changeset="74267403" timestamp="2019-09-09T14:34:06Z" user="Chacho Alex" uid="9319351" lat="-0.1282999" lon="-78.5887211"/>
+ <node id="3781498003" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:23Z" user="agranizo" uid="1799232" lat="-0.1271430" lon="-78.5903290"/>
+ <node id="3781498004" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:23Z" user="agranizo" uid="1799232" lat="-0.1263190" lon="-78.5900940"/>
+ <node id="3781498005" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:23Z" user="agranizo" uid="1799232" lat="-0.1253810" lon="-78.5896620"/>
+ <node id="3781498006" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:23Z" user="agranizo" uid="1799232" lat="-0.1281460" lon="-78.5890310"/>
+ <node id="3781498007" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:23Z" user="agranizo" uid="1799232" lat="-0.1273720" lon="-78.5902760"/>
+ <node id="3781498008" visible="true" version="1" changeset="34560236" timestamp="2015-10-10T23:54:23Z" user="agranizo" uid="1799232" lat="-0.1249420" lon="-78.5894310"/>
+ <node id="4643019861" visible="true" version="2" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1164104" lon="-78.5889498"/>
+ <node id="4643021366" visible="true" version="2" changeset="141490751" timestamp="2023-09-20T01:57:47Z" user="DjaRiver" uid="19246198" lat="-0.1175079" lon="-78.5859545"/>
+ <node id="8417458961" visible="true" version="1" changeset="99158584" timestamp="2021-02-12T08:12:49Z" user="PulisakZ" uid="9026132" lat="-0.1225481" lon="-78.5894751"/>
+ <node id="9583707335" visible="true" version="1" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1163626" lon="-78.5885929"/>
+ <node id="9583707336" visible="true" version="1" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1164414" lon="-78.5884711"/>
+ <node id="9583707337" visible="true" version="1" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1167211" lon="-78.5879234"/>
+ <node id="9583707338" visible="true" version="1" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1171386" lon="-78.5868319"/>
+ <node id="9583707339" visible="true" version="1" changeset="118565542" timestamp="2022-03-16T19:50:17Z" user="vic_erazo" uid="2911516" lat="-0.1173167" lon="-78.5867396"/>
+ <way id="723159928" visible="true" version="6" changeset="141490751" timestamp="2023-09-20T01:57:47Z" user="DjaRiver" uid="19246198">
+  <nd ref="3781498002"/>
+  <nd ref="1052496591"/>
+  <nd ref="3781498006"/>
+  <nd ref="1052496071"/>
+  <nd ref="1052497424"/>
+  <nd ref="3781498001"/>
+  <nd ref="1052496646"/>
+  <nd ref="3781497996"/>
+  <nd ref="3781498007"/>
+  <nd ref="1052496855"/>
+  <nd ref="1052496396"/>
+  <nd ref="3781498003"/>
+  <nd ref="1052496549"/>
+  <nd ref="1052496027"/>
+  <nd ref="3781497997"/>
+  <nd ref="3781498004"/>
+  <nd ref="3781497998"/>
+  <nd ref="1052496522"/>
+  <nd ref="3781498005"/>
+  <nd ref="3781498008"/>
+  <nd ref="1052497710"/>
+  <nd ref="3781497999"/>
+  <nd ref="1052496246"/>
+  <nd ref="1052497158"/>
+  <nd ref="1052497609"/>
+  <nd ref="1052496745"/>
+  <nd ref="1052497056"/>
+  <nd ref="3781497964"/>
+  <nd ref="3781497983"/>
+  <nd ref="3781497984"/>
+  <nd ref="3781497977"/>
+  <nd ref="1052496485"/>
+  <nd ref="8417458961"/>
+  <nd ref="3781497965"/>
+  <nd ref="1052496657"/>
+  <nd ref="1052496174"/>
+  <nd ref="1052496115"/>
+  <nd ref="1052496980"/>
+  <nd ref="3781497985"/>
+  <nd ref="1052497384"/>
+  <nd ref="3781497978"/>
+  <nd ref="3781497986"/>
+  <nd ref="1052496634"/>
+  <nd ref="3781497990"/>
+  <nd ref="1052496845"/>
+  <nd ref="1052496364"/>
+  <nd ref="1052496528"/>
+  <nd ref="1052497747"/>
+  <nd ref="1052496514"/>
+  <nd ref="1052497700"/>
+  <nd ref="3781497991"/>
+  <nd ref="1052496208"/>
+  <nd ref="1052497129"/>
+  <nd ref="1052497561"/>
+  <nd ref="1052496708"/>
+  <nd ref="3781497980"/>
+  <nd ref="1052496983"/>
+  <nd ref="3781497992"/>
+  <nd ref="1052496455"/>
+  <nd ref="1052496428"/>
+  <nd ref="1052497484"/>
+  <nd ref="1052496082"/>
+  <nd ref="1052496918"/>
+  <nd ref="1052497308"/>
+  <nd ref="4643019861"/>
+  <nd ref="1052496598"/>
+  <nd ref="1052496819"/>
+  <nd ref="3781497981"/>
+  <nd ref="9583707335"/>
+  <nd ref="9583707336"/>
+  <nd ref="3781497966"/>
+  <nd ref="3781497993"/>
+  <nd ref="9583707337"/>
+  <nd ref="1052496314"/>
+  <nd ref="3781497982"/>
+  <nd ref="1052496754"/>
+  <nd ref="1052496270"/>
+  <nd ref="1052496490"/>
+  <nd ref="1052497647"/>
+  <nd ref="9583707338"/>
+  <nd ref="1052496192"/>
+  <nd ref="9583707339"/>
+  <nd ref="1052497063"/>
+  <nd ref="1052497501"/>
+  <nd ref="1052496677"/>
+  <nd ref="1052496637"/>
+  <nd ref="1052496123"/>
+  <nd ref="1052496390"/>
+  <nd ref="1052497393"/>
+  <nd ref="4643021366"/>
+  <tag k="access" v="no"/>
+  <tag k="highway" v="path"/>
+  <tag k="motor_vehicle" v="permissive"/>
+  <tag k="name" v="Trocha Inca"/>
+ </way>
+</osm>

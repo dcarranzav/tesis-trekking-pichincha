@@ -1,0 +1,118 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-10-01T03:16:16Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/327805695",
+        "highway": "footway",
+        "@timestamp": "2019-02-04T16:14:47Z",
+        "@version": 3,
+        "@changeset": 66908181,
+        "@user": "Freddy Calderon P",
+        "@uid": 9264823
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -78.5373223,
+            -0.1866873
+          ],
+          [
+            -78.5374548,
+            -0.1863792
+          ],
+          [
+            -78.5376271,
+            -0.18639
+          ],
+          [
+            -78.5376665,
+            -0.1863921
+          ],
+          [
+            -78.5377066,
+            -0.1863788
+          ],
+          [
+            -78.5376536,
+            -0.1863179
+          ]
+        ]
+      },
+      "id": "way/327805695"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/377354721",
+        "highway": "footway",
+        "@timestamp": "2015-10-28T20:05:07Z",
+        "@version": 1,
+        "@changeset": 34935223,
+        "@user": "Sunfishtommy",
+        "@uid": 2302638
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -78.5376536,
+            -0.1863179
+          ],
+          [
+            -78.5375792,
+            -0.1862276
+          ]
+        ]
+      },
+      "id": "way/377354721"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/377354724",
+        "highway": "footway",
+        "@timestamp": "2023-09-01T01:26:46Z",
+        "@version": 2,
+        "@changeset": 140657965,
+        "@user": "DjaRiver",
+        "@uid": 19246198
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -78.5375792,
+            -0.1862276
+          ],
+          [
+            -78.5375149,
+            -0.1860986
+          ],
+          [
+            -78.5374859,
+            -0.1860185
+          ],
+          [
+            -78.5374846,
+            -0.1859465
+          ],
+          [
+            -78.5374939,
+            -0.1858848
+          ],
+          [
+            -78.5375218,
+            -0.1857582
+          ]
+        ]
+      },
+      "id": "way/377354724"
+    }
+  ]
+}

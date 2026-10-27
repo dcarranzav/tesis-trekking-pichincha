@@ -1,0 +1,273 @@
+ambito,elemento,estado,detalle
+rutas,concordancia_ids_inventario_dataset,OK,27 rutas coinciden en ambos archivos
+rutas,ids_unicos,OK,Los identificadores de ruta son únicos
+rutas,nombres_destino_consistentes,OK,Cada identificador de destino tiene un solo nombre
+rutas,inventario_dataset_metadatos_sincronizados,OK,"Nombres, destino y decisiones coinciden entre inventario y dataset"
+rutas,elegibilidad_sin_rutas_tecnicas_ni_excluidas,OK,Ninguna ruta elegible exige equipo técnico ni está excluida
+originales,R022_xml_snapshot_geojson,OK,"XML exacto, snapshot y GeoJSON concuerdan en 128 nodos"
+originales,R023_xml_sendero_cascada,OK,"XML OSM fijado por SHA-256, sendero continuo y extremo en la cascada"
+originales,R024_R025_xml_sendero_mirador,OK,"XML OSM fijado por SHA-256, dos senderos continuos que terminan en el mismo mirador"
+originales,R026_xml_sendero_guarumos,OK,"XML OSM fijado por SHA-256, sendero continuo desde la estación de desembarque hasta Cascada Guarumos"
+originales,R027_xml_sendero_viento,OK,"XML OSM fijado por SHA-256, footway continua desde la vía de acceso hasta el sector recreativo"
+originales,R001,OK,3 archivo(s) original(es) localizado(s)
+geometria,R001,OK,"R001_trazado_subida_cumbre_2026-10-05.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R001,OK,R001_perfil_elevacion_raw_2026-10-05.csv
+figura_perfil,R001,OK,R001_perfil_elevacion_2026-10-05.svg
+perfil_procesado,R001,OK,"R001_perfil_elevacion_procesado_2026-10-05.csv: 162 puntos, sin vacíos y métricas reconciliadas"
+dem,R001,OK,Copernicus_DSM_COG_10_S01_00_W079_00_DEM.tif disponible
+originales,R002,OK,2 archivo(s) original(es) localizado(s)
+geometria,R002,OK,"R002_trazado_ida_continuo_2026-10-06.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R002,OK,R002_perfil_elevacion_raw_2026-10-06.csv
+figura_perfil,R002,OK,R002_perfil_elevacion_2026-10-06.svg
+perfil_procesado,R002,OK,"R002_perfil_elevacion_procesado_2026-10-06.csv: 203 puntos, sin vacíos y métricas reconciliadas"
+dem,R002,OK,Copernicus_DSM_COG_10_S01_00_W079_00_DEM.tif disponible
+originales,R003,OK,1 archivo(s) original(es) localizado(s)
+geometria,R003,OK,"R003_trazado_ida_continuo_2026-10-01.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R003,OK,R003_perfil_elevacion_raw_2026-10-05.csv
+figura_perfil,R003,OK,R003_perfil_elevacion_2026-10-05.svg
+perfil_procesado,R003,OK,"R003_perfil_elevacion_procesado_2026-10-05.csv: 126 puntos, sin vacíos y métricas reconciliadas"
+dem,R003,OK,Copernicus_DSM_COG_10_S01_00_W079_00_DEM.tif disponible
+originales,R004,OK,3 archivo(s) original(es) localizado(s)
+geometria,R004,OK,"R004_trazado_circular_continuo_2026-10-06.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R004,OK,R004_perfil_elevacion_raw_2026-10-06.csv
+figura_perfil,R004,OK,R004_perfil_elevacion_2026-10-06.svg
+perfil_procesado,R004,OK,"R004_perfil_elevacion_procesado_2026-10-06.csv: 57 puntos, sin vacíos y métricas reconciliadas"
+dem,R004,OK,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif disponible
+originales,R005,OK,1 archivo(s) original(es) localizado(s)
+geometria,R005,OK,"R005_trazado_preliminar_2026-10-01.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R005,OK,R005_perfil_elevacion_raw_2026-10-05.csv
+figura_perfil,R005,OK,R005_perfil_elevacion_2026-10-05.svg
+perfil_procesado,R005,OK,"R005_perfil_elevacion_procesado_2026-10-05.csv: 33 puntos, sin vacíos y métricas reconciliadas"
+dem,R005,OK,Copernicus_DSM_COG_10_S01_00_W079_00_DEM.tif disponible
+originales,R006,OK,1 archivo(s) original(es) localizado(s)
+geometria,R006,OK,"R006_trazado_ida_continuo_2026-10-05.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R006,OK,R006_perfil_elevacion_raw_2026-10-05.csv
+figura_perfil,R006,OK,R006_perfil_elevacion_2026-10-05.svg
+perfil_procesado,R006,OK,"R006_perfil_elevacion_procesado_2026-10-05.csv: 89 puntos, sin vacíos y métricas reconciliadas"
+dem,R006,OK,Copernicus_DSM_COG_10_S01_00_W079_00_DEM.tif disponible
+originales,R007,OK,2 archivo(s) original(es) localizado(s)
+geometria,R007,OK,"R007_trazado_ida_continuo_2026-10-06.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R007,OK,R007_perfil_elevacion_raw_2026-10-06.csv
+figura_perfil,R007,OK,R007_perfil_elevacion_2026-10-06.svg
+perfil_procesado,R007,OK,"R007_perfil_elevacion_procesado_2026-10-06.csv: 129 puntos, sin vacíos y métricas reconciliadas"
+dem,R007,OK,Copernicus_DSM_COG_10_S01_00_W079_00_DEM.tif disponible
+originales,R008,OK,1 archivo(s) original(es) localizado(s)
+geometria,R008,OK,"R008_trazado_ida_continuo_2026-10-07.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R008,OK,R008_perfil_elevacion_raw_2026-10-07.csv
+figura_perfil,R008,OK,R008_perfil_elevacion_2026-10-07.svg
+perfil_procesado,R008,OK,"R008_perfil_elevacion_procesado_2026-10-07.csv: 28 puntos, sin vacíos y métricas reconciliadas"
+dem,R008,OK,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif disponible
+originales,R009,OK,1 archivo(s) original(es) localizado(s)
+geometria,R009,OK,"R009_trazado_ida_continuo_2026-10-07.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R009,OK,R009_perfil_elevacion_raw_2026-10-07.csv
+figura_perfil,R009,OK,R009_perfil_elevacion_2026-10-07.svg
+perfil_procesado,R009,OK,"R009_perfil_elevacion_procesado_2026-10-07.csv: 141 puntos, sin vacíos y métricas reconciliadas"
+dem,R009,OK,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif disponible
+originales,R010,OK,1 archivo(s) original(es) localizado(s)
+geometria,R010,OK,"R010_trazado_ida_continuo_2026-10-07.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R010,OK,R010_perfil_elevacion_raw_2026-10-07.csv
+figura_perfil,R010,OK,R010_perfil_elevacion_2026-10-07.svg
+perfil_procesado,R010,OK,"R010_perfil_elevacion_procesado_2026-10-07.csv: 55 puntos, sin vacíos y métricas reconciliadas"
+dem,R010,OK,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif disponible
+originales,R011,OK,1 archivo(s) original(es) localizado(s)
+geometria,R011,OK,"R011_trazado_ida_continuo_2026-10-09.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R011,OK,R011_perfil_elevacion_raw_2026-10-09.csv
+figura_perfil,R011,OK,R011_perfil_elevacion_2026-10-09.svg
+perfil_procesado,R011,OK,"R011_perfil_elevacion_procesado_2026-10-09.csv: 15 puntos, sin vacíos y métricas reconciliadas"
+dem,R011,OK,Copernicus_DSM_COG_10_S01_00_W079_00_DEM.tif disponible
+originales,R012,OK,1 archivo(s) original(es) localizado(s)
+geometria,R012,OK,"R012_trazado_ida_continuo_2026-10-09.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R012,OK,R012_perfil_elevacion_raw_2026-10-09.csv
+figura_perfil,R012,OK,R012_perfil_elevacion_2026-10-09.svg
+perfil_procesado,R012,OK,"R012_perfil_elevacion_procesado_2026-10-09.csv: 32 puntos, sin vacíos y métricas reconciliadas"
+dem,R012,OK,Copernicus_DSM_COG_10_S01_00_W079_00_DEM.tif disponible
+originales,R013,OK,1 archivo(s) original(es) localizado(s)
+geometria,R013,OK,"R013_trazado_ida_continuo_2026-10-09.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R013,OK,R013_perfil_elevacion_raw_2026-10-09.csv
+figura_perfil,R013,OK,R013_perfil_elevacion_2026-10-09.svg
+perfil_procesado,R013,OK,"R013_perfil_elevacion_procesado_2026-10-09.csv: 23 puntos, sin vacíos y métricas reconciliadas"
+dem,R013,OK,Copernicus_DSM_COG_10_S01_00_W079_00_DEM.tif disponible
+originales,R014,OK,1 archivo(s) original(es) localizado(s)
+geometria,R014,OK,"R014_trazado_ida_continuo_2026-10-09.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R014,OK,R014_perfil_elevacion_raw_2026-10-09.csv
+figura_perfil,R014,OK,R014_perfil_elevacion_2026-10-09.svg
+perfil_procesado,R014,OK,"R014_perfil_elevacion_procesado_2026-10-09.csv: 65 puntos, sin vacíos y métricas reconciliadas"
+dem,R014,OK,Copernicus_DSM_COG_10_S01_00_W079_00_DEM.tif disponible
+originales,R015,OK,2 archivo(s) original(es) localizado(s)
+geometria,R015,OK,"R015_trazado_ida_continuo_2026-10-09.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R015,OK,R015_perfil_elevacion_raw_2026-10-09.csv
+figura_perfil,R015,OK,R015_perfil_elevacion_2026-10-09.svg
+perfil_procesado,R015,OK,"R015_perfil_elevacion_procesado_2026-10-09.csv: 54 puntos, sin vacíos y métricas reconciliadas"
+dem,R015,OK,Copernicus_DSM_COG_10_S01_00_W079_00_DEM.tif disponible
+originales,R016,OK,2 archivo(s) original(es) localizado(s)
+geometria,R016,OK,"R016_trazado_ida_continuo_2026-10-09.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R016,OK,R016_perfil_elevacion_raw_2026-10-09.csv
+figura_perfil,R016,OK,R016_perfil_elevacion_2026-10-09.svg
+perfil_procesado,R016,OK,"R016_perfil_elevacion_procesado_2026-10-09.csv: 29 puntos, sin vacíos y métricas reconciliadas"
+dem,R016,OK,Copernicus_DSM_COG_10_S01_00_W079_00_DEM.tif disponible
+originales,R017,OK,1 archivo(s) original(es) localizado(s)
+geometria,R017,OK,"R017_trazado_ida_continuo_2026-10-09.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R017,OK,R017_perfil_elevacion_raw_2026-10-09.csv
+figura_perfil,R017,OK,R017_perfil_elevacion_2026-10-09.svg
+perfil_procesado,R017,OK,"R017_perfil_elevacion_procesado_2026-10-09.csv: 93 puntos, sin vacíos y métricas reconciliadas"
+dem,R017,OK,Copernicus_DSM_COG_10_S01_00_W079_00_DEM.tif disponible
+originales,R018,OK,1 archivo(s) original(es) localizado(s)
+geometria,R018,OK,"R018_trazado_ida_continuo_2026-10-10.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R018,OK,R018_perfil_elevacion_raw_2026-10-10.csv
+figura_perfil,R018,OK,R018_perfil_elevacion_2026-10-10.svg
+perfil_procesado,R018,OK,"R018_perfil_elevacion_procesado_2026-10-10.csv: 10 puntos, sin vacíos y métricas reconciliadas"
+dem,R018,OK,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif disponible
+originales,R019,OK,1 archivo(s) original(es) localizado(s)
+geometria,R019,OK,"R019_trazado_ida_continuo_2026-10-12.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R019,OK,R019_perfil_elevacion_raw_2026-10-12.csv
+figura_perfil,R019,OK,R019_perfil_elevacion_2026-10-12.svg
+perfil_procesado,R019,OK,"R019_perfil_elevacion_procesado_2026-10-12.csv: 79 puntos, sin vacíos y métricas reconciliadas"
+dem,R019,OK,Copernicus_DSM_COG_10_S01_00_W079_00_DEM.tif disponible
+originales,R020,OK,2 archivo(s) original(es) localizado(s)
+geometria,R020,OK,"R020_trazado_ida_continuo_2026-10-14.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R020,OK,R020_perfil_elevacion_raw_2026-10-14.csv
+figura_perfil,R020,OK,R020_perfil_elevacion_2026-10-14.svg
+perfil_procesado,R020,OK,"R020_perfil_elevacion_procesado_2026-10-14.csv: 112 puntos, sin vacíos y métricas reconciliadas"
+dem,R020,OK,Copernicus_DSM_COG_10_S01_00_W079_00_DEM.tif disponible
+originales,R021,OK,1 archivo(s) original(es) localizado(s)
+geometria,R021,OK,"R021_trazado_ida_continuo_2026-10-17.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R021,OK,R021_perfil_elevacion_raw_2026-10-17.csv
+figura_perfil,R021,OK,R021_perfil_elevacion_2026-10-17.svg
+perfil_procesado,R021,OK,"R021_perfil_elevacion_procesado_2026-10-17.csv: 98 puntos, sin vacíos y métricas reconciliadas"
+dem,R021,OK,Copernicus_DSM_COG_10_S01_00_W079_00_DEM.tif disponible
+originales,R022,OK,2 archivo(s) original(es) localizado(s)
+geometria,R022,OK,"R022_trazado_ida_continuo_2026-10-17.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R022,OK,R022_perfil_elevacion_raw_2026-10-17.csv
+figura_perfil,R022,OK,R022_perfil_elevacion_2026-10-17.svg
+perfil_procesado,R022,OK,"R022_perfil_elevacion_procesado_2026-10-17.csv: 74 puntos, sin vacíos y métricas reconciliadas"
+dem,R022,OK,Copernicus_DSM_COG_10_S01_00_W079_00_DEM.tif disponible
+originales,R023,OK,1 archivo(s) original(es) localizado(s)
+geometria,R023,OK,"R023_trazado_ida_continuo_2026-10-21.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R023,OK,R023_perfil_elevacion_raw_2026-10-21.csv
+figura_perfil,R023,OK,R023_perfil_elevacion_2026-10-21.svg
+perfil_procesado,R023,OK,"R023_perfil_elevacion_procesado_2026-10-21.csv: 57 puntos, sin vacíos y métricas reconciliadas"
+dem,R023,OK,Copernicus_DSM_COG_10_S01_00_W079_00_DEM.tif disponible
+originales,R024,OK,1 archivo(s) original(es) localizado(s)
+geometria,R024,OK,"R024_trazado_ida_continuo_2026-10-21.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R024,OK,R024_perfil_elevacion_raw_2026-10-21.csv
+figura_perfil,R024,OK,R024_perfil_elevacion_2026-10-21.svg
+perfil_procesado,R024,OK,"R024_perfil_elevacion_procesado_2026-10-21.csv: 18 puntos, sin vacíos y métricas reconciliadas"
+dem,R024,OK,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif disponible
+originales,R025,OK,1 archivo(s) original(es) localizado(s)
+geometria,R025,OK,"R025_trazado_ida_continuo_2026-10-21.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R025,OK,R025_perfil_elevacion_raw_2026-10-21.csv
+figura_perfil,R025,OK,R025_perfil_elevacion_2026-10-21.svg
+perfil_procesado,R025,OK,"R025_perfil_elevacion_procesado_2026-10-21.csv: 44 puntos, sin vacíos y métricas reconciliadas"
+dem,R025,OK,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif disponible
+originales,R026,OK,1 archivo(s) original(es) localizado(s)
+geometria,R026,OK,"R026_trazado_ida_continuo_2026-10-22.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R026,OK,R026_perfil_elevacion_raw_2026-10-22.csv
+figura_perfil,R026,OK,R026_perfil_elevacion_2026-10-22.svg
+perfil_procesado,R026,OK,"R026_perfil_elevacion_procesado_2026-10-22.csv: 37 puntos, sin vacíos y métricas reconciliadas"
+dem,R026,OK,Copernicus_DSM_COG_10_S01_00_W079_00_DEM.tif disponible
+originales,R027,OK,1 archivo(s) original(es) localizado(s)
+geometria,R027,OK,"R027_trazado_ida_continuo_2026-10-22.geojson: LineString válida, simple y EPSG:4326"
+perfil_raw,R027,OK,R027_perfil_elevacion_raw_2026-10-22.csv
+figura_perfil,R027,OK,R027_perfil_elevacion_2026-10-22.svg
+perfil_procesado,R027,OK,"R027_perfil_elevacion_procesado_2026-10-22.csv: 26 puntos, sin vacíos y métricas reconciliadas"
+dem,R027,OK,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif disponible
+codigo_python,analizar_zona_osm.py,OK,Sintaxis válida
+codigo_python,auditar_cierre_inventario.py,OK,Sintaxis válida
+codigo_python,auditar_integridad_proyecto.py,OK,Sintaxis válida
+codigo_python,buscar_nombres_osm.py,OK,Sintaxis válida
+codigo_python,calcular_indicador_esfuerzo.py,OK,Sintaxis válida
+codigo_python,clasificar_dificultad_fisica.py,OK,Sintaxis válida
+codigo_python,clima_rutas.py,OK,Sintaxis válida
+codigo_python,completar_r001_cumbre.py,OK,Sintaxis válida
+codigo_python,consultar_bbox_osm.py,OK,Sintaxis válida
+codigo_python,consultar_candidatas_osm.py,OK,Sintaxis válida
+codigo_python,contrastar_r002_fuente_puce.py,OK,Sintaxis válida
+codigo_python,contrastar_r022_xml_snapshot.py,OK,Sintaxis válida
+codigo_python,datos_mapa_dashboard.py,OK,Sintaxis válida
+codigo_python,descargar_candidato_cerro_luz.py,OK,Sintaxis válida
+codigo_python,descargar_candidato_guagrapamba.py,OK,Sintaxis válida
+codigo_python,descargar_candidato_guarumos.py,OK,Sintaxis válida
+codigo_python,descargar_lote_r008_r010.py,OK,Sintaxis válida
+codigo_python,descargar_lote_r011_r014.py,OK,Sintaxis válida
+codigo_python,descargar_lote_r015_r017.py,OK,Sintaxis válida
+codigo_python,descargar_r018.py,OK,Sintaxis válida
+codigo_python,descargar_r020_sendero3.py,OK,Sintaxis válida
+codigo_python,descargar_r022_ilalo.py,OK,Sintaxis válida
+codigo_python,descubrir_destinos_osm.py,OK,Sintaxis válida
+codigo_python,diagnosticar_bellavista_red.py,OK,Sintaxis válida
+codigo_python,diagnosticar_candidato_guagrapamba.py,OK,Sintaxis válida
+codigo_python,diagnosticar_candidato_humboldt.py,OK,Sintaxis válida
+codigo_python,diagnosticar_candidato_piragua.py,OK,Sintaxis válida
+codigo_python,diagnosticar_candidatos_mindo.py,OK,Sintaxis válida
+codigo_python,diagnosticar_chaquinan_osm.py,OK,Sintaxis válida
+codigo_python,diagnosticar_chaquinan_overpass.py,OK,Sintaxis válida
+codigo_python,diagnosticar_maquipucuna.py,OK,Sintaxis válida
+codigo_python,diagnosticar_poi_osm.py,OK,Sintaxis válida
+codigo_python,diagnosticar_r005.py,OK,Sintaxis válida
+codigo_python,diagnosticar_r005_red.py,OK,Sintaxis válida
+codigo_python,diagnosticar_vilatuna_red.py,OK,Sintaxis válida
+codigo_python,diagnosticar_yanacocha.py,OK,Sintaxis válida
+codigo_python,diagnosticar_yellow_house_senderos_4_5.py,OK,Sintaxis válida
+codigo_python,ejecutar_notebook_python_puro.py,OK,Sintaxis válida
+codigo_python,ejecutar_notebooks_lectura.py,OK,Sintaxis válida
+codigo_python,ensayar_dbscan_exploratorio.py,OK,Sintaxis válida
+codigo_python,evaluar_kmeans_esfuerzo.py,OK,Sintaxis válida
+codigo_python,evaluar_trazas_gpx_externas.py,OK,Sintaxis válida
+codigo_python,explorar_modelo_clasificacion.py,OK,Sintaxis válida
+codigo_python,extraer_elevacion_piloto.py,OK,Sintaxis válida
+codigo_python,generar_eda_preliminar.py,OK,Sintaxis válida
+codigo_python,generar_evidencia_perfiles_lote.py,OK,Sintaxis válida
+codigo_python,generar_evidencia_perfiles_mindo.py,OK,Sintaxis válida
+codigo_python,generar_evidencia_perfiles_yanacocha.py,OK,Sintaxis válida
+codigo_python,generar_evidencia_r005.py,OK,Sintaxis válida
+codigo_python,generar_evidencia_r018.py,OK,Sintaxis válida
+codigo_python,generar_evidencia_r019.py,OK,Sintaxis válida
+codigo_python,generar_evidencia_r020.py,OK,Sintaxis válida
+codigo_python,generar_mapa_verificacion_lote.py,OK,Sintaxis válida
+codigo_python,generar_mapa_verificacion_mindo.py,OK,Sintaxis válida
+codigo_python,generar_mapa_verificacion_yanacocha.py,OK,Sintaxis válida
+codigo_python,generar_perfiles_svg.py,OK,Sintaxis válida
+codigo_python,inspeccionar_vias_osm.py,OK,Sintaxis válida
+codigo_python,inspeccionar_zona_osm.py,OK,Sintaxis válida
+codigo_python,logica_recomendacion.py,OK,Sintaxis válida
+codigo_python,preparar_dataset_clasificacion.py,OK,Sintaxis válida
+codigo_python,procesar_elevacion_ampliacion.py,OK,Sintaxis válida
+codigo_python,procesar_elevacion_piloto.py,OK,Sintaxis válida
+codigo_python,procesar_lote_r008_r010.py,OK,Sintaxis válida
+codigo_python,procesar_lote_r011_r014.py,OK,Sintaxis válida
+codigo_python,procesar_lote_r015_r017.py,OK,Sintaxis válida
+codigo_python,procesar_r002.py,OK,Sintaxis válida
+codigo_python,procesar_r004.py,OK,Sintaxis válida
+codigo_python,procesar_r006.py,OK,Sintaxis válida
+codigo_python,procesar_r007.py,OK,Sintaxis válida
+codigo_python,procesar_r018.py,OK,Sintaxis válida
+codigo_python,procesar_r019.py,OK,Sintaxis válida
+codigo_python,procesar_r020_sendero3.py,OK,Sintaxis válida
+codigo_python,procesar_r021_yellow_house.py,OK,Sintaxis válida
+codigo_python,procesar_r022_ilalo.py,OK,Sintaxis válida
+codigo_python,procesar_r023_guagrapamba.py,OK,Sintaxis válida
+codigo_python,procesar_r024_r025_cerro_luz.py,OK,Sintaxis válida
+codigo_python,procesar_r026_guarumos.py,OK,Sintaxis válida
+codigo_python,procesar_r027_sendero_viento.py,OK,Sintaxis válida
+codigo_python,validar_metodologia_clasificacion.py,OK,Sintaxis válida
+codigo_python,validar_piloto_trazados.py,OK,Sintaxis válida
+codigo_python,verificar_preparacion_modelo.py,OK,Sintaxis válida
+codigo_python,vista_rutas.py,OK,Sintaxis válida
+codigo_python,visuales_pagina.py,OK,Sintaxis válida
+notebook,00_verificacion_entorno.ipynb,OK,JSON válido; 1 celdas; 1 celdas de código con sintaxis válida
+notebook_ejecucion,00_verificacion_entorno.ipynb,OK,1 celdas de código ejecutadas sin salidas de error
+notebook,01_validacion_documentacion.ipynb,OK,JSON válido; 4 celdas; 4 celdas de código con sintaxis válida
+notebook_ejecucion,01_validacion_documentacion.ipynb,OK,4 celdas de código ejecutadas sin salidas de error
+notebook,02_inspeccion_trazados_piloto.ipynb,OK,JSON válido; 21 celdas; 11 celdas de código con sintaxis válida
+notebook_ejecucion,02_inspeccion_trazados_piloto.ipynb,OK,11 celdas de código ejecutadas sin salidas de error
+notebook,03_elevacion_piloto.ipynb,OK,JSON válido; 9 celdas; 4 celdas de código con sintaxis válida
+notebook_ejecucion,03_elevacion_piloto.ipynb,OK,4 celdas de código ejecutadas sin salidas de error
+notebook,04_ampliacion_rutas.ipynb,OK,JSON válido; 45 celdas; 22 celdas de código con sintaxis válida
+notebook_ejecucion,04_ampliacion_rutas.ipynb,OK,22 celdas de código ejecutadas sin salidas de error
+notebook_vigencia,04_ampliacion_rutas.ipynb,OK,La salida de consolidación muestra las 27 rutas vigentes
+notebook,05_validacion_metodologica.ipynb,OK,JSON válido; 35 celdas; 18 celdas de código con sintaxis válida
+notebook_ejecucion,05_validacion_metodologica.ipynb,OK,18 celdas de código ejecutadas sin salidas de error
+evidencias,archivos_registrados,OK,43 evidencias físicas coinciden con el registro
+entorno,dependencias_principales,OK,9 dependencias principales están declaradas
+documentacion,documentos_metodologicos,OK,9 documentos esenciales localizados
+clasificacion_fisica,tres_niveles,OK,"20 rutas: Fácil=8, Moderada=10, Difícil=2"

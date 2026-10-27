@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1316 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="10025787156" visible="true" version="1" changeset="126199073" timestamp="2022-09-14T21:47:53Z" user="rootsh0pf" uid="3524076" lat="0.0419227" lon="-78.4863808">
+  <tag k="description" v="Distance: 2000 meters&#10;Time: 120 minutes&#10;Difficulty: Medium-High&#10;No dogs allowed."/>
+  <tag k="information" v="guidepost"/>
+  <tag k="name" v="Sendero Pondoña Trail"/>
+  <tag k="tourism" v="information"/>
+ </node>
+</osm>

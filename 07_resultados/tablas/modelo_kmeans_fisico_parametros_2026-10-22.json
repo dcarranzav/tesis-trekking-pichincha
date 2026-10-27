@@ -1,0 +1,52 @@
+{
+  "version": "kmeans-fisico-relativo-v1",
+  "fecha": "2026-10-22",
+  "algoritmo": "scikit-learn KMeans (k-means++, n_init=10, 50 semillas, mínimo de inercia)",
+  "variables": [
+    "distancia_total_km",
+    "ascenso_total_m"
+  ],
+  "media_entrenamiento": [
+    3.517549999999999,
+    264.5262
+  ],
+  "desviacion_entrenamiento": [
+    2.473034279483404,
+    227.28871514146934
+  ],
+  "centroides_estandarizados": [
+    [
+      -0.7114606866808993,
+      -0.6298921025514015
+    ],
+    [
+      1.06719103002135,
+      0.944838153827102
+    ]
+  ],
+  "n_rutas": 20,
+  "ids_entrenamiento": [
+    "R001",
+    "R003",
+    "R004",
+    "R006",
+    "R008",
+    "R011",
+    "R013",
+    "R015",
+    "R016",
+    "R017",
+    "R018",
+    "R019",
+    "R020",
+    "R021",
+    "R022",
+    "R023",
+    "R024",
+    "R025",
+    "R026",
+    "R027"
+  ],
+  "sha256_dataset": "d2af49640741c71c0797c1d3509465bd3dae3cf5dac622baa49624ee5027b3f2",
+  "limite": "Clase relativa a la muestra; no predice seguridad, acceso, técnica ni aptitud personal"
+}

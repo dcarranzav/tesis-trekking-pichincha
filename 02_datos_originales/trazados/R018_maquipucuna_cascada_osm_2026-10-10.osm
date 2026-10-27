@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1300 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="7501200888" visible="true" version="2" changeset="87546437" timestamp="2020-07-05T05:20:56Z" user="Isabel Ontaneda" uid="11444373" lat="0.1255740" lon="-78.6330570">
+  <tag k="name" v="Cascada Maquipucuna"/>
+  <tag k="waterway" v="waterfall"/>
+ </node>
+ <node id="7501200889" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1252678" lon="-78.6317883"/>
+ <node id="7501200890" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1253370" lon="-78.6317230"/>
+ <node id="7501200891" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1253510" lon="-78.6316590"/>
+ <node id="7501200892" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1253610" lon="-78.6316150"/>
+ <node id="7501200893" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1253810" lon="-78.6315790"/>
+ <node id="7501200894" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1253890" lon="-78.6315570"/>
+ <node id="7501200895" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1254000" lon="-78.6315520"/>
+ <node id="7501200896" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1254380" lon="-78.6315380"/>
+ <node id="7501200897" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1254850" lon="-78.6315090"/>
+ <node id="7501200898" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1255500" lon="-78.6314550"/>
+ <node id="7501200899" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1256000" lon="-78.6314730"/>
+ <node id="7501200900" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1256350" lon="-78.6314940"/>
+ <node id="7501200901" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1256750" lon="-78.6316180"/>
+ <node id="7501200902" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1256320" lon="-78.6317340"/>
+ <node id="7501200903" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1255980" lon="-78.6317620"/>
+ <node id="7501200904" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1255990" lon="-78.6317790"/>
+ <node id="7501200905" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1255960" lon="-78.6318050"/>
+ <node id="7501200906" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1256090" lon="-78.6319070"/>
+ <node id="7501200907" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1256300" lon="-78.6319880"/>
+ <node id="7501200908" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1256330" lon="-78.6320250"/>
+ <node id="7501200909" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1256280" lon="-78.6320900"/>
+ <node id="7501200910" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1256050" lon="-78.6321230"/>
+ <node id="7501200911" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1255970" lon="-78.6321700"/>
+ <node id="7501200912" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1255610" lon="-78.6322030"/>
+ <node id="7501200913" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1255300" lon="-78.6322500"/>
+ <node id="7501200914" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1255070" lon="-78.6322970"/>
+ <node id="7501200915" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1254890" lon="-78.6323360"/>
+ <node id="7501200916" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1254550" lon="-78.6324100"/>
+ <node id="7501200917" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1254310" lon="-78.6324540"/>
+ <node id="7501200918" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1253950" lon="-78.6324960"/>
+ <node id="7501200919" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1253830" lon="-78.6325500"/>
+ <node id="7501200920" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1254100" lon="-78.6325810"/>
+ <node id="7501200921" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1254640" lon="-78.6326120"/>
+ <node id="7501200922" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1254930" lon="-78.6326340"/>
+ <node id="7501200923" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1255400" lon="-78.6326800"/>
+ <node id="7501200924" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1255530" lon="-78.6327380"/>
+ <node id="7501200925" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1255720" lon="-78.6327790"/>
+ <node id="7501200926" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1255920" lon="-78.6328200"/>
+ <node id="7501200927" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1256060" lon="-78.6329010"/>
+ <node id="7501200928" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1255840" lon="-78.6329760"/>
+ <node id="7501200929" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1255870" lon="-78.6330120"/>
+ <node id="7501200930" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1255800" lon="-78.6330260"/>
+ <node id="7501200931" visible="true" version="1" changeset="84941740" timestamp="2020-05-09T15:16:43Z" user="Xaviercito1" uid="10954170" lat="0.1255800" lon="-78.6330500"/>
+ <node id="12298720209" visible="true" version="1" changeset="158525584" timestamp="2024-10-30T05:38:45Z" user="kueda" uid="1758858" lat="0.1255126" lon="-78.6326532"/>
+ <way id="801959483" visible="true" version="3" changeset="158525665" timestamp="2024-10-30T05:45:48Z" user="kueda" uid="1758858">
+  <nd ref="7501200888"/>
+  <nd ref="7501200931"/>
+  <nd ref="7501200930"/>
+  <nd ref="7501200929"/>
+  <nd ref="7501200928"/>
+  <nd ref="7501200927"/>
+  <nd ref="7501200926"/>
+  <nd ref="7501200925"/>
+  <nd ref="7501200924"/>
+  <nd ref="7501200923"/>
+  <nd ref="12298720209"/>
+  <nd ref="7501200922"/>
+  <nd ref="7501200921"/>
+  <nd ref="7501200920"/>
+  <nd ref="7501200919"/>
+  <nd ref="7501200918"/>
+  <nd ref="7501200917"/>
+  <nd ref="7501200916"/>
+  <nd ref="7501200915"/>
+  <nd ref="7501200914"/>
+  <nd ref="7501200913"/>
+  <nd ref="7501200912"/>
+  <nd ref="7501200911"/>
+  <nd ref="7501200910"/>
+  <nd ref="7501200909"/>
+  <nd ref="7501200908"/>
+  <nd ref="7501200907"/>
+  <nd ref="7501200906"/>
+  <nd ref="7501200905"/>
+  <nd ref="7501200904"/>
+  <nd ref="7501200903"/>
+  <nd ref="7501200902"/>
+  <nd ref="7501200901"/>
+  <nd ref="7501200900"/>
+  <nd ref="7501200899"/>
+  <nd ref="7501200898"/>
+  <nd ref="7501200897"/>
+  <nd ref="7501200896"/>
+  <nd ref="7501200895"/>
+  <nd ref="7501200894"/>
+  <nd ref="7501200893"/>
+  <nd ref="7501200892"/>
+  <nd ref="7501200891"/>
+  <nd ref="7501200890"/>
+  <nd ref="7501200889"/>
+  <tag k="highway" v="path"/>
+  <tag k="name" v="Sendero de la Cascada"/>
+  <tag k="surface" v="earth"/>
+ </way>
+</osm>

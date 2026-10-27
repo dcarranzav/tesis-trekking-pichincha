@@ -1,0 +1,19 @@
+id_ruta,orden,distancia_m,longitud,latitud,elevacion_m,fuente_elevacion,archivo_dem,elevacion_mediana3_m,cambio_elevacion_m,pendiente_pct,metodo_filtrado
+R024,0,0.0,-78.397579,0.0564157,2378.797,Copernicus DEM GLO-30 Public 2021,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif,2378.797,,,mediana_centrada_3_puntos_extremos_conservados
+R024,1,29.731,-78.39777839,0.05652338,2377.025,Copernicus DEM GLO-30 Public 2021,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif,2377.025,-1.772,-5.96,mediana_centrada_3_puntos_extremos_conservados
+R024,2,59.462,-78.3980448,0.05652953,2372.93,Copernicus DEM GLO-30 Public 2021,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif,2374.187,-2.838,-9.546,mediana_centrada_3_puntos_extremos_conservados
+R024,3,89.193,-78.39831086,0.05655029,2374.187,Copernicus DEM GLO-30 Public 2021,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif,2374.187,0.0,0.0,mediana_centrada_3_puntos_extremos_conservados
+R024,4,118.924,-78.39857766,0.05655785,2374.875,Copernicus DEM GLO-30 Public 2021,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif,2374.875,0.688,2.314,mediana_centrada_3_puntos_extremos_conservados
+R024,5,148.655,-78.39882783,0.05661087,2375.197,Copernicus DEM GLO-30 Public 2021,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif,2375.197,0.322,1.083,mediana_centrada_3_puntos_extremos_conservados
+R024,6,178.386,-78.39901719,0.0567896,2375.197,Copernicus DEM GLO-30 Public 2021,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif,2375.197,0.0,0.0,mediana_centrada_3_puntos_extremos_conservados
+R024,7,208.116,-78.39928245,0.05680876,2371.36,Copernicus DEM GLO-30 Public 2021,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif,2371.36,-3.837,-12.906,mediana_centrada_3_puntos_extremos_conservados
+R024,8,237.847,-78.39954922,0.05680736,2369.707,Copernicus DEM GLO-30 Public 2021,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif,2371.36,0.0,0.0,mediana_centrada_3_puntos_extremos_conservados
+R024,9,267.578,-78.39981585,0.05679498,2374.118,Copernicus DEM GLO-30 Public 2021,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif,2374.029,2.669,8.977,mediana_centrada_3_puntos_extremos_conservados
+R024,10,297.309,-78.4000824,0.05680004,2374.029,Copernicus DEM GLO-30 Public 2021,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif,2374.029,0.0,0.0,mediana_centrada_3_puntos_extremos_conservados
+R024,11,327.04,-78.40034499,0.05684699,2370.731,Copernicus DEM GLO-30 Public 2021,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif,2374.029,0.0,0.0,mediana_centrada_3_puntos_extremos_conservados
+R024,12,356.771,-78.40060853,0.0568885,2376.019,Copernicus DEM GLO-30 Public 2021,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif,2376.019,1.99,6.693,mediana_centrada_3_puntos_extremos_conservados
+R024,13,386.502,-78.40087317,0.0569224,2380.135,Copernicus DEM GLO-30 Public 2021,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif,2380.135,4.116,13.844,mediana_centrada_3_puntos_extremos_conservados
+R024,14,416.233,-78.40114,0.05692899,2383.738,Copernicus DEM GLO-30 Public 2021,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif,2383.738,3.603,12.119,mediana_centrada_3_puntos_extremos_conservados
+R024,15,445.964,-78.40140633,0.05694399,2385.562,Copernicus DEM GLO-30 Public 2021,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif,2385.562,1.824,6.135,mediana_centrada_3_puntos_extremos_conservados
+R024,16,475.695,-78.40167206,0.05696915,2388.141,Copernicus DEM GLO-30 Public 2021,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif,2388.141,2.579,8.674,mediana_centrada_3_puntos_extremos_conservados
+R024,17,505.426,-78.4019378,0.0569943,2389.015,Copernicus DEM GLO-30 Public 2021,Copernicus_DSM_COG_10_N00_00_W079_00_DEM.tif,2389.015,0.874,2.94,mediana_centrada_3_puntos_extremos_conservados

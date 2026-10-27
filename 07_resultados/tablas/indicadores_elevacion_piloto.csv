@@ -1,0 +1,5 @@
+id_ruta,distancia_ida_km,distancia_ida_vuelta_km,puntos_perfil,valores_faltantes,metodo_principal,elevacion_min_m,elevacion_max_m,ascenso_ida_m,descenso_ida_m,ascenso_ida_vuelta_m,pendiente_media_abs_pct,pendiente_p95_abs_pct,pendiente_max_abs_pct
+R001,4.804,9.607,162,0,mediana_centrada_3_puntos_extremos_conservados,3954.548,4678.573,774.432,50.407,824.839,17.171,56.44,91.168
+R003,3.742,7.484,126,0,mediana_centrada_3_puntos_extremos_conservados,3062.865,3289.859,334.339,114.642,448.981,11.998,43.67,104.56
+R005,0.951,1.903,33,0,mediana_centrada_3_puntos_extremos_conservados,1410.106,1505.709,39.36,126.057,165.417,17.388,58.109,75.548
+R006,2.616,5.232,89,0,mediana_centrada_3_puntos_extremos_conservados,2517.14,3181.26,740.976,76.856,817.832,31.262,83.923,102.647

@@ -1,0 +1,4 @@
+nivel_orden,dificultad_fisica_estimada,n_rutas,horas_min,horas_max,distancia_min_km,distancia_max_km,criterio
+1,Fácil,8,0.17,0.903,0.515,2.55,<=1 h
+2,Moderada,10,1.011,2.806,1.663,7.484,>1 y <=3 h
+3,Difícil,2,4.062,4.638,5.232,9.607,>3 h

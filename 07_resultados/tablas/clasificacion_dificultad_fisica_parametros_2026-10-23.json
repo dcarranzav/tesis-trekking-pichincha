@@ -1,0 +1,20 @@
+{
+  "version": "dificultad-fisica-mide-adaptada-3niv-v1",
+  "fecha": "2026-10-23",
+  "n_rutas": 20,
+  "regla": "max(distancia/4, subida/400 + bajada/600) + 0.5*min(distancia/4, subida/400 + bajada/600)",
+  "parametros": {
+    "velocidad_horizontal_kmh": 4.0,
+    "velocidad_subida_m_h": 400.0,
+    "velocidad_bajada_m_h": 600.0,
+    "facil_hasta_h": 1.0,
+    "moderada_hasta_h": 3.0,
+    "dificil_desde_h_mayor_que": 3.0
+  },
+  "adaptacion": "MIDE 1 -> Fácil; MIDE 2 -> Moderada; MIDE 3-5 -> Difícil",
+  "fuente_principal": "https://montanasegura.com/MIDE/manualMIDE.pdf",
+  "alcance": "Solo cantidad de esfuerzo físico estimado; no es MIDE completo ni recomendación de salida",
+  "sha256_dataset": "d2af49640741c71c0797c1d3509465bd3dae3cf5dac622baa49624ee5027b3f2",
+  "archivo_clasificacion": "clasificacion_dificultad_fisica_2026-10-23.csv",
+  "sha256_clasificacion": "1791c252c5ab9f8dd61b50523632d2797d5f139626b74e145c535e3fb877452a"
+}

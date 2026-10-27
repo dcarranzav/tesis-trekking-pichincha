@@ -1,0 +1,8 @@
+criterio,valor,umbral_previo,cumple
+C1 estabilidad entre semillas (ARI mín),1.0,>= 0.9,True
+C2 concordancia con Ward (ARI),1.0,>= 0.9,True
+C3 estabilidad al retirar una ruta (ARI mín),1.0,>= 0.7,True
+C4 tamaño mínimo de grupo,4.0,>= 3,True
+C5 silueta k=2,0.4477,>= 0.4,True
+C6 sensibilidad a rutas/pesos/destinos (ARI mín en comunes),0.1307,>= 0.7,False
+C7 sensibilidad a cambio de variables (ARI mín en comunes),0.7644,>= 0.7,True

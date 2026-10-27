@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500">
+<rect width="100%" height="100%" fill="white"/>
+<text x="500" y="30" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold">R010 – Sendero Tranquilo de Maquipucuna</text>
+<text x="500" y="52" text-anchor="middle" font-family="Arial" font-size="13">Perfil Copernicus DEM GLO-30 · muestreo cada 30 m</text>
+<line x1="85" y1="410.0" x2="935" y2="410.0" stroke="#dddddd"/>
+<text x="75" y="414.0" text-anchor="end" font-family="Arial" font-size="11">1250</text>
+<line x1="85" y1="342.0" x2="935" y2="342.0" stroke="#dddddd"/>
+<text x="75" y="346.0" text-anchor="end" font-family="Arial" font-size="11">1292</text>
+<line x1="85" y1="274.0" x2="935" y2="274.0" stroke="#dddddd"/>
+<text x="75" y="278.0" text-anchor="end" font-family="Arial" font-size="11">1334</text>
+<line x1="85" y1="206.0" x2="935" y2="206.0" stroke="#dddddd"/>
+<text x="75" y="210.0" text-anchor="end" font-family="Arial" font-size="11">1376</text>
+<line x1="85" y1="138.0" x2="935" y2="138.0" stroke="#dddddd"/>
+<text x="75" y="142.0" text-anchor="end" font-family="Arial" font-size="11">1418</text>
+<line x1="85" y1="70.0" x2="935" y2="70.0" stroke="#dddddd"/>
+<text x="75" y="74.0" text-anchor="end" font-family="Arial" font-size="11">1460</text>
+<line x1="85.0" y1="70" x2="85.0" y2="410" stroke="#eeeeee"/>
+<text x="85.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">0.0</text>
+<line x1="255.0" y1="70" x2="255.0" y2="410" stroke="#eeeeee"/>
+<text x="255.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">0.3</text>
+<line x1="425.0" y1="70" x2="425.0" y2="410" stroke="#eeeeee"/>
+<text x="425.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">0.6</text>
+<line x1="595.0" y1="70" x2="595.0" y2="410" stroke="#eeeeee"/>
+<text x="595.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">1.0</text>
+<line x1="765.0" y1="70" x2="765.0" y2="410" stroke="#eeeeee"/>
+<text x="765.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">1.3</text>
+<line x1="935.0" y1="70" x2="935.0" y2="410" stroke="#eeeeee"/>
+<text x="935.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">1.6</text>
+<polyline points="85.0,363.1 100.7,363.1 116.5,335.1 132.2,335.1 148.0,319.9 163.7,314.9 179.4,314.9 195.2,314.9 210.9,302.1 226.7,291.3 242.4,287.1 258.1,278.4 273.9,271.0 289.6,257.3 305.4,250.7 321.1,239.2 336.9,227.3 352.6,213.3 368.3,213.3 384.1,190.0 399.8,180.9 415.6,180.9 431.3,165.2 447.0,138.9 462.8,136.7 478.5,135.2 494.3,117.5 510.0,102.3 525.7,122.3 541.5,145.0 557.2,150.5 573.0,150.5 588.7,161.1 604.4,167.5 620.2,167.5 635.9,174.4 651.7,181.1 667.4,179.5 683.1,188.6 698.9,194.5 714.6,194.5 730.4,200.7 746.1,215.1 761.9,234.9 777.6,234.9 793.3,233.8 809.1,265.0 824.8,256.5 840.6,260.0 856.3,283.1 872.0,301.6 887.8,302.4 903.5,301.6 919.3,342.5 935.0,377.7" fill="none" stroke="#999999" stroke-width="1.5" opacity="0.8"/>
+<polyline points="85.0,363.1 100.7,363.1 116.5,335.1 132.2,335.1 148.0,319.9 163.7,314.9 179.4,314.9 195.2,314.9 210.9,302.1 226.7,291.3 242.4,287.1 258.1,278.4 273.9,271.0 289.6,257.3 305.4,250.7 321.1,239.2 336.9,227.3 352.6,213.3 368.3,213.3 384.1,190.0 399.8,180.9 415.6,180.9 431.3,165.2 447.0,138.9 462.8,136.7 478.5,135.2 494.3,117.5 510.0,117.5 525.7,122.3 541.5,145.0 557.2,150.5 573.0,150.5 588.7,161.1 604.4,167.5 620.2,167.5 635.9,174.4 651.7,179.5 667.4,181.1 683.1,188.6 698.9,194.5 714.6,194.5 730.4,200.7 746.1,215.1 761.9,234.9 777.6,234.9 793.3,234.9 809.1,256.5 824.8,260.0 840.6,260.0 856.3,283.1 872.0,301.6 887.8,301.6 903.5,302.4 919.3,342.5 935.0,377.7" fill="none" stroke="#1769aa" stroke-width="2.5"/>
+<line x1="85" y1="410" x2="935" y2="410" stroke="#333333"/>
+<line x1="85" y1="70" x2="85" y2="410" stroke="#333333"/>
+<text x="510" y="480" text-anchor="middle" font-family="Arial" font-size="13">Distancia del trazado (km)</text>
+<text x="20" y="240" text-anchor="middle" transform="rotate(-90 20 240)" font-family="Arial" font-size="13">Elevación (m)</text>
+<line x1="665" y1="85" x2="705" y2="85" stroke="#999999" stroke-width="2"/><text x="715" y="89" font-family="Arial" font-size="12">Raw</text>
+<line x1="785" y1="85" x2="825" y2="85" stroke="#1769aa" stroke-width="3"/><text x="835" y="89" font-family="Arial" font-size="12">Mediana 3</text>
+</svg>

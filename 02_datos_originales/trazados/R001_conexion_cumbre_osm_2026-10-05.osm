@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1318 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="249414034" visible="true" version="13" changeset="66908181" timestamp="2019-02-04T16:14:45Z" user="Freddy Calderon P" uid="9264823" lat="-0.1627104" lon="-78.5667070">
+  <tag k="ele" v="4696"/>
+  <tag k="gns_classification" v="MT"/>
+  <tag k="gns_uni" v="-1379695"/>
+  <tag k="is_in:country" v="Ecuador"/>
+  <tag k="is_in:country_code" v="EC"/>
+  <tag k="is_in:state" v="Provincia de Pichincha"/>
+  <tag k="name" v="Rucu Pichincha"/>
+  <tag k="natural" v="volcano"/>
+  <tag k="source" v="GNS"/>
+  <tag k="sport" v="trekking"/>
+  <tag k="volcano:status" v="dormant"/>
+  <tag k="volcano:type" v="stratovolcano"/>
+ </node>
+ <node id="352973222" visible="true" version="1" changeset="672813" timestamp="2009-02-26T15:40:52Z" user="Ecuador Tur" uid="72349" lat="-0.1617170" lon="-78.5648910"/>
+ <node id="352973223" visible="true" version="1" changeset="672813" timestamp="2009-02-26T15:40:52Z" user="Ecuador Tur" uid="72349" lat="-0.1618830" lon="-78.5646210"/>
+ <node id="352973224" visible="true" version="1" changeset="672813" timestamp="2009-02-26T15:40:52Z" user="Ecuador Tur" uid="72349" lat="-0.1618600" lon="-78.5645360"/>
+ <node id="352973225" visible="true" version="1" changeset="672813" timestamp="2009-02-26T15:40:52Z" user="Ecuador Tur" uid="72349" lat="-0.1620290" lon="-78.5644130"/>
+ <node id="2243257307" visible="true" version="3" changeset="178669886" timestamp="2026-02-17T09:58:51Z" user="Hidden Mountain" uid="14202257" lat="-0.1621451" lon="-78.5665806"/>
+ <node id="2243257308" visible="true" version="2" changeset="178669886" timestamp="2026-02-17T09:58:51Z" user="Hidden Mountain" uid="14202257" lat="-0.1618947" lon="-78.5663482"/>
+ <node id="2243257309" visible="true" version="2" changeset="178669886" timestamp="2026-02-17T09:58:51Z" user="Hidden Mountain" uid="14202257" lat="-0.1617426" lon="-78.5659928"/>
+ <node id="2243257310" visible="true" version="1" changeset="15575636" timestamp="2013-04-01T23:35:01Z" user="Ecuador Tur" uid="72349" lat="-0.1617290" lon="-78.5655780"/>
+ <node id="2310915523" visible="true" version="2" changeset="91009280" timestamp="2020-09-16T22:15:50Z" user="erickdeoliveiraleal" uid="463504" lat="-0.1617031" lon="-78.5653651"/>
+ <node id="4028377594" visible="true" version="3" changeset="178673400" timestamp="2026-02-17T11:09:32Z" user="Hidden Mountain" uid="14202257" lat="-0.1621877" lon="-78.5642962"/>
+ <node id="11156942514" visible="true" version="2" changeset="178669886" timestamp="2026-02-17T09:58:51Z" user="Hidden Mountain" uid="14202257" lat="-0.1624753" lon="-78.5665811"/>
+ <node id="11156942515" visible="true" version="2" changeset="178669886" timestamp="2026-02-17T09:58:51Z" user="Hidden Mountain" uid="14202257" lat="-0.1625746" lon="-78.5666665"/>
+ <node id="13572478118" visible="true" version="1" changeset="178669886" timestamp="2026-02-17T09:58:51Z" user="Hidden Mountain" uid="14202257" lat="-0.1617645" lon="-78.5661791"/>
+ <node id="13572478119" visible="true" version="1" changeset="178669886" timestamp="2026-02-17T09:58:51Z" user="Hidden Mountain" uid="14202257" lat="-0.1620176" lon="-78.5663522"/>
+ <node id="13572478120" visible="true" version="1" changeset="178669886" timestamp="2026-02-17T09:58:51Z" user="Hidden Mountain" uid="14202257" lat="-0.1621008" lon="-78.5664536"/>
+ <way id="377339146" visible="true" version="6" changeset="178669886" timestamp="2026-02-17T09:58:51Z" user="Hidden Mountain" uid="14202257">
+  <nd ref="249414034"/>
+  <nd ref="11156942515"/>
+  <nd ref="11156942514"/>
+  <nd ref="2243257307"/>
+  <nd ref="13572478120"/>
+  <nd ref="13572478119"/>
+  <nd ref="2243257308"/>
+  <nd ref="13572478118"/>
+  <nd ref="2243257309"/>
+  <nd ref="2243257310"/>
+  <nd ref="2310915523"/>
+  <nd ref="352973222"/>
+  <nd ref="352973223"/>
+  <nd ref="352973224"/>
+  <nd ref="352973225"/>
+  <nd ref="4028377594"/>
+  <tag k="bicycle" v="no"/>
+  <tag k="highway" v="path"/>
+  <tag k="name" v="Arenal Bajada"/>
+  <tag k="sac_scale" v="demanding_mountain_hiking"/>
+  <tag k="surface" v="sand"/>
+ </way>
+</osm>

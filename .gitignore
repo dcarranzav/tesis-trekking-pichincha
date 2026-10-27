@@ -1,0 +1,25 @@
+# Entorno virtual
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editores y sistema
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Archivos temporales
+*.tmp
+*.log
+
+
+# archivos temporales de ejecucion local
+_tmp/
+_to_delete/

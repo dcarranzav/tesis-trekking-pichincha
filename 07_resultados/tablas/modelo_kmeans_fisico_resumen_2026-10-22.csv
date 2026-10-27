@@ -1,0 +1,4 @@
+k,variables,n_rutas,silueta,inercia,tamanos,ari_semillas_min,ari_ward
+2,distancia_total_km|ascenso_total_m,20,0.5919,12.9118,8/12,1.0,1.0
+3,distancia_total_km|ascenso_total_m,20,0.5895,6.1769,2/6/12,1.0,0.9246
+4,distancia_total_km|ascenso_total_m,20,0.4354,4.5064,2/5/6/7,0.5111,0.5111

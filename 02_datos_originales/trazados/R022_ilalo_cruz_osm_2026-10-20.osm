@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1294 spike-08.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="1323665115" visible="true" version="2" changeset="50182516" timestamp="2017-07-10T17:39:18Z" user="Ecuador Tur" uid="72349" lat="-0.2712813" lon="-78.4270426"/>
+ <node id="1369911761" visible="true" version="3" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2831086" lon="-78.4366072"/>
+ <node id="1369911766" visible="true" version="3" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2831921" lon="-78.4366515"/>
+ <node id="1369911768" visible="true" version="3" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2832666" lon="-78.4367933"/>
+ <node id="1369911771" visible="true" version="3" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2832716" lon="-78.4369009"/>
+ <node id="1369911774" visible="true" version="3" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2833060" lon="-78.4369484"/>
+ <node id="1369911776" visible="true" version="2" changeset="50143197" timestamp="2017-07-09T02:58:27Z" user="MapsOnline" uid="4639112" lat="-0.2834914" lon="-78.4369266"/>
+ <node id="1369911781" visible="true" version="2" changeset="50143197" timestamp="2017-07-09T02:58:27Z" user="MapsOnline" uid="4639112" lat="-0.2835380" lon="-78.4368836"/>
+ <node id="1369911783" visible="true" version="3" changeset="141186110" timestamp="2023-09-13T01:45:24Z" user="MontBlanc1" uid="19895323" lat="-0.2835711" lon="-78.4368775"/>
+ <node id="1369911786" visible="true" version="2" changeset="50143197" timestamp="2017-07-09T02:58:27Z" user="MapsOnline" uid="4639112" lat="-0.2823610" lon="-78.4361331"/>
+ <node id="1369911788" visible="true" version="3" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2824169" lon="-78.4361720"/>
+ <node id="1369911790" visible="true" version="3" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2825060" lon="-78.4362067"/>
+ <node id="1369911793" visible="true" version="2" changeset="50143197" timestamp="2017-07-09T02:58:27Z" user="MapsOnline" uid="4639112" lat="-0.2825263" lon="-78.4363190"/>
+ <node id="1369911803" visible="true" version="2" changeset="50143197" timestamp="2017-07-09T02:58:27Z" user="MapsOnline" uid="4639112" lat="-0.2825593" lon="-78.4363847"/>
+ <node id="1369911804" visible="true" version="2" changeset="50143197" timestamp="2017-07-09T02:58:27Z" user="MapsOnline" uid="4639112" lat="-0.2826639" lon="-78.4364335"/>
+ <node id="1369911805" visible="true" version="2" changeset="50143197" timestamp="2017-07-09T02:58:27Z" user="MapsOnline" uid="4639112" lat="-0.2827396" lon="-78.4364838"/>
+ <node id="1369911806" visible="true" version="2" changeset="50143197" timestamp="2017-07-09T02:58:27Z" user="MapsOnline" uid="4639112" lat="-0.2827723" lon="-78.4365036"/>
+ <node id="1369911808" visible="true" version="2" changeset="50143197" timestamp="2017-07-09T02:58:27Z" user="MapsOnline" uid="4639112" lat="-0.2828094" lon="-78.4365278"/>
+ <node id="1369911809" visible="true" version="2" changeset="50143197" timestamp="2017-07-09T02:58:27Z" user="MapsOnline" uid="4639112" lat="-0.2828706" lon="-78.4365512"/>
+ <node id="1369911811" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2814083" lon="-78.4358544"/>
+ <node id="1369911813" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2815643" lon="-78.4358627"/>
+ <node id="1369911824" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2816930" lon="-78.4358364"/>
+ <node id="1369911827" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2818117" lon="-78.4357887"/>
+ <node id="1369911828" visible="true" version="2" changeset="50143197" timestamp="2017-07-09T02:58:27Z" user="MapsOnline" uid="4639112" lat="-0.2818466" lon="-78.4358200"/>
+ <node id="1369911830" visible="true" version="2" changeset="50143197" timestamp="2017-07-09T02:58:27Z" user="MapsOnline" uid="4639112" lat="-0.2818807" lon="-78.4358621"/>
+ <node id="1369911831" visible="true" version="2" changeset="50143197" timestamp="2017-07-09T02:58:27Z" user="MapsOnline" uid="4639112" lat="-0.2818756" lon="-78.4359044"/>
+ <node id="1369911834" visible="true" version="2" changeset="50143197" timestamp="2017-07-09T02:58:27Z" user="MapsOnline" uid="4639112" lat="-0.2818670" lon="-78.4359587"/>
+ <node id="1369911845" visible="true" version="2" changeset="50143197" timestamp="2017-07-09T02:58:27Z" user="MapsOnline" uid="4639112" lat="-0.2818347" lon="-78.4360150"/>
+ <node id="1369911847" visible="true" version="2" changeset="50143197" timestamp="2017-07-09T02:58:27Z" user="MapsOnline" uid="4639112" lat="-0.2819220" lon="-78.4361197"/>
+ <node id="1369911849" visible="true" version="2" changeset="50143197" timestamp="2017-07-09T02:58:27Z" user="MapsOnline" uid="4639112" lat="-0.2820523" lon="-78.4361214"/>
+ <node id="1369911851" visible="true" version="2" changeset="50143197" timestamp="2017-07-09T02:58:27Z" user="MapsOnline" uid="4639112" lat="-0.2821927" lon="-78.4361211"/>
+ <node id="1369911853" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2810747" lon="-78.4355690"/>
+ <node id="1369911855" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2810534" lon="-78.4356386"/>
+ <node id="1369911856" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:23Z" user="Ecuador Tur" uid="72349" lat="-0.2810330" lon="-78.4357300"/>
+ <node id="1369911866" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2809833" lon="-78.4358544"/>
+ <node id="1369911868" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2811099" lon="-78.4358461"/>
+ <node id="1369911874" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2812456" lon="-78.4358597"/>
+ <node id="1369911878" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:23Z" user="Ecuador Tur" uid="72349" lat="-0.2808610" lon="-78.4351120"/>
+ <node id="1369911886" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2809287" lon="-78.4350143"/>
+ <node id="1369911890" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2810036" lon="-78.4350814"/>
+ <node id="1369911896" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2810816" lon="-78.4351950"/>
+ <node id="1369911899" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2811260" lon="-78.4353213"/>
+ <node id="1369911906" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:24Z" user="Ecuador Tur" uid="72349" lat="-0.2811000" lon="-78.4355060"/>
+ <node id="1369911908" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:24Z" user="Ecuador Tur" uid="72349" lat="-0.2801700" lon="-78.4347170"/>
+ <node id="1369911911" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:24Z" user="Ecuador Tur" uid="72349" lat="-0.2802310" lon="-78.4347880"/>
+ <node id="1369911913" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:24Z" user="Ecuador Tur" uid="72349" lat="-0.2802330" lon="-78.4348670"/>
+ <node id="1369911917" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2801643" lon="-78.4350230"/>
+ <node id="1369911919" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2801340" lon="-78.4351901"/>
+ <node id="1369911921" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2802379" lon="-78.4352277"/>
+ <node id="1369911924" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2803470" lon="-78.4352434"/>
+ <node id="1369911930" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2804823" lon="-78.4352424"/>
+ <node id="1369911933" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2805723" lon="-78.4353675"/>
+ <node id="1369911936" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2806490" lon="-78.4353571"/>
+ <node id="1369911939" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2807230" lon="-78.4353010"/>
+ <node id="1369911941" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:24Z" user="Ecuador Tur" uid="72349" lat="-0.2808130" lon="-78.4351670"/>
+ <node id="1369911944" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2796251" lon="-78.4342257"/>
+ <node id="1369911947" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2797686" lon="-78.4341610"/>
+ <node id="1369911952" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2799109" lon="-78.4343093"/>
+ <node id="1369911954" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2800193" lon="-78.4344993"/>
+ <node id="1369911956" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2787803" lon="-78.4332650"/>
+ <node id="1369911959" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2788683" lon="-78.4334247"/>
+ <node id="1369911961" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2789673" lon="-78.4338322"/>
+ <node id="1369911964" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:25Z" user="Ecuador Tur" uid="72349" lat="-0.2790480" lon="-78.4338530"/>
+ <node id="1369911967" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2792057" lon="-78.4339868"/>
+ <node id="1369911975" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2793359" lon="-78.4341657"/>
+ <node id="1369911977" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2796800" lon="-78.4341120"/>
+ <node id="1369911981" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:25Z" user="Ecuador Tur" uid="72349" lat="-0.2775960" lon="-78.4315030"/>
+ <node id="1369911983" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2777540" lon="-78.4315860"/>
+ <node id="1369911985" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:25Z" user="Ecuador Tur" uid="72349" lat="-0.2777940" lon="-78.4318220"/>
+ <node id="1369911988" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:25Z" user="Ecuador Tur" uid="72349" lat="-0.2777170" lon="-78.4321250"/>
+ <node id="1369911990" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:25Z" user="Ecuador Tur" uid="72349" lat="-0.2776790" lon="-78.4324380"/>
+ <node id="1369911999" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2776019" lon="-78.4327821"/>
+ <node id="1369912000" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2779318" lon="-78.4330225"/>
+ <node id="1369912003" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2785920" lon="-78.4333119"/>
+ <node id="1369912005" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2786245" lon="-78.4331973"/>
+ <node id="1369912007" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2786703" lon="-78.4331980"/>
+ <node id="1369912018" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:26Z" user="Ecuador Tur" uid="72349" lat="-0.2768730" lon="-78.4314410"/>
+ <node id="1369912020" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:26Z" user="Ecuador Tur" uid="72349" lat="-0.2769640" lon="-78.4316070"/>
+ <node id="1369912022" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:26Z" user="Ecuador Tur" uid="72349" lat="-0.2772350" lon="-78.4315710"/>
+ <node id="1369912023" visible="true" version="2" changeset="123159154" timestamp="2022-07-03T17:22:54Z" user="erickdeoliveiraleal" uid="463504" lat="-0.2746404" lon="-78.4303784"/>
+ <node id="1369912025" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:26Z" user="Ecuador Tur" uid="72349" lat="-0.2748740" lon="-78.4304770"/>
+ <node id="1369912027" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2749910" lon="-78.4304597"/>
+ <node id="1369912029" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2752222" lon="-78.4305013"/>
+ <node id="1369912031" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2754133" lon="-78.4305677"/>
+ <node id="1369912039" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:26Z" user="Ecuador Tur" uid="72349" lat="-0.2757660" lon="-78.4307250"/>
+ <node id="1369912041" visible="true" version="2" changeset="123159154" timestamp="2022-07-03T17:22:54Z" user="erickdeoliveiraleal" uid="463504" lat="-0.2759751" lon="-78.4308870"/>
+ <node id="1369912043" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:26Z" user="Ecuador Tur" uid="72349" lat="-0.2764060" lon="-78.4311020"/>
+ <node id="1369912045" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:26Z" user="Ecuador Tur" uid="72349" lat="-0.2766660" lon="-78.4312880"/>
+ <node id="1369912046" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:26Z" user="Ecuador Tur" uid="72349" lat="-0.2732850" lon="-78.4292060"/>
+ <node id="1369912067" visible="true" version="2" changeset="123159154" timestamp="2022-07-03T17:22:54Z" user="erickdeoliveiraleal" uid="463504" lat="-0.2739471" lon="-78.4296359"/>
+ <node id="1369912070" visible="true" version="2" changeset="123159154" timestamp="2022-07-03T17:22:54Z" user="erickdeoliveiraleal" uid="463504" lat="-0.2743909" lon="-78.4301344"/>
+ <node id="1369912081" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:27Z" user="Ecuador Tur" uid="72349" lat="-0.2732340" lon="-78.4289500"/>
+ <node id="1369912082" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:27Z" user="Ecuador Tur" uid="72349" lat="-0.2732690" lon="-78.4291960"/>
+ <node id="1369912087" visible="true" version="2" changeset="24727936" timestamp="2014-08-13T17:00:48Z" user="LLAQWA" uid="77114" lat="-0.2719301" lon="-78.4277459"/>
+ <node id="1369912089" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:27Z" user="Ecuador Tur" uid="72349" lat="-0.2720350" lon="-78.4278140"/>
+ <node id="1369912090" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:27Z" user="Ecuador Tur" uid="72349" lat="-0.2721780" lon="-78.4278540"/>
+ <node id="1369912093" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:27Z" user="Ecuador Tur" uid="72349" lat="-0.2722100" lon="-78.4278560"/>
+ <node id="1369912095" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:27Z" user="Ecuador Tur" uid="72349" lat="-0.2723910" lon="-78.4278600"/>
+ <node id="1369912097" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:27Z" user="Ecuador Tur" uid="72349" lat="-0.2723990" lon="-78.4278600"/>
+ <node id="1369912100" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:27Z" user="Ecuador Tur" uid="72349" lat="-0.2726230" lon="-78.4279300"/>
+ <node id="1369912102" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:27Z" user="Ecuador Tur" uid="72349" lat="-0.2726540" lon="-78.4279410"/>
+ <node id="1369912105" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:27Z" user="Ecuador Tur" uid="72349" lat="-0.2728540" lon="-78.4280430"/>
+ <node id="1369912108" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:27Z" user="Ecuador Tur" uid="72349" lat="-0.2728700" lon="-78.4280440"/>
+ <node id="1369912111" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:27Z" user="Ecuador Tur" uid="72349" lat="-0.2730570" lon="-78.4282670"/>
+ <node id="1369912117" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:28Z" user="Ecuador Tur" uid="72349" lat="-0.2730800" lon="-78.4282850"/>
+ <node id="1369912122" visible="true" version="1" changeset="8797076" timestamp="2011-07-22T12:06:28Z" user="Ecuador Tur" uid="72349" lat="-0.2731800" lon="-78.4285890"/>
+ <node id="3014751644" visible="true" version="1" changeset="24727936" timestamp="2014-08-13T17:00:15Z" user="LLAQWA" uid="77114" lat="-0.2715169" lon="-78.4271981"/>
+ <node id="3014751645" visible="true" version="1" changeset="24727936" timestamp="2014-08-13T17:00:15Z" user="LLAQWA" uid="77114" lat="-0.2715568" lon="-78.4272580"/>
+ <node id="3014751742" visible="true" version="1" changeset="24727936" timestamp="2014-08-13T17:00:16Z" user="LLAQWA" uid="77114" lat="-0.2716475" lon="-78.4274592"/>
+ <node id="3014751938" visible="true" version="1" changeset="24727936" timestamp="2014-08-13T17:00:16Z" user="LLAQWA" uid="77114" lat="-0.2715750" lon="-78.4273758"/>
+ <node id="3014751939" visible="true" version="1" changeset="24727936" timestamp="2014-08-13T17:00:16Z" user="LLAQWA" uid="77114" lat="-0.2717835" lon="-78.4275499"/>
+ <node id="4959229865" visible="true" version="1" changeset="50143197" timestamp="2017-07-09T02:58:26Z" user="MapsOnline" uid="4639112" lat="-0.2834207" lon="-78.4369562"/>
+ <node id="4959229866" visible="true" version="1" changeset="50143197" timestamp="2017-07-09T02:58:26Z" user="MapsOnline" uid="4639112" lat="-0.2833669" lon="-78.4369527"/>
+ <node id="4959229868" visible="true" version="2" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2832555" lon="-78.4367215"/>
+ <node id="4959229869" visible="true" version="1" changeset="50143197" timestamp="2017-07-09T02:58:26Z" user="MapsOnline" uid="4639112" lat="-0.2830236" lon="-78.4365846"/>
+ <node id="4959229870" visible="true" version="1" changeset="50143197" timestamp="2017-07-09T02:58:26Z" user="MapsOnline" uid="4639112" lat="-0.2829457" lon="-78.4365746"/>
+ <node id="4959229871" visible="true" version="1" changeset="50143197" timestamp="2017-07-09T02:58:26Z" user="MapsOnline" uid="4639112" lat="-0.2818275" lon="-78.4361350"/>
+ <node id="4959229872" visible="true" version="1" changeset="50143197" timestamp="2017-07-09T02:58:26Z" user="MapsOnline" uid="4639112" lat="-0.2817960" lon="-78.4361007"/>
+ <node id="9996501327" visible="true" version="1" changeset="125722156" timestamp="2022-09-03T04:36:19Z" user="Marlon11595" uid="15003869" lat="-0.2775036" lon="-78.4315204">
+  <tag k="ford" v="yes"/>
+ </node>
+ <node id="9996501328" visible="true" version="1" changeset="125722156" timestamp="2022-09-03T04:36:19Z" user="Marlon11595" uid="15003869" lat="-0.2777864" lon="-78.4317383">
+  <tag k="ford" v="yes"/>
+ </node>
+ <node id="11206144702" visible="true" version="1" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2801071" lon="-78.4350785"/>
+ <node id="11206144703" visible="true" version="1" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2802337" lon="-78.4349427"/>
+ <node id="11206144704" visible="true" version="1" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2788793" lon="-78.4336996"/>
+ <node id="11206144705" visible="true" version="1" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2794829" lon="-78.4342984"/>
+ <node id="11206144706" visible="true" version="1" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2793860" lon="-78.4342461"/>
+ <node id="11206144707" visible="true" version="1" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2781866" lon="-78.4331402"/>
+ <node id="11206144708" visible="true" version="1" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2783730" lon="-78.4332844"/>
+ <node id="11206144709" visible="true" version="1" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516" lat="-0.2785408" lon="-78.4333589"/>
+ <way id="297582904" visible="true" version="9" changeset="141530776" timestamp="2023-09-20T20:25:19Z" user="vic_erazo" uid="2911516">
+  <nd ref="1323665115"/>
+  <nd ref="3014751644"/>
+  <nd ref="3014751645"/>
+  <nd ref="3014751938"/>
+  <nd ref="3014751742"/>
+  <nd ref="3014751939"/>
+  <nd ref="1369912087"/>
+  <nd ref="1369912089"/>
+  <nd ref="1369912090"/>
+  <nd ref="1369912093"/>
+  <nd ref="1369912095"/>
+  <nd ref="1369912097"/>
+  <nd ref="1369912100"/>
+  <nd ref="1369912102"/>
+  <nd ref="1369912105"/>
+  <nd ref="1369912108"/>
+  <nd ref="1369912111"/>
+  <nd ref="1369912117"/>
+  <nd ref="1369912122"/>
+  <nd ref="1369912081"/>
+  <nd ref="1369912082"/>
+  <nd ref="1369912046"/>
+  <nd ref="1369912067"/>
+  <nd ref="1369912070"/>
+  <nd ref="1369912023"/>
+  <nd ref="1369912025"/>
+  <nd ref="1369912027"/>
+  <nd ref="1369912029"/>
+  <nd ref="1369912031"/>
+  <nd ref="1369912039"/>
+  <nd ref="1369912041"/>
+  <nd ref="1369912043"/>
+  <nd ref="1369912045"/>
+  <nd ref="1369912018"/>
+  <nd ref="1369912020"/>
+  <nd ref="1369912022"/>
+  <nd ref="9996501327"/>
+  <nd ref="1369911981"/>
+  <nd ref="1369911983"/>
+  <nd ref="9996501328"/>
+  <nd ref="1369911985"/>
+  <nd ref="1369911988"/>
+  <nd ref="1369911990"/>
+  <nd ref="1369911999"/>
+  <nd ref="1369912000"/>
+  <nd ref="11206144707"/>
+  <nd ref="11206144708"/>
+  <nd ref="11206144709"/>
+  <nd ref="1369912003"/>
+  <nd ref="1369912005"/>
+  <nd ref="1369912007"/>
+  <nd ref="1369911956"/>
+  <nd ref="1369911959"/>
+  <nd ref="11206144704"/>
+  <nd ref="1369911961"/>
+  <nd ref="1369911964"/>
+  <nd ref="1369911967"/>
+  <nd ref="1369911975"/>
+  <nd ref="11206144706"/>
+  <nd ref="11206144705"/>
+  <nd ref="1369911944"/>
+  <nd ref="1369911977"/>
+  <nd ref="1369911947"/>
+  <nd ref="1369911952"/>
+  <nd ref="1369911954"/>
+  <nd ref="1369911908"/>
+  <nd ref="1369911911"/>
+  <nd ref="1369911913"/>
+  <nd ref="11206144703"/>
+  <nd ref="1369911917"/>
+  <nd ref="11206144702"/>
+  <nd ref="1369911919"/>
+  <nd ref="1369911921"/>
+  <nd ref="1369911924"/>
+  <nd ref="1369911930"/>
+  <nd ref="1369911933"/>
+  <nd ref="1369911936"/>
+  <nd ref="1369911939"/>
+  <nd ref="1369911941"/>
+  <nd ref="1369911878"/>
+  <nd ref="1369911886"/>
+  <nd ref="1369911890"/>
+  <nd ref="1369911896"/>
+  <nd ref="1369911899"/>
+  <nd ref="1369911906"/>
+  <nd ref="1369911853"/>
+  <nd ref="1369911855"/>
+  <nd ref="1369911856"/>
+  <nd ref="1369911866"/>
+  <nd ref="1369911868"/>
+  <nd ref="1369911874"/>
+  <nd ref="1369911811"/>
+  <nd ref="1369911813"/>
+  <nd ref="1369911824"/>
+  <nd ref="1369911827"/>
+  <nd ref="1369911828"/>
+  <nd ref="1369911830"/>
+  <nd ref="1369911831"/>
+  <nd ref="1369911834"/>
+  <nd ref="1369911845"/>
+  <nd ref="4959229872"/>
+  <nd ref="4959229871"/>
+  <nd ref="1369911847"/>
+  <nd ref="1369911849"/>
+  <nd ref="1369911851"/>
+  <nd ref="1369911786"/>
+  <nd ref="1369911788"/>
+  <nd ref="1369911790"/>
+  <nd ref="1369911793"/>
+  <nd ref="1369911803"/>
+  <nd ref="1369911804"/>
+  <nd ref="1369911805"/>
+  <nd ref="1369911806"/>
+  <nd ref="1369911808"/>
+  <nd ref="1369911809"/>
+  <nd ref="4959229870"/>
+  <nd ref="4959229869"/>
+  <nd ref="1369911761"/>
+  <nd ref="1369911766"/>
+  <nd ref="4959229868"/>
+  <nd ref="1369911768"/>
+  <nd ref="1369911771"/>
+  <nd ref="1369911774"/>
+  <nd ref="4959229866"/>
+  <nd ref="4959229865"/>
+  <nd ref="1369911776"/>
+  <nd ref="1369911781"/>
+  <nd ref="1369911783"/>
+  <tag k="highway" v="path"/>
+  <tag k="name" v="camino a la Cruz del Ilaló"/>
+  <tag k="sac_scale" v="hiking"/>
+  <tag k="surface" v="earth"/>
+ </way>
+</osm>

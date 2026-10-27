@@ -1,0 +1,6 @@
+control,estado,valor,umbral,detalle
+muestra_minima,OK,20.0,>=20,Número de alternativas elegibles para el ajuste final
+valores_faltantes,OK,0.0,0,Celdas faltantes en las cinco variables candidatas
+filas_duplicadas,OK,0.0,0,Perfiles físicos exactamente duplicados
+variables_sin_variacion,OK,0.0,0,Variables que no separan ninguna ruta
+correlacion_maxima_spearman,REVISAR,0.926,<0.85 preferible,Par más asociado: distancia_total_km y ascenso_total_m

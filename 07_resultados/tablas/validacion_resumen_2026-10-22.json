@@ -1,0 +1,116 @@
+{
+  "fecha": "2026-10-22",
+  "integridad": {
+    "n_rutas": 20,
+    "ids_unicos": true,
+    "valores_faltantes": 0,
+    "media_estandarizada_max_abs": 3.4416913763379854e-16,
+    "desv_estandarizada_min_max": [
+      1.0,
+      1.0
+    ],
+    "destinos_distintos": 13,
+    "rutas_por_destino": {
+      "D001": [
+        "R001"
+      ],
+      "D003": [
+        "R003"
+      ],
+      "D004": [
+        "R004",
+        "R008"
+      ],
+      "D006": [
+        "R006"
+      ],
+      "D008": [
+        "R018"
+      ],
+      "D009": [
+        "R011",
+        "R013"
+      ],
+      "D010": [
+        "R015",
+        "R016",
+        "R017",
+        "R020",
+        "R021"
+      ],
+      "D011": [
+        "R019"
+      ],
+      "D012": [
+        "R022"
+      ],
+      "D013": [
+        "R023"
+      ],
+      "D014": [
+        "R024",
+        "R025"
+      ],
+      "D015": [
+        "R026"
+      ],
+      "D016": [
+        "R027"
+      ]
+    }
+  },
+  "criterios_previos": {
+    "ari_semillas_min": 0.9,
+    "ari_ward": 0.9,
+    "ari_loo_min": 0.7,
+    "tamano_minimo_grupo": 3,
+    "silueta_minima": 0.4,
+    "ari_sensibilidad_min": 0.7
+  },
+  "grupo_mayor_ascenso_k2": [
+    "R001",
+    "R003",
+    "R006",
+    "R022"
+  ],
+  "dbscan_multigrupo_ruido_incluye_las_cuatro": {
+    "configuraciones_con_2_o_mas_grupos": 9,
+    "de_ellas_con_R001_R003_R006_R022_como_ruido": 9
+  },
+  "grupo_mayor_coincide_con_R001_R003_R006_R022": true,
+  "criterios_cumplidos": 6,
+  "criterios_totales": 7,
+  "versiones": {
+    "pandas": "3.0.6",
+    "numpy": "2.5.3",
+    "sklearn": "1.9.1"
+  },
+  "parametros": {
+    "semillas": [
+      0,
+      49
+    ],
+    "n_init": 10,
+    "eps": [
+      0.5,
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      2.0
+    ],
+    "min_samples": [
+      2,
+      3,
+      4
+    ],
+    "variables": [
+      "distancia_total_km",
+      "ascenso_total_m",
+      "elevacion_max_m",
+      "pendiente_media_abs_pct"
+    ]
+  },
+  "aviso": "",
+  "habilitacion": "NO: este resumen no es validacion_modelo_final.json ni habilita recomendaciones"
+}

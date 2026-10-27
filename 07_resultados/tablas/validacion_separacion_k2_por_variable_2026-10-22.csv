@@ -1,0 +1,7 @@
+variable,minimo_grupo_mayor,maximo_grupo_menor,separacion_total
+distancia_total_km,4.36,6.63,False
+ascenso_total_m,448.98,339.04,True
+elevacion_max_m,3082.38,3549.29,False
+pendiente_media_abs_pct,12.0,23.19,False
+pendiente_p95_abs_pct,43.67,72.92,False
+indice_naismith_h,1.74,1.89,False

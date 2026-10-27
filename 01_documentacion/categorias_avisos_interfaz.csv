@@ -1,0 +1,11 @@
+clave,tipo,categoria,nota
+R001,destacada,caracter_tecnico,El aviso completo de alta montaña y T3 se muestra una sola vez; la altitud numérica aparece en su caja
+R020,advertencia,acceso,Acceso vigente y relación con R017
+R021,advertencia,acceso,Apertura de los Senderos 1 y 2
+R022,advertencia,acceso,Apertura pública y acceso
+R022,advertencia,caracter_tecnico,Posibles vados (ford=yes) en dos nodos de OpenStreetMap
+R023,advertencia,acceso,Acceso y condiciones actuales
+R024,advertencia,acceso,Acceso horario y permiso del Bosque Mágico
+R025,advertencia,acceso,Acceso horario y permiso del Bosque Mágico
+R026,advertencia,acceso,Tarabita privada de pago y falta de mapa oficial
+R027,advertencia,acceso,Registro horario y estado del Sendero del Viento

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1327 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="2150683165" visible="true" version="1" changeset="14997117" timestamp="2013-02-11T17:57:49Z" user="Ecuador Tur" uid="72349" lat="-0.4245100" lon="-78.5164780"/>
+ <node id="2621350324" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:53Z" user="Ecuador Tur" uid="72349" lat="-0.4240760" lon="-78.5174330"/>
+ <node id="2621350342" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:53Z" user="Ecuador Tur" uid="72349" lat="-0.4242430" lon="-78.5171400"/>
+ <node id="2621350345" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:53Z" user="Ecuador Tur" uid="72349" lat="-0.4243890" lon="-78.5165680"/>
+ <node id="2621350361" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:54Z" user="Ecuador Tur" uid="72349" lat="-0.4242870" lon="-78.5170600"/>
+ <node id="2621350366" visible="true" version="2" changeset="141753432" timestamp="2023-09-26T02:17:33Z" user="MountArvon" uid="17999682" lat="-0.4244521" lon="-78.5165202"/>
+ <node id="2621350381" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:54Z" user="Ecuador Tur" uid="72349" lat="-0.4243380" lon="-78.5169690"/>
+ <node id="2621350418" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:55Z" user="Ecuador Tur" uid="72349" lat="-0.4240230" lon="-78.5175990"/>
+ <node id="2621350463" visible="true" version="2" changeset="141753432" timestamp="2023-09-26T02:17:33Z" user="MountArvon" uid="17999682" lat="-0.4241122" lon="-78.5173542"/>
+ <node id="2621350490" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:56Z" user="Ecuador Tur" uid="72349" lat="-0.4241510" lon="-78.5172810"/>
+ <node id="2621350520" visible="true" version="2" changeset="91008125" timestamp="2020-09-16T21:27:41Z" user="erickdeoliveiraleal" uid="463504" lat="-0.4236269" lon="-78.5185743"/>
+ <node id="2621350526" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:56Z" user="Ecuador Tur" uid="72349" lat="-0.4237690" lon="-78.5185210"/>
+ <node id="2621350534" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:56Z" user="Ecuador Tur" uid="72349" lat="-0.4238380" lon="-78.5184370"/>
+ <node id="2621350536" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:56Z" user="Ecuador Tur" uid="72349" lat="-0.4242020" lon="-78.5171860"/>
+ <node id="2621350556" visible="true" version="3" changeset="141753432" timestamp="2023-09-26T02:17:33Z" user="MountArvon" uid="17999682" lat="-0.4239256" lon="-78.5182615"/>
+ <node id="2621350576" visible="true" version="2" changeset="141753432" timestamp="2023-09-26T02:17:33Z" user="MountArvon" uid="17999682" lat="-0.4238856" lon="-78.5183678"/>
+ <node id="2621350584" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:57Z" user="Ecuador Tur" uid="72349" lat="-0.4239290" lon="-78.5181830"/>
+ <node id="2621350592" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:57Z" user="Ecuador Tur" uid="72349" lat="-0.4243420" lon="-78.5168640"/>
+ <node id="2621350598" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:57Z" user="Ecuador Tur" uid="72349" lat="-0.4239220" lon="-78.5180840"/>
+ <node id="2621350606" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:57Z" user="Ecuador Tur" uid="72349" lat="-0.4239610" lon="-78.5180070"/>
+ <node id="2621350618" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:57Z" user="Ecuador Tur" uid="72349" lat="-0.4240040" lon="-78.5178980"/>
+ <node id="2621350625" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:57Z" user="Ecuador Tur" uid="72349" lat="-0.4240240" lon="-78.5177850"/>
+ <node id="2621350641" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:58Z" user="Ecuador Tur" uid="72349" lat="-0.4243350" lon="-78.5167640"/>
+ <node id="2621350660" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:58Z" user="Ecuador Tur" uid="72349" lat="-0.4243410" lon="-78.5166790"/>
+ <node id="2621350683" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:58Z" user="Ecuador Tur" uid="72349" lat="-0.4240430" lon="-78.5175120"/>
+ <node id="2621350690" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:20:58Z" user="Ecuador Tur" uid="72349" lat="-0.4243560" lon="-78.5166160"/>
+ <node id="2621350781" visible="true" version="1" changeset="19976611" timestamp="2014-01-13T18:21:00Z" user="Ecuador Tur" uid="72349" lat="-0.4240280" lon="-78.5176980"/>
+ <way id="256471445" visible="true" version="5" changeset="123155294" timestamp="2022-07-03T15:17:24Z" user="erickdeoliveiraleal" uid="463504">
+  <nd ref="2621350520"/>
+  <nd ref="2621350526"/>
+  <nd ref="2621350534"/>
+  <nd ref="2621350576"/>
+  <nd ref="2621350556"/>
+  <nd ref="2621350584"/>
+  <nd ref="2621350598"/>
+  <nd ref="2621350606"/>
+  <nd ref="2621350618"/>
+  <nd ref="2621350625"/>
+  <nd ref="2621350781"/>
+  <nd ref="2621350418"/>
+  <nd ref="2621350683"/>
+  <nd ref="2621350324"/>
+  <nd ref="2621350463"/>
+  <nd ref="2621350490"/>
+  <nd ref="2621350536"/>
+  <nd ref="2621350342"/>
+  <nd ref="2621350361"/>
+  <nd ref="2621350381"/>
+  <nd ref="2621350592"/>
+  <nd ref="2621350641"/>
+  <nd ref="2621350660"/>
+  <nd ref="2621350690"/>
+  <nd ref="2621350345"/>
+  <nd ref="2621350366"/>
+  <nd ref="2150683165"/>
+  <tag k="highway" v="path"/>
+ </way>
+</osm>

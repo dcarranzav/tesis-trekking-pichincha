@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500">
+<rect width="100%" height="100%" fill="white"/>
+<text x="500" y="30" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold">R024 – Cerro de la Luz - sendero directo al mirador</text>
+<text x="500" y="52" text-anchor="middle" font-family="Arial" font-size="13">Perfil Copernicus DEM GLO-30 · muestreo cada 30 m</text>
+<line x1="85" y1="410.0" x2="935" y2="410.0" stroke="#dddddd"/>
+<text x="75" y="414.0" text-anchor="end" font-family="Arial" font-size="11">2350</text>
+<line x1="85" y1="342.0" x2="935" y2="342.0" stroke="#dddddd"/>
+<text x="75" y="346.0" text-anchor="end" font-family="Arial" font-size="11">2362</text>
+<line x1="85" y1="274.0" x2="935" y2="274.0" stroke="#dddddd"/>
+<text x="75" y="278.0" text-anchor="end" font-family="Arial" font-size="11">2373</text>
+<line x1="85" y1="206.0" x2="935" y2="206.0" stroke="#dddddd"/>
+<text x="75" y="210.0" text-anchor="end" font-family="Arial" font-size="11">2385</text>
+<line x1="85" y1="138.0" x2="935" y2="138.0" stroke="#dddddd"/>
+<text x="75" y="142.0" text-anchor="end" font-family="Arial" font-size="11">2397</text>
+<line x1="85" y1="70.0" x2="935" y2="70.0" stroke="#dddddd"/>
+<text x="75" y="74.0" text-anchor="end" font-family="Arial" font-size="11">2409</text>
+<line x1="85.0" y1="70" x2="85.0" y2="410" stroke="#eeeeee"/>
+<text x="85.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">0.0</text>
+<line x1="255.0" y1="70" x2="255.0" y2="410" stroke="#eeeeee"/>
+<text x="255.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">0.1</text>
+<line x1="425.0" y1="70" x2="425.0" y2="410" stroke="#eeeeee"/>
+<text x="425.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">0.2</text>
+<line x1="595.0" y1="70" x2="595.0" y2="410" stroke="#eeeeee"/>
+<text x="595.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">0.3</text>
+<line x1="765.0" y1="70" x2="765.0" y2="410" stroke="#eeeeee"/>
+<text x="765.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">0.4</text>
+<line x1="935.0" y1="70" x2="935.0" y2="410" stroke="#eeeeee"/>
+<text x="935.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">0.5</text>
+<polyline points="85.0,243.2 135.0,253.4 185.0,276.9 235.0,269.7 285.0,265.7 335.0,263.9 385.0,263.9 435.0,285.9 485.0,295.3 535.0,270.1 585.0,270.6 635.0,289.5 685.0,259.2 735.0,235.6 785.0,214.9 835.0,204.5 885.0,189.7 935.0,184.7" fill="none" stroke="#999999" stroke-width="1.5" opacity="0.8"/>
+<polyline points="85.0,243.2 135.0,253.4 185.0,269.7 235.0,269.7 285.0,265.7 335.0,263.9 385.0,263.9 435.0,285.9 485.0,285.9 535.0,270.6 585.0,270.6 635.0,270.6 685.0,259.2 735.0,235.6 785.0,214.9 835.0,204.5 885.0,189.7 935.0,184.7" fill="none" stroke="#1769aa" stroke-width="2.5"/>
+<line x1="85" y1="410" x2="935" y2="410" stroke="#333333"/>
+<line x1="85" y1="70" x2="85" y2="410" stroke="#333333"/>
+<text x="510" y="480" text-anchor="middle" font-family="Arial" font-size="13">Distancia del trazado (km)</text>
+<text x="20" y="240" text-anchor="middle" transform="rotate(-90 20 240)" font-family="Arial" font-size="13">Elevación (m)</text>
+<line x1="665" y1="85" x2="705" y2="85" stroke="#999999" stroke-width="2"/><text x="715" y="89" font-family="Arial" font-size="12">Raw</text>
+<line x1="785" y1="85" x2="825" y2="85" stroke="#1769aa" stroke-width="3"/><text x="835" y="89" font-family="Arial" font-size="12">Mediana 3</text>
+</svg>

@@ -1,0 +1,26 @@
+name: trekking_pichincha
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - pyogrio
+  - numpy
+  - geopandas
+  - shapely
+  - rasterio
+  - openpyxl
+  - ipykernel
+  - pandas
+  - seaborn
+  - gpxpy
+  - jupyterlab
+  - pyproj
+  - matplotlib
+  - pillow
+  - scipy
+  - scikit-learn
+  - networkx
+  - folium
+  - streamlit>=1.66
+  - requests
+

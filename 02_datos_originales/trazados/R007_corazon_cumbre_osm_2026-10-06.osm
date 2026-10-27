@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1308 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="249409499" visible="true" version="22" changeset="144126426" timestamp="2023-11-17T07:50:15Z" user="tg4567" uid="12500589" lat="-0.5319602" lon="-78.6604998">
+  <tag k="ele" v="4790"/>
+  <tag k="gns_classification" v="MT"/>
+  <tag k="is_in:country" v="Ecuador"/>
+  <tag k="is_in:country_code" v="EC"/>
+  <tag k="is_in:state" v="Provincia de Pichincha"/>
+  <tag k="name" v="Corazón"/>
+  <tag k="natural" v="volcano"/>
+  <tag k="source" v="http://forum.openstreetmap.org/viewtopic.php?pid=474184#p474184"/>
+  <tag k="type" v="strato"/>
+  <tag k="volcano:status" v="extinct"/>
+  <tag k="volcano:type" v="stratovolcano"/>
+  <tag k="wikidata" v="Q869065"/>
+  <tag k="wikimedia_commons" v="Category:Corazón (Volcano)"/>
+  <tag k="wikipedia" v="es:Volcán Corazón"/>
+  <tag k="wikipedia:de" v="Corazón"/>
+  <tag k="wikipedia:qu" v="Sunqu (nina urqu)"/>
+ </node>
+</osm>

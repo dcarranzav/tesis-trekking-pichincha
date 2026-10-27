@@ -1,0 +1,4 @@
+# Dependencias mínimas para ejecutar solo la interfaz (app.py), p. ej. en Streamlit Community Cloud.
+# El entorno completo de investigación (geopandas, rasterio, scikit-learn, etc.) está en environment.yml.
+streamlit>=1.66
+requests>=2.32,<3

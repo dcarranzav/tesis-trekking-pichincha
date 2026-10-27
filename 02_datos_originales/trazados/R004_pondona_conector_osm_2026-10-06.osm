@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1320 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="7501980263" visible="true" version="2" changeset="141449073" timestamp="2023-09-19T04:26:14Z" user="LakeTumba" uid="19895058" lat="0.0415521" lon="-78.4855764"/>
+ <node id="9721343628" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0416612" lon="-78.4857396"/>
+ <node id="9721343629" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0417815" lon="-78.4858882"/>
+ <node id="9721343630" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0418452" lon="-78.4860227"/>
+ <node id="9721343631" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0418735" lon="-78.4861501"/>
+ <node id="9721343632" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0419301" lon="-78.4862422"/>
+ <node id="9721343633" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0419655" lon="-78.4863554"/>
+ <node id="9721343634" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0420505" lon="-78.4863979"/>
+ <node id="9721343635" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0419585" lon="-78.4864191"/>
+ <node id="9721343636" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0419797" lon="-78.4865182"/>
+ <node id="9721343637" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0420363" lon="-78.4865678"/>
+ <node id="9721343638" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0420009" lon="-78.4866598"/>
+ <node id="9721343639" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0419089" lon="-78.4867943"/>
+ <node id="9721343640" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0418169" lon="-78.4868297"/>
+ <node id="9721343641" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0415904" lon="-78.4870349"/>
+ <node id="9721343642" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0413639" lon="-78.4872827"/>
+ <node id="9721343643" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0412648" lon="-78.4874172"/>
+ <node id="9721343644" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0411515" lon="-78.4874880"/>
+ <node id="9721343645" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0410949" lon="-78.4875375"/>
+ <node id="9721343646" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0410170" lon="-78.4876295"/>
+ <node id="9721343647" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0412223" lon="-78.4876366"/>
+ <node id="9721343648" visible="true" version="1" changeset="120645120" timestamp="2022-05-06T19:49:49Z" user="leobu" uid="13632806" lat="0.0413285" lon="-78.4876224"/>
+ <way id="1057987723" visible="true" version="2" changeset="123166324" timestamp="2022-07-03T22:21:12Z" user="erickdeoliveiraleal" uid="463504">
+  <nd ref="7501980263"/>
+  <nd ref="9721343628"/>
+  <nd ref="9721343629"/>
+  <nd ref="9721343630"/>
+  <nd ref="9721343631"/>
+  <nd ref="9721343632"/>
+  <nd ref="9721343633"/>
+  <nd ref="9721343634"/>
+  <nd ref="9721343635"/>
+  <nd ref="9721343636"/>
+  <nd ref="9721343637"/>
+  <nd ref="9721343638"/>
+  <nd ref="9721343639"/>
+  <nd ref="9721343640"/>
+  <nd ref="9721343641"/>
+  <nd ref="9721343642"/>
+  <nd ref="9721343643"/>
+  <nd ref="9721343644"/>
+  <nd ref="9721343645"/>
+  <nd ref="9721343646"/>
+  <nd ref="9721343647"/>
+  <nd ref="9721343648"/>
+  <tag k="bicycle" v="no"/>
+  <tag k="foot" v="yes"/>
+  <tag k="highway" v="path"/>
+  <tag k="horse" v="no"/>
+  <tag k="motor_vehicle" v="no"/>
+  <tag k="surface" v="unpaved"/>
+  <tag k="width" v="1"/>
+ </way>
+</osm>

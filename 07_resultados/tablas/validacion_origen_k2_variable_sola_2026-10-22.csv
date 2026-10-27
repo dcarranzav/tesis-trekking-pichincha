@@ -1,0 +1,7 @@
+variable_sola,ari_vs_k2_base,silueta_1d
+distancia_total_km,0.3286,0.6577
+ascenso_total_m,1.0,0.6686
+elevacion_max_m,-0.0071,0.7018
+pendiente_media_abs_pct,0.3676,0.6707
+pendiente_p95_abs_pct,0.0551,0.514
+indice_naismith_h (referencia a priori),0.3286,0.6617

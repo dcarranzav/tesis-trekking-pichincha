@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1314 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="13714085179" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0451586" lon="-78.7837324"/>
+ <node id="13714086629" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0451467" lon="-78.7839180"/>
+ <node id="13714086630" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0451906" lon="-78.7841050"/>
+ <node id="13714086631" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0452475" lon="-78.7841766"/>
+ <node id="13714086632" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0453597" lon="-78.7842075"/>
+ <node id="13714086633" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0454475" lon="-78.7842774"/>
+ <node id="13714086634" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0453987" lon="-78.7843798"/>
+ <node id="13714086635" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0454134" lon="-78.7844107"/>
+ <node id="13714086636" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0454605" lon="-78.7843652"/>
+ <node id="13714086637" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0454784" lon="-78.7844384"/>
+ <node id="13714086638" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0454459" lon="-78.7845002"/>
+ <node id="13714086639" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0454556" lon="-78.7845912"/>
+ <node id="13714086640" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0454215" lon="-78.7846872"/>
+ <node id="13714086641" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0454361" lon="-78.7847165"/>
+ <node id="13714086642" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0455028" lon="-78.7846839"/>
+ <node id="13714086643" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0455971" lon="-78.7846368"/>
+ <node id="13714086644" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0456817" lon="-78.7846059"/>
+ <node id="13714086645" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0457988" lon="-78.7845408"/>
+ <node id="13714086646" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0458833" lon="-78.7845360"/>
+ <node id="13714086647" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0459354" lon="-78.7845668"/>
+ <node id="13714086648" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0459776" lon="-78.7846547"/>
+ <node id="13714086649" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0459679" lon="-78.7847262"/>
+ <node id="13714086650" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0459484" lon="-78.7847864"/>
+ <node id="13714086651" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0458833" lon="-78.7847929"/>
+ <node id="13714086652" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0458557" lon="-78.7847978"/>
+ <node id="13714086653" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0458036" lon="-78.7848417"/>
+ <node id="13714086654" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0458541" lon="-78.7848612"/>
+ <node id="13714086655" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0458817" lon="-78.7848953"/>
+ <node id="13714086656" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0458833" lon="-78.7849311">
+  <tag k="name" v="Mindo Hermit Trail - Mirador"/>
+  <tag k="tourism" v="viewpoint"/>
+ </node>
+ <way id="1497391425" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589">
+  <nd ref="13714085179"/>
+  <nd ref="13714086629"/>
+  <nd ref="13714086630"/>
+  <nd ref="13714086631"/>
+  <nd ref="13714086632"/>
+  <nd ref="13714086633"/>
+  <nd ref="13714086634"/>
+  <nd ref="13714086635"/>
+  <nd ref="13714086636"/>
+  <nd ref="13714086637"/>
+  <nd ref="13714086638"/>
+  <nd ref="13714086639"/>
+  <nd ref="13714086640"/>
+  <nd ref="13714086641"/>
+  <nd ref="13714086642"/>
+  <nd ref="13714086643"/>
+  <nd ref="13714086644"/>
+  <nd ref="13714086645"/>
+  <nd ref="13714086646"/>
+  <nd ref="13714086647"/>
+  <nd ref="13714086648"/>
+  <nd ref="13714086649"/>
+  <nd ref="13714086650"/>
+  <nd ref="13714086651"/>
+  <nd ref="13714086652"/>
+  <nd ref="13714086653"/>
+  <nd ref="13714086654"/>
+  <nd ref="13714086655"/>
+  <nd ref="13714086656"/>
+  <tag k="highway" v="path"/>
+  <tag k="name" v="Mindo Hermit Trail - Mirador"/>
+  <tag k="sac_scale" v="mountain_hiking"/>
+ </way>
+</osm>

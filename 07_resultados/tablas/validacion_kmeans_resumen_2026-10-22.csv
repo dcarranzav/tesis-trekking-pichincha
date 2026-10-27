@@ -1,0 +1,4 @@
+k,silueta_mejor,silueta_semillas_min,silueta_semillas_max,inercia_mejor,tamanos,tamano_minimo,ari_semillas_min,ari_semillas_media,ari_entre_pares_min,semillas_que_reproducen_mejor,ari_ward
+2,0.4477,0.4477,0.4477,44.0976,4/16,4,1.0,1.0,1.0,50/50,1.0
+3,0.3203,0.3203,0.3213,30.8581,3/6/11,3,0.462,0.9354,0.462,44/50,0.7474
+4,0.3353,0.3226,0.3353,23.1229,2/2/8/8,2,0.3345,0.8348,0.3345,33/50,0.4471

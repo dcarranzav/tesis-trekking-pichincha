@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500">
+<rect width="100%" height="100%" fill="white"/>
+<text x="500" y="30" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold">R019 – Sendero Tarabita - Cascada La Reina</text>
+<text x="500" y="52" text-anchor="middle" font-family="Arial" font-size="13">Perfil Copernicus DEM GLO-30 · muestreo cada 30 m</text>
+<line x1="85" y1="410.0" x2="935" y2="410.0" stroke="#dddddd"/>
+<text x="75" y="414.0" text-anchor="end" font-family="Arial" font-size="11">1461</text>
+<line x1="85" y1="342.0" x2="935" y2="342.0" stroke="#dddddd"/>
+<text x="75" y="346.0" text-anchor="end" font-family="Arial" font-size="11">1503</text>
+<line x1="85" y1="274.0" x2="935" y2="274.0" stroke="#dddddd"/>
+<text x="75" y="278.0" text-anchor="end" font-family="Arial" font-size="11">1545</text>
+<line x1="85" y1="206.0" x2="935" y2="206.0" stroke="#dddddd"/>
+<text x="75" y="210.0" text-anchor="end" font-family="Arial" font-size="11">1587</text>
+<line x1="85" y1="138.0" x2="935" y2="138.0" stroke="#dddddd"/>
+<text x="75" y="142.0" text-anchor="end" font-family="Arial" font-size="11">1629</text>
+<line x1="85" y1="70.0" x2="935" y2="70.0" stroke="#dddddd"/>
+<text x="75" y="74.0" text-anchor="end" font-family="Arial" font-size="11">1671</text>
+<line x1="85.0" y1="70" x2="85.0" y2="410" stroke="#eeeeee"/>
+<text x="85.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">0.0</text>
+<line x1="255.0" y1="70" x2="255.0" y2="410" stroke="#eeeeee"/>
+<text x="255.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">0.5</text>
+<line x1="425.0" y1="70" x2="425.0" y2="410" stroke="#eeeeee"/>
+<text x="425.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">0.9</text>
+<line x1="595.0" y1="70" x2="595.0" y2="410" stroke="#eeeeee"/>
+<text x="595.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">1.4</text>
+<line x1="765.0" y1="70" x2="765.0" y2="410" stroke="#eeeeee"/>
+<text x="765.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">1.9</text>
+<line x1="935.0" y1="70" x2="935.0" y2="410" stroke="#eeeeee"/>
+<text x="935.0" y="432" text-anchor="middle" font-family="Arial" font-size="11">2.3</text>
+<polyline points="85.0,337.7 95.9,366.7 106.8,349.1 117.7,377.7 128.6,364.5 139.5,337.6 150.4,351.4 161.3,355.9 172.2,355.9 183.1,343.6 194.0,344.5 204.9,328.8 215.8,343.2 226.7,314.9 237.6,318.2 248.5,316.7 259.4,294.8 270.3,285.7 281.2,295.1 292.1,274.4 302.9,299.2 313.8,278.1 324.7,257.3 335.6,263.9 346.5,259.7 357.4,259.3 368.3,259.3 379.2,248.2 390.1,249.8 401.0,241.3 411.9,221.5 422.8,241.0 433.7,228.0 444.6,217.4 455.5,230.6 466.4,230.6 477.3,234.0 488.2,223.3 499.1,236.4 510.0,241.7 520.9,226.1 531.8,244.9 542.7,238.2 553.6,209.3 564.5,241.3 575.4,223.2 586.3,244.8 597.2,221.1 608.1,252.9 619.0,245.6 629.9,263.0 640.8,232.6 651.7,200.8 662.6,232.6 673.5,231.0 684.4,231.0 695.3,233.2 706.2,206.1 717.1,221.7 727.9,214.0 738.8,240.6 749.7,221.3 760.6,190.6 771.5,187.7 782.4,210.7 793.3,210.7 804.2,186.5 815.1,199.2 826.0,181.8 836.9,154.7 847.8,178.1 858.7,156.0 869.6,156.0 880.5,156.8 891.4,156.2 902.3,158.0 913.2,134.4 924.1,159.8 935.0,102.3" fill="none" stroke="#999999" stroke-width="1.5" opacity="0.8"/>
+<polyline points="85.0,337.7 95.9,349.1 106.8,366.7 117.7,364.5 128.6,364.5 139.5,351.4 150.4,351.4 161.3,355.9 172.2,355.9 183.1,344.5 194.0,343.6 204.9,343.2 215.8,328.8 226.7,318.2 237.6,316.7 248.5,316.7 259.4,294.8 270.3,294.8 281.2,285.7 292.1,295.1 302.9,278.1 313.8,278.1 324.7,263.9 335.6,259.7 346.5,259.7 357.4,259.3 368.3,259.3 379.2,249.8 390.1,248.2 401.0,241.3 411.9,241.0 422.8,228.0 433.7,228.0 444.6,228.0 455.5,230.6 466.4,230.6 477.3,230.6 488.2,234.0 499.1,236.4 510.0,236.4 520.9,241.7 531.8,238.2 542.7,238.2 553.6,238.2 564.5,223.2 575.4,241.3 586.3,223.2 597.2,244.8 608.1,245.6 619.0,252.9 629.9,245.6 640.8,232.6 651.7,232.6 662.6,231.0 673.5,231.0 684.4,231.0 695.3,231.0 706.2,221.7 717.1,214.0 727.9,221.7 738.8,221.3 749.7,221.3 760.6,190.6 771.5,190.6 782.4,210.7 793.3,210.7 804.2,199.2 815.1,186.5 826.0,181.8 836.9,178.1 847.8,156.0 858.7,156.0 869.6,156.0 880.5,156.2 891.4,156.8 902.3,156.2 913.2,158.0 924.1,134.4 935.0,102.3" fill="none" stroke="#1769aa" stroke-width="2.5"/>
+<line x1="85" y1="410" x2="935" y2="410" stroke="#333333"/>
+<line x1="85" y1="70" x2="85" y2="410" stroke="#333333"/>
+<text x="510" y="480" text-anchor="middle" font-family="Arial" font-size="13">Distancia del trazado (km)</text>
+<text x="20" y="240" text-anchor="middle" transform="rotate(-90 20 240)" font-family="Arial" font-size="13">Elevación (m)</text>
+<line x1="665" y1="85" x2="705" y2="85" stroke="#999999" stroke-width="2"/><text x="715" y="89" font-family="Arial" font-size="12">Raw</text>
+<line x1="785" y1="85" x2="825" y2="85" stroke="#1769aa" stroke-width="3"/><text x="835" y="89" font-family="Arial" font-size="12">Mediana 3</text>
+</svg>

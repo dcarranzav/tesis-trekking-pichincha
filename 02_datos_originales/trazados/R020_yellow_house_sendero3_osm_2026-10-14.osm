@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1307 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="3036123955" visible="true" version="1" changeset="24945889" timestamp="2014-08-23T00:16:13Z" user="giomaussi" uid="1282514" lat="-0.0416828" lon="-78.7594177"/>
+ <node id="3036123957" visible="true" version="1" changeset="24945889" timestamp="2014-08-23T00:16:13Z" user="giomaussi" uid="1282514" lat="-0.0421333" lon="-78.7596930"/>
+ <node id="3036123958" visible="true" version="1" changeset="24945889" timestamp="2014-08-23T00:16:13Z" user="giomaussi" uid="1282514" lat="-0.0422834" lon="-78.7590424"/>
+ <node id="3036123960" visible="true" version="1" changeset="24945889" timestamp="2014-08-23T00:16:13Z" user="giomaussi" uid="1282514" lat="-0.0423585" lon="-78.7594177"/>
+ <node id="3036123961" visible="true" version="1" changeset="24945889" timestamp="2014-08-23T00:16:13Z" user="giomaussi" uid="1282514" lat="-0.0425336" lon="-78.7588422"/>
+ <node id="3036123964" visible="true" version="1" changeset="24945889" timestamp="2014-08-23T00:16:13Z" user="giomaussi" uid="1282514" lat="-0.0427589" lon="-78.7593677"/>
+ <node id="3036123965" visible="true" version="1" changeset="24945889" timestamp="2014-08-23T00:16:13Z" user="giomaussi" uid="1282514" lat="-0.0428590" lon="-78.7584918"/>
+ <node id="3036123972" visible="true" version="1" changeset="24945889" timestamp="2014-08-23T00:16:14Z" user="giomaussi" uid="1282514" lat="-0.0432593" lon="-78.7580414"/>
+ <node id="3036123974" visible="true" version="1" changeset="24945889" timestamp="2014-08-23T00:16:14Z" user="giomaussi" uid="1282514" lat="-0.0433344" lon="-78.7593677"/>
+ <node id="3036123978" visible="true" version="1" changeset="24945889" timestamp="2014-08-23T00:16:14Z" user="giomaussi" uid="1282514" lat="-0.0436347" lon="-78.7574408"/>
+ <node id="3036123980" visible="true" version="1" changeset="24945889" timestamp="2014-08-23T00:16:14Z" user="giomaussi" uid="1282514" lat="-0.0437098" lon="-78.7594928"/>
+ <node id="3036123982" visible="true" version="1" changeset="24945889" timestamp="2014-08-23T00:16:14Z" user="giomaussi" uid="1282514" lat="-0.0439350" lon="-78.7571405"/>
+ <node id="3036123985" visible="true" version="1" changeset="24945889" timestamp="2014-08-23T00:16:14Z" user="giomaussi" uid="1282514" lat="-0.0441852" lon="-78.7596429"/>
+ <node id="3036123989" visible="true" version="1" changeset="24945889" timestamp="2014-08-23T00:16:14Z" user="giomaussi" uid="1282514" lat="-0.0443604" lon="-78.7564649"/>
+ <node id="3036123991" visible="true" version="1" changeset="24945889" timestamp="2014-08-23T00:16:14Z" user="giomaussi" uid="1282514" lat="-0.0445105" lon="-78.7595929"/>
+ <node id="3036123994" visible="true" version="1" changeset="24945889" timestamp="2014-08-23T00:16:14Z" user="giomaussi" uid="1282514" lat="-0.0448609" lon="-78.7593677"/>
+ <node id="3036123995" visible="true" version="1" changeset="24945889" timestamp="2014-08-23T00:16:14Z" user="giomaussi" uid="1282514" lat="-0.0448859" lon="-78.7560645"/>
+ <node id="3036123999" visible="true" version="1" changeset="24945889" timestamp="2014-08-23T00:16:14Z" user="giomaussi" uid="1282514" lat="-0.0454615" lon="-78.7592175"/>
+ <way id="299595680" visible="true" version="3" changeset="25145259" timestamp="2014-08-31T18:55:32Z" user="joost schouppe" uid="67832">
+  <nd ref="3036123995"/>
+  <nd ref="3036123989"/>
+  <nd ref="3036123982"/>
+  <nd ref="3036123978"/>
+  <nd ref="3036123972"/>
+  <nd ref="3036123965"/>
+  <nd ref="3036123961"/>
+  <nd ref="3036123958"/>
+  <nd ref="3036123955"/>
+  <nd ref="3036123957"/>
+  <nd ref="3036123960"/>
+  <nd ref="3036123964"/>
+  <nd ref="3036123974"/>
+  <nd ref="3036123980"/>
+  <nd ref="3036123985"/>
+  <nd ref="3036123991"/>
+  <nd ref="3036123994"/>
+  <nd ref="3036123999"/>
+  <tag k="highway" v="footway"/>
+  <tag k="name" v="Sendero 3"/>
+  <tag k="sac_scale" v="mountain_hiking"/>
+  <tag k="source" v="Joost Schouppe"/>
+ </way>
+</osm>

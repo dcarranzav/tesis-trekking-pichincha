@@ -1,0 +1,10 @@
+# Apariencia de la interfaz. Solo cambia colores y la barra de herramientas; no afecta datos ni resultados.
+[theme]
+# Oscuro fijo: el visor del mapa y el perfil es oscuro, y así toda la página se ve coherente.
+base = "dark"
+# Azul petróleo del proyecto en lugar del rojo predeterminado (el rojo se confunde con un error).
+primaryColor = "#1f8299"
+
+[client]
+# Oculta el botón «Deploy» de desarrollo; el menú sigue disponible.
+toolbarMode = "minimal"

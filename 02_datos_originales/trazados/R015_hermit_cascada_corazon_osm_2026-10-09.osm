@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1303 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="2243412134" visible="true" version="2" changeset="15672372" timestamp="2013-04-09T23:50:11Z" user="MindoMap" uid="1320019" lat="-0.0396856" lon="-78.7855487">
+  <tag k="name" v="Cascada Corazon"/>
+  <tag k="waterway" v="waterfall"/>
+ </node>
+ <node id="13714085179" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0451586" lon="-78.7837324"/>
+ <node id="13714085180" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0450654" lon="-78.7836132"/>
+ <node id="13714085181" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0449667" lon="-78.7835317"/>
+ <node id="13714085182" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0448551" lon="-78.7834244"/>
+ <node id="13714085183" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0446684" lon="-78.7832806"/>
+ <node id="13714085184" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0446448" lon="-78.7830789"/>
+ <node id="13714085185" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0446105" lon="-78.7829695"/>
+ <node id="13714085186" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0444453" lon="-78.7828450"/>
+ <node id="13714085187" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0442929" lon="-78.7827871"/>
+ <node id="13714085188" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0441749" lon="-78.7827592"/>
+ <node id="13714085189" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0439796" lon="-78.7826648"/>
+ <node id="13714085190" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0437565" lon="-78.7826884"/>
+ <node id="13714085191" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0435955" lon="-78.7827077"/>
+ <node id="13714085192" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0434196" lon="-78.7827785"/>
+ <node id="13714085193" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0431771" lon="-78.7828858"/>
+ <node id="13714085194" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0430527" lon="-78.7828944"/>
+ <node id="13714085195" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0428595" lon="-78.7829137"/>
+ <node id="13714085196" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0427372" lon="-78.7829437"/>
+ <node id="13714085197" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0424969" lon="-78.7829866"/>
+ <node id="13714085198" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0423810" lon="-78.7830467">
+  <tag k="name" v="Cascadita"/>
+  <tag k="waterway" v="waterfall"/>
+ </node>
+ <node id="13714085199" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0422501" lon="-78.7831540"/>
+ <node id="13714085200" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0421407" lon="-78.7830596"/>
+ <node id="13714086601" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0420313" lon="-78.7830875"/>
+ <node id="13714086602" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0419648" lon="-78.7832098"/>
+ <node id="13714086603" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0419025" lon="-78.7833729"/>
+ <node id="13714086604" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0418060" lon="-78.7835874"/>
+ <node id="13714086605" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0417480" lon="-78.7837334"/>
+ <node id="13714086606" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0416622" lon="-78.7839501"/>
+ <node id="13714086607" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0417051" lon="-78.7843685"/>
+ <node id="13714086608" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0418167" lon="-78.7846796"/>
+ <node id="13714086609" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0419626" lon="-78.7848191"/>
+ <node id="13714086610" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0421321" lon="-78.7848942"/>
+ <node id="13714086611" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0422180" lon="-78.7850315"/>
+ <node id="13714086612" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0421643" lon="-78.7851710"/>
+ <node id="13714086613" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0420892" lon="-78.7852332"/>
+ <node id="13714086614" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0419991" lon="-78.7853920"/>
+ <node id="13714086615" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0418146" lon="-78.7856002"/>
+ <node id="13714086616" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0416429" lon="-78.7856066"/>
+ <node id="13714086617" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0414669" lon="-78.7857075"/>
+ <node id="13714086618" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0412631" lon="-78.7858555"/>
+ <node id="13714086619" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0410592" lon="-78.7859521"/>
+ <node id="13714086620" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0408296" lon="-78.7859371"/>
+ <node id="13714086621" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0406301" lon="-78.7859671"/>
+ <node id="13714086622" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0404456" lon="-78.7859113"/>
+ <node id="13714086623" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0403061" lon="-78.7859413"/>
+ <node id="13714086624" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0401580" lon="-78.7859757"/>
+ <node id="13714086625" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0399778" lon="-78.7859821"/>
+ <node id="13714086626" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0399070" lon="-78.7859328"/>
+ <node id="13714086627" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0398276" lon="-78.7857633"/>
+ <node id="13714086628" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589" lat="-0.0397460" lon="-78.7856753"/>
+ <way id="1497391422" visible="true" version="1" changeset="181005753" timestamp="2026-04-07T15:24:53Z" user="Simon Reuter" uid="14481589">
+  <nd ref="13714085179"/>
+  <nd ref="13714085180"/>
+  <nd ref="13714085181"/>
+  <nd ref="13714085182"/>
+  <nd ref="13714085183"/>
+  <nd ref="13714085184"/>
+  <nd ref="13714085185"/>
+  <nd ref="13714085186"/>
+  <nd ref="13714085187"/>
+  <nd ref="13714085188"/>
+  <nd ref="13714085189"/>
+  <nd ref="13714085190"/>
+  <nd ref="13714085191"/>
+  <nd ref="13714085192"/>
+  <nd ref="13714085193"/>
+  <nd ref="13714085194"/>
+  <nd ref="13714085195"/>
+  <nd ref="13714085196"/>
+  <nd ref="13714085197"/>
+  <nd ref="13714085198"/>
+  <nd ref="13714085199"/>
+  <nd ref="13714085200"/>
+  <nd ref="13714086601"/>
+  <nd ref="13714086602"/>
+  <nd ref="13714086603"/>
+  <nd ref="13714086604"/>
+  <nd ref="13714086605"/>
+  <nd ref="13714086606"/>
+  <nd ref="13714086607"/>
+  <nd ref="13714086608"/>
+  <nd ref="13714086609"/>
+  <nd ref="13714086610"/>
+  <nd ref="13714086611"/>
+  <nd ref="13714086612"/>
+  <nd ref="13714086613"/>
+  <nd ref="13714086614"/>
+  <nd ref="13714086615"/>
+  <nd ref="13714086616"/>
+  <nd ref="13714086617"/>
+  <nd ref="13714086618"/>
+  <nd ref="13714086619"/>
+  <nd ref="13714086620"/>
+  <nd ref="13714086621"/>
+  <nd ref="13714086622"/>
+  <nd ref="13714086623"/>
+  <nd ref="13714086624"/>
+  <nd ref="13714086625"/>
+  <nd ref="13714086626"/>
+  <nd ref="13714086627"/>
+  <nd ref="13714086628"/>
+  <nd ref="2243412134"/>
+  <tag k="bicycle" v="no"/>
+  <tag k="highway" v="path"/>
+  <tag k="horse" v="no"/>
+  <tag k="motor_vehicle" v="no"/>
+  <tag k="name" v="Mindo Hermit Trail - Cascada Corazón"/>
+  <tag k="sac_scale" v="mountain_hiking"/>
+ </way>
+</osm>

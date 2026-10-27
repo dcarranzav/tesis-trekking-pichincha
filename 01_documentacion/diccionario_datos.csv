@@ -1,0 +1,28 @@
+variable,tipo_dato,unidad_o_formato,valores_permitidos,descripcion,obligatorio,momento_registro
+id_ruta,texto,sin_unidad,patron_R000,Identificador único y estable de la ruta,si,inventario
+nombre_ruta,texto,sin_unidad,texto_libre,Nombre conocido de la ruta,si,inventario
+id_destino,texto,sin_unidad,patron_D000,Identificador estable del destino al que pertenece la alternativa,si,inventario
+nombre_destino,texto,sin_unidad,texto_libre,Lugar de interés o destino principal asociado a la alternativa,si,inventario
+nombre_variante,texto,sin_unidad,texto_libre,Nombre que diferencia el recorrido concreto frente a otras alternativas del mismo destino,si,inventario
+actividad_declarada,categoria,sin_unidad,senderismo|trekking|caminata|media_montana|alta_montana|por_verificar,Tipo de actividad descrito por la fuente o inferido provisionalmente,si,inventario
+requiere_equipo_tecnico,categoria,sin_unidad,si|no|por_verificar,Indica si el recorrido exige equipo técnico especializado,si,inventario
+comparable_trekking,categoria,sin_unidad,si|no|por_verificar,Indica si la alternativa es compatible con el conjunto de rutas no técnicas que se clasificará,si,inventario
+motivo_compatibilidad,texto,sin_unidad,texto_libre,Justificación documental o tarea pendiente sobre la compatibilidad temática,si,inventario
+canton,texto,sin_unidad,canton_de_Pichincha,Cantón donde se localiza principalmente la ruta,si,inventario
+sector,texto,sin_unidad,texto_libre,Parroquia comunidad área protegida o sector de referencia,si,inventario
+tipo_recorrido,categoria,sin_unidad,circular|ida_y_vuelta|travesia|desconocido,Forma general del recorrido,si,inventario
+fuente_trazado,texto,sin_unidad,texto_libre,Plataforma institución o persona que proporciona el trazado,si,inventario
+url_fuente,texto,URL,url_valida,Enlace directo o página donde se consultó el trazado,si,inventario
+identificador_fuente,texto,sin_unidad,texto_libre,Identificador asignado por la fuente cuando exista,no,inventario
+fecha_consulta,fecha,AAAA-MM-DD,fecha_valida,Fecha en que se consultó o descargó la fuente,si,inventario
+formato_original,categoria,sin_unidad,gpx|geojson|kml|osm|otro,Formato original del trazado,si,inventario
+licencia_nombre,texto,sin_unidad,texto_libre,Nombre de la licencia o condición de uso declarada,si,inventario
+licencia_url,texto,URL,url_valida,Enlace donde se describen la licencia o condiciones de uso,no,inventario
+atribucion_requerida,categoria,sin_unidad,si|no|por_verificar,Indica si la fuente exige atribución,si,inventario
+trazado_disponible,categoria,sin_unidad,si|no|por_verificar,Indica si existe un trazado descargable o reproducible,si,inventario
+elevacion_disponible,categoria,sin_unidad,si|no|por_verificar,Indica si pueden obtenerse elevaciones utilizables,si,piloto
+archivo_original,texto,nombre_de_archivo,texto_libre,Nombre exacto del archivo conservado sin modificar,no,descarga
+calidad_preliminar,categoria,sin_unidad,pendiente|apta|dudosa|no_apta,Resultado inicial de la revisión de calidad,si,piloto
+decision,categoria,sin_unidad,pendiente|incluir|excluir|no_clasificable,Decisión sobre el uso de la ruta en el análisis,si,piloto
+motivo_decision,texto,sin_unidad,texto_libre,Justificación de la inclusión exclusión o falta de clasificación,no,piloto
+observaciones,texto,sin_unidad,texto_libre,Notas adicionales relevantes para la revisión,no,cualquier_etapa

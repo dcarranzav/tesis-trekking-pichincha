@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visor de ruta</title>
+<style>__LEAFLET_CSS__</style>
+<style>
+:root{--fondo:#ffffff;--panel:#f3f6f4;--texto:#16231d;--suave:#52625a;--borde:#cfd9d3;--acento:#0f766e;--acento-t:#ffffff;--ejes:#6b7a72;--area:rgba(15,118,110,.14)}
+@media (prefers-color-scheme:dark){:root{--fondo:#0f1714;--panel:#18231f;--texto:#e8f0ec;--suave:#a7b8b0;--borde:#2c3d36;--acento:#2dd4bf;--acento-t:#06231f;--ejes:#8fa39a;--area:rgba(45,212,191,.16)}}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--fondo);color:var(--texto);font:14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.visor{display:flex;flex-direction:column;height:100%;gap:8px;padding:0 0 4px}
+.mapwrap{position:relative;flex:1 1 auto;min-height:220px;border-radius:12px;overflow:hidden;border:1px solid var(--borde)}
+#map{position:absolute;inset:0;background:#dfe7e2;z-index:0}
+.capas{position:absolute;top:10px;right:10px;z-index:1000;display:flex;gap:0;border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.35)}
+.capas button{border:0;padding:7px 11px;font:600 12px system-ui;background:#fff;color:#16231d;cursor:pointer;min-height:34px}
+.capas button[aria-pressed=true]{background:var(--acento);color:var(--acento-t)}
+.leyenda{font-size:12px;color:var(--suave);display:flex;flex-wrap:wrap;gap:2px 12px;align-items:center}
+.leyenda b{color:var(--texto);font-weight:600}
+.leyenda span.it{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.leyenda i{display:inline-block;width:18px;height:6px;border-radius:3px}
+.leaflet-pulso{animation:pulso 1.6s ease-out infinite}
+@keyframes pulso{0%{stroke-opacity:.9;stroke-width:3}100%{stroke-opacity:.15;stroke-width:12}}
+.seguir{position:absolute;left:58px;top:10px;z-index:1000;display:inline-flex;align-items:center;gap:6px;background:#fff;color:#16231d;border-radius:10px;padding:6px 10px;font:600 12px system-ui;box-shadow:0 1px 4px rgba(0,0,0,.35);min-height:34px;cursor:pointer}
+.seguir input{accent-color:#0f766e;margin:0}
+.aviso{position:absolute;left:10px;bottom:24px;z-index:1000;background:#fff7e0;color:#5a4300;border:1px solid #e6c667;border-radius:8px;padding:4px 9px;font-size:11px;max-width:80%}
+.controles{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.controles button,.controles select{min-height:40px;border-radius:10px;border:1px solid var(--borde);background:var(--panel);color:var(--texto);padding:0 12px;font:600 13px system-ui;cursor:pointer}
+.controles button.principal{background:var(--acento);color:var(--acento-t);border-color:var(--acento)}
+.controles button:disabled{opacity:.55;cursor:not-allowed}
+.controles label{display:inline-flex;align-items:center;gap:6px;color:var(--suave);font-size:12px}
+.controles .deslizador{flex:1 1 180px}
+.controles input[type=range]{width:100%;min-height:32px;accent-color:var(--acento)}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
+.lectura{background:var(--panel);border:1px solid var(--borde);border-radius:10px;padding:7px 10px;font-weight:600;font-variant-numeric:tabular-nums;min-height:34px}
+.lectura small{font-weight:400;color:var(--suave)}
+.perfil{flex:0 0 150px;border:1px solid var(--borde);border-radius:12px;background:var(--panel);position:relative}
+.perfil svg{width:100%;height:100%;display:block;touch-action:pan-y;cursor:crosshair}
+.nota{margin:0;color:var(--suave);font-size:12px}
+.pin-wrap{background:transparent;border:0}
+.pin{display:inline-block;transform:translate(-50%,-135%);background:#fff;color:#16231d;border:2px solid;border-radius:12px;padding:2px 8px;font:700 12px/1.3 system-ui;white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,.4)}
+.pin.ini{border-color:#15803d}.pin.fin{border-color:#b91c1c}
+.km{display:inline-block;transform:translate(-50%,-50%);background:#fff;color:#16231d;border:1.5px solid #14213d;border-radius:10px;min-width:20px;text-align:center;font:700 11px/1.5 system-ui;padding:0 4px}
+@media (max-width:560px){.perfil{flex-basis:120px}.leyenda{max-width:92%;bottom:18px}.seguir{left:auto;right:10px;top:52px}.aviso{position:absolute;left:10px;bottom:24px;z-index:1000;background:#fff7e0;color:#5a4300;border:1px solid #e6c667;border-radius:8px;padding:4px 9px;font-size:11px;max-width:80%}.controles .deslizador{flex-basis:100%}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="visor" role="region" aria-label="Visor de la ruta seleccionada">
+  <div class="mapwrap">
+    <div id="map" role="application" aria-label="Mapa del trazado de la ruta"></div>
+    <div class="capas" role="group" aria-label="Capa del mapa">
+      <button type="button" data-capa="calles" aria-pressed="true">Calles</button>
+      <button type="button" data-capa="topo" aria-pressed="false">Topográfico</button>
+      <button type="button" data-capa="satelite" aria-pressed="false">Satélite</button>
+    </div>
+    <label class="seguir"><input type="checkbox" id="chkSeguir" checked> Seguir el recorrido</label>
+    <div class="aviso" id="avisoTeselas" hidden>Sin conexión a las teselas: se muestra solo el trazado.</div>
+  </div>
+  <div class="leyenda" id="leyenda"></div>
+  <div class="controles">
+    <button type="button" class="principal" id="btnPlay" aria-pressed="false">▶ Reproducir simulación</button>
+    <button type="button" id="btnReset">⟲ Reiniciar</button>
+    <label>Ritmo
+      <select id="vel" aria-label="Ritmo de la animación">
+        <option value="1">1×</option><option value="2">2×</option><option value="4">4×</option>
+      </select>
+    </label>
+    <label class="deslizador">Posición
+      <input id="pos" type="range" min="0" max="1000" value="0" step="1" aria-label="Posición a lo largo de la ruta">
+    </label>
+  </div>
+  <div class="lectura" id="lectura"></div>
+  <div class="perfil"><svg id="perfil" role="img" aria-label="Perfil de elevación de la ruta"></svg></div>
+  <p class="nota" id="nota"></p>
+</div>
+<script>__LEAFLET_JS__</script>
+<script>
+(function(){
+"use strict";
+var D = __DATOS__;
+var N = D.d.length, TOTAL = D.d[N-1];
+var reducido = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var fmt = function(v,n){return Number(v).toLocaleString("es-EC",{minimumFractionDigits:n,maximumFractionDigits:n});};
+var $ = function(id){return document.getElementById(id);};
+
+/* ---------- utilidades de posición ---------- */
+function indice(dist){
+  var lo=0, hi=N-1;
+  while(hi-lo>1){var m=(lo+hi)>>1; if(D.d[m]<=dist) lo=m; else hi=m;}
+  return lo;
+}
+function estado(dist){
+  dist = Math.max(0, Math.min(TOTAL, dist));
+  var i = indice(dist), j = Math.min(i+1, N-1);
+  var span = D.d[j]-D.d[i], t = span>0 ? (dist-D.d[i])/span : 0;
+  var l = function(a){return a[i]+(a[j]-a[i])*t;};
+  var regreso = D.giro!==null && dist > D.d[D.giro];
+  return {dist:dist, lat:l(D.lat), lon:l(D.lon), elev:l(D.elev), pend:D.pend[j], regreso:regreso};
+}
+function clase(p){
+  var a=Math.abs(p);
+  for(var k=0;k<D.clases.length;k++){ if(D.clases[k].max===null || a<D.clases[k].max) return k; }
+  return D.clases.length-1;
+}
+
+/* ---------- mapa ---------- */
+var map = L.map("map",{scrollWheelZoom:false,zoomSnap:0.5});
+var ATR_OSM = "© <a href='https://www.openstreetmap.org/copyright' target='_blank' rel='noopener'>OpenStreetMap</a> contributors";
+var capas = {
+  calles: L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:ATR_OSM}),
+  topo: L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",{maxZoom:17,subdomains:"abc",
+    attribution:ATR_OSM+" · © <a href='https://opentopomap.org' target='_blank' rel='noopener'>OpenTopoMap</a> (CC-BY-SA)"}),
+  satelite: L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{maxZoom:18,
+    attribution:"Imágenes: © <a href='https://www.esri.com' target='_blank' rel='noopener'>Esri</a>, Maxar, Earthstar Geographics y colaboradores · Trazado: "+ATR_OSM})
+};
+var activa = "calles", cargadas = 0, fallos = 0;
+function conectar(c){
+  c.on("tileload",function(){cargadas++;});
+  c.on("tileerror",function(){fallos++; if(cargadas===0 && fallos>=3) $("avisoTeselas").hidden=false;});
+}
+conectar(capas.calles); conectar(capas.topo); conectar(capas.satelite);
+capas.calles.addTo(map);
+Array.prototype.forEach.call(document.querySelectorAll(".capas button"),function(b){
+  b.addEventListener("click",function(){
+    var nueva=b.getAttribute("data-capa"); if(nueva===activa) return;
+    map.removeLayer(capas[activa]); capas[nueva].addTo(map); activa=nueva;
+    Array.prototype.forEach.call(document.querySelectorAll(".capas button"),function(x){
+      x.setAttribute("aria-pressed", String(x===b));});
+  });
+});
+
+var limites = L.latLngBounds(D.linea);
+map.fitBounds(limites,{padding:[30,30]});
+var hasta = D.giro!==null ? D.giro : N-1;
+L.polyline(D.linea,{color:"#0b132b",weight:10,opacity:.9,lineCap:"round",lineJoin:"round"}).addTo(map);
+var ini=0;
+for(var i=1;i<=hasta;i++){
+  var cambia = (i===hasta) || clase(D.pend[i+1])!==clase(D.pend[i]);
+  if(cambia){
+    var pts=[]; for(var k=ini;k<=i;k++) pts.push([D.lat[k],D.lon[k]]);
+    L.polyline(pts,{color:D.clases[clase(D.pend[i])].color,weight:5,opacity:1,lineCap:"round",lineJoin:"round"}).addTo(map);
+    ini=i;
+  }
+}
+function pin(lat,lon,texto,cls){
+  L.marker([lat,lon],{interactive:false,keyboard:false,icon:L.divIcon({className:"pin-wrap",iconSize:[0,0],
+    html:"<span class='pin "+cls+"'>"+texto+"</span>"})}).addTo(map);
+}
+pin(D.lat[0],D.lon[0],D.circular ? "Inicio y final" : "Inicio","ini");
+if(!D.circular){ pin(D.lat[D.giro],D.lon[D.giro],"Llegada","fin"); }
+if(D.ida_m>=1500){
+  for(var km=1; km*1000 < D.ida_m-150; km++){
+    var s=estado(km*1000);
+    L.marker([s.lat,s.lon],{interactive:false,keyboard:false,icon:L.divIcon({className:"pin-wrap",iconSize:[0,0],
+      html:"<span class='km'>"+km+"</span>"})}).addTo(map);
+  }
+}
+var hechoIda = L.polyline([],{color:"#ff7a00",weight:5,opacity:1,lineCap:"round",lineJoin:"round"}).addTo(map);
+var hechoVuelta = L.polyline([],{color:"#ffffff",weight:3.5,opacity:1,dashArray:"6 7",lineCap:"round"}).addTo(map);
+var halo = L.circleMarker([D.lat[0],D.lon[0]],{radius:14,color:"#ff7a00",weight:3,fill:false,interactive:false,className:reducido?"":"leaflet-pulso"}).addTo(map);
+var marcador = L.circleMarker([D.lat[0],D.lon[0]],{radius:9,color:"#ffffff",weight:3,fillColor:"#ff7a00",fillOpacity:1}).addTo(map);
+
+/* tramos ya recorridos: la ida en naranja y el regreso en blanco discontinuo */
+function tramos(s){
+  var i=indice(s.dist), ida=[], vuelta=[], g=(D.giro===null?N-1:D.giro);
+  for(var k=0;k<=Math.min(i,g);k++) ida.push([D.lat[k],D.lon[k]]);
+  if(s.dist<=D.d[g]) ida.push([s.lat,s.lon]);
+  else { for(var q=g;q<=i;q++) vuelta.push([D.lat[q],D.lon[q]]); vuelta.push([s.lat,s.lon]); }
+  return {ida:ida, vuelta:vuelta};
+}
+var zoomSeguir = null;
+
+/* leyenda */
+(function(){
+  var h="<b>Pendiente local:</b>";
+  D.clases.forEach(function(c){h+="<span class='it'><i style='background:"+c.color+"'></i>"+c.etiqueta+"</span>";});
+  $("leyenda").innerHTML = h;
+})();
+
+/* ---------- perfil ---------- */
+var svg=$("perfil"), NS="http://www.w3.org/2000/svg", geo=null, cursor=null, punto=null;
+function el(tag,attrs,parent){var e=document.createElementNS(NS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+function dibujarPerfil(){
+  var w=svg.clientWidth||600, h=svg.clientHeight||150;
+  svg.innerHTML=""; svg.setAttribute("viewBox","0 0 "+w+" "+h);
+  var ml=48, mr=10, mt=18, mb=22;
+  var emin=Math.min.apply(null,D.elev), emax=Math.max.apply(null,D.elev);
+  var pad=Math.max(5,(emax-emin)*0.12); emin=Math.floor((emin-pad)/5)*5; emax=Math.ceil((emax+pad)/5)*5;
+  var X=function(d){return ml+(d/TOTAL)*(w-ml-mr);}, Y=function(e){return mt+(1-(e-emin)/(emax-emin))*(h-mt-mb);};
+  geo={ml:ml,mr:mr,w:w,X:X};
+  var estilo={fill:"var(--ejes)","font-size":"10"};
+  var rango=emax-emin, pasosE=[5,10,20,25,50,100,200,250,500,1000], pe=1000;
+  for(var z=0;z<pasosE.length;z++){ if(rango/pasosE[z]<=4){pe=pasosE[z];break;} }
+  for(var ev=Math.ceil(emin/pe)*pe; ev<=emax; ev+=pe){
+    var y=Y(ev);
+    el("line",{x1:ml,x2:w-mr,y1:y,y2:y,stroke:"var(--borde)","stroke-width":1},svg);
+    var t=el("text",{x:ml-6,y:y+3,"text-anchor":"end",fill:estilo.fill,"font-size":10},svg); t.textContent=fmt(ev,0)+" m";
+  }
+  var pasos=[0.1,0.25,0.5,1,2,5,10], paso=1;
+  for(var q=0;q<pasos.length;q++){ if((TOTAL/1000)/pasos[q] <= 6){paso=pasos[q];break;} paso=pasos[q]; }
+  for(var kx=0; kx*paso*1000<=TOTAL+1; kx++){
+    var xx=X(kx*paso*1000);
+    var tx=el("text",{x:xx,y:h-6,"text-anchor":kx===0?"start":"middle",fill:estilo.fill,"font-size":10},svg);
+    tx.textContent=fmt(kx*paso,paso<1?2:0)+" km";
+  }
+  var area="M"+X(D.d[0])+","+Y(emin); for(var a=0;a<N;a++) area+=" L"+X(D.d[a]).toFixed(1)+","+Y(D.elev[a]).toFixed(1);
+  area+=" L"+X(D.d[N-1])+","+Y(emin)+" Z"; el("path",{d:area,fill:"var(--area)"},svg);
+  var ini2=0;
+  for(var s=1;s<N;s++){
+    var fin=(s===N-1)||clase(D.pend[s+1])!==clase(D.pend[s]);
+    if(fin){
+      var pts=""; for(var u=ini2;u<=s;u++) pts+=X(D.d[u]).toFixed(1)+","+Y(D.elev[u]).toFixed(1)+" ";
+      el("polyline",{points:pts,fill:"none",stroke:D.clases[clase(D.pend[s])].color,"stroke-width":3.5,"stroke-linejoin":"round","stroke-linecap":"round"},svg);
+      ini2=s;
+    }
+  }
+  if(D.giro!==null){
+    var xg=X(D.d[D.giro]);
+    el("line",{x1:xg,x2:xg,y1:mt-6,y2:h-mb,stroke:"var(--ejes)","stroke-dasharray":"4 3","stroke-width":1},svg);
+    var a1=el("text",{x:(ml+xg)/2,y:11,"text-anchor":"middle",fill:estilo.fill,"font-size":10},svg); a1.textContent="Ida";
+    var a2=el("text",{x:(xg+w-mr)/2,y:11,"text-anchor":"middle",fill:estilo.fill,"font-size":10},svg); a2.textContent="Regreso (misma traza)";
+  }
+  cursor=el("line",{y1:mt-6,y2:h-mb,stroke:"#ff7a00","stroke-width":2},svg);
+  punto=el("circle",{r:5,fill:"#ff7a00",stroke:"#fff","stroke-width":2},svg);
+  svg.setAttribute("aria-label","Perfil de elevación de "+D.titulo+": de "+fmt(Math.min.apply(null,D.elev),0)+" a "+fmt(Math.max.apply(null,D.elev),0)+" m en "+fmt(TOTAL/1000,2)+" km. Usa el control Posición para recorrerlo.");
+  actualizar(pos,false);
+  svg.__E=Y;
+}
+
+/* ---------- animación ---------- */
+var pos=0, corriendo=false, t0=0, base=0, DURACION=40000;
+function actualizar(p,moverSlider){
+  pos=Math.max(0,Math.min(1,p));
+  var s=estado(pos*TOTAL);
+  marcador.setLatLng([s.lat,s.lon]); halo.setLatLng([s.lat,s.lon]);
+  var t=tramos(s); hechoIda.setLatLngs(t.ida); hechoVuelta.setLatLngs(t.vuelta);
+  if(corriendo && $("chkSeguir").checked){
+    /* la cámara acompaña al punto, algo más cerca que la vista completa */
+    if(zoomSeguir===null) zoomSeguir=Math.min(map.getBoundsZoom(limites)+1.5, 17);
+    if(map.getZoom()!==zoomSeguir) map.setView([s.lat,s.lon],zoomSeguir,{animate:false});
+    else map.panTo([s.lat,s.lon],{animate:false});
+  }
+  if(geo&&cursor){
+    var x=geo.X(s.dist); cursor.setAttribute("x1",x);cursor.setAttribute("x2",x);
+    punto.setAttribute("cx",x);
+    var emin=Math.min.apply(null,D.elev), emax=Math.max.apply(null,D.elev);
+    if(svg.__E) punto.setAttribute("cy",svg.__E(s.elev));
+  }
+  var sub = s.pend>0.5 ? "subida "+fmt(Math.abs(s.pend),0)+" %" : (s.pend<-0.5 ? "bajada "+fmt(Math.abs(s.pend),0)+" %" : "casi plano");
+  var tramo = D.circular ? "circuito" : (s.regreso ? "regreso" : "ida");
+  var txt="Km "+fmt(s.dist/1000,2)+" de "+fmt(TOTAL/1000,2)+" · "+tramo+" · altitud "+fmt(s.elev,0)+" m · "+sub;
+  $("lectura").textContent=txt;
+  var sl=$("pos"); if(moverSlider!==false) sl.value=String(Math.round(pos*1000));
+  sl.setAttribute("aria-valuetext",txt);
+}
+function paso(ts){
+  if(!corriendo) return;
+  var v=Number($("vel").value);
+  var p=base+((ts-t0)*v)/DURACION;
+  if(p>=1){actualizar(1);detener();return;}
+  actualizar(p); requestAnimationFrame(paso);
+}
+function iniciar(){
+  /* El usuario pide explícitamente la simulación: se respeta «movimiento reducido» sin iniciarla sola ni desactivar el botón. */
+  if(pos>=1) actualizar(0);
+  corriendo=true; base=pos; t0=performance.now();
+  $("btnPlay").textContent="⏸ Pausar"; $("btnPlay").setAttribute("aria-pressed","true");
+  requestAnimationFrame(function(ts){t0=ts;requestAnimationFrame(paso);});
+}
+function detener(){
+  if(corriendo && pos>=1 && $("chkSeguir").checked && !reducido) setTimeout(function(){map.flyToBounds(limites,{padding:[30,30],duration:1.2});},300);
+  zoomSeguir=null;
+  corriendo=false; $("btnPlay").textContent="▶ Reproducir simulación"; $("btnPlay").setAttribute("aria-pressed","false");
+}
+$("btnPlay").addEventListener("click",function(){corriendo?detener():iniciar();});
+$("btnReset").addEventListener("click",function(){detener();actualizar(0);map.fitBounds(limites,{padding:[30,30]});});
+$("vel").addEventListener("change",function(){if(corriendo){base=pos;t0=performance.now();}});
+$("pos").addEventListener("input",function(e){detener();actualizar(Number(e.target.value)/1000,false);});
+svg.addEventListener("pointerdown",function(e){svg.setPointerCapture&&svg.setPointerCapture(e.pointerId);mover(e);});
+svg.addEventListener("pointermove",function(e){if(e.buttons||e.pointerType==="mouse")mover(e);});
+function mover(e){
+  if(!geo) return; detener();
+  var r=svg.getBoundingClientRect(), x=(e.clientX-r.left)*(geo.w/r.width);
+  actualizar((x-geo.ml)/(geo.w-geo.ml-geo.mr));
+}
+$("nota").textContent = (D.circular
+  ? "La animación es una simulación visual del circuito, no un registro GPS ni una velocidad real."
+  : "La animación es una simulación visual: ida y regreso por la misma traza, no un registro GPS ni una velocidad real.")
+  + " Elevaciones estimadas con Copernicus DEM GLO-30; el trazado procede de OpenStreetMap.";
+window.addEventListener("resize",function(){map.invalidateSize();dibujarPerfil();});
+setTimeout(function(){map.invalidateSize();map.fitBounds(limites,{padding:[30,30]});dibujarPerfil();},60);
+dibujarPerfil();
+})();
+</script>
+</body>
+</html>
