@@ -106,7 +106,8 @@ class StreamlitFalso:
                 return elegido
             return elegir
         if nombre == "text_input":
-            return lambda etiqueta, *a, **k: self.valores.get(k.get("key"), "")
+            return lambda etiqueta, *a, **k: (self._reg("text_input", etiqueta, key=k.get("key")),
+                                              self.valores.get(k.get("key"), ""))[1]
         if nombre == "number_input":
             return lambda etiqueta, *a, **k: self.valores.get(k.get("key"), k.get("value", 0.0))
         if nombre in ("button", "form_submit_button"):
@@ -154,7 +155,9 @@ class AppHumo(unittest.TestCase):
     def test_sin_nombre_pide_ingreso_y_no_muestra_rutas(self):
         st = ejecutar(registrado=False)
         self.assertTrue(st.detenido)
-        self.assertIn("Escribe tu nombre", st.textos())
+        self.assertNotIn("Escribe tu nombre para comenzar", "\n".join(st.textos()))
+        etiquetas = [args[0] for nombre, args, kwargs, pila in st.llamadas if nombre == "text_input" and args]
+        self.assertIn("¿Cómo te llamas?", etiquetas)
         self.assertEqual(st.tarjetas(), [])
 
     def test_bienvenida_usa_formulario_para_enviar_con_enter(self):
@@ -164,7 +167,7 @@ class AppHumo(unittest.TestCase):
         self.assertIn("guardar_alias", botones)
         html = st.html()
         self.assertIn("Rutas de trekking en Pichincha", html)
-        self.assertIn("No necesitas cuenta ni contraseña", st.textos())
+        self.assertNotIn("No necesitas cuenta ni contraseña", st.textos())
         self.assertIsNone(EMOJI.search(html + st.textos()))
 
     def test_saludo_escapa_el_nombre_y_permite_cambiarlo(self):

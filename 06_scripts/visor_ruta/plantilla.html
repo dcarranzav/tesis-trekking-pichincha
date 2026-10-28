@@ -52,7 +52,6 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid 
     <div id="map" role="application" aria-label="Mapa del trazado de la ruta"></div>
     <div class="capas" role="group" aria-label="Capa del mapa">
       <button type="button" data-capa="calles" aria-pressed="true">Calles</button>
-      <button type="button" data-capa="topo" aria-pressed="false">Topográfico</button>
       <button type="button" data-capa="satelite" aria-pressed="false">Satélite</button>
     </div>
     <label class="seguir"><input type="checkbox" id="chkSeguir" checked> Seguir el recorrido</label>
@@ -110,8 +109,6 @@ var map = L.map("map",{scrollWheelZoom:false,zoomSnap:0.5});
 var ATR_OSM = "© <a href='https://www.openstreetmap.org/copyright' target='_blank' rel='noopener'>OpenStreetMap</a> contributors";
 var capas = {
   calles: L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:ATR_OSM}),
-  topo: L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",{maxZoom:17,subdomains:"abc",
-    attribution:ATR_OSM+" · © <a href='https://opentopomap.org' target='_blank' rel='noopener'>OpenTopoMap</a> (CC-BY-SA)"}),
   satelite: L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{maxZoom:18,
     attribution:"Imágenes: © <a href='https://www.esri.com' target='_blank' rel='noopener'>Esri</a>, Maxar, Earthstar Geographics y colaboradores · Trazado: "+ATR_OSM})
 };
@@ -120,7 +117,7 @@ function conectar(c){
   c.on("tileload",function(){cargadas++;});
   c.on("tileerror",function(){fallos++; if(cargadas===0 && fallos>=3) $("avisoTeselas").hidden=false;});
 }
-conectar(capas.calles); conectar(capas.topo); conectar(capas.satelite);
+conectar(capas.calles); conectar(capas.satelite);
 capas.calles.addTo(map);
 Array.prototype.forEach.call(document.querySelectorAll(".capas button"),function(b){
   b.addEventListener("click",function(){

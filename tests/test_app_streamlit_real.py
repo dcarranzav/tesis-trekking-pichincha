@@ -62,7 +62,8 @@ class AppStreamlitReal(unittest.TestCase):
         at = nueva(registrado=False)
         self.assertFalse(at.exception, [e.value for e in at.exception])
         self.assertEqual(len(at.get("iframe")), 0)
-        self.assertIn("Escribe tu nombre para comenzar", texto(at))
+        self.assertNotIn("Escribe tu nombre para comenzar", texto(at))
+        self.assertEqual(at.text_input(key="alias_borrador").label, "¿Cómo te llamas?")
         at.text_input(key="alias_borrador").set_value("Ana María")
         at.button(key="guardar_alias").click().run()
         self.assertFalse(at.exception, [e.value for e in at.exception])
@@ -83,7 +84,8 @@ class AppStreamlitReal(unittest.TestCase):
         at.button(key="cambiar_alias").click().run()
         self.assertFalse(at.exception, [e.value for e in at.exception])
         self.assertEqual(len(at.get("iframe")), 0)
-        self.assertIn("Escribe tu nombre para comenzar", texto(at))
+        self.assertNotIn("Escribe tu nombre para comenzar", texto(at))
+        self.assertEqual(at.text_input(key="alias_borrador").label, "¿Cómo te llamas?")
 
     def test_ver_ruta_abre_la_ficha_y_volver_regresa_a_la_lista(self):
         at = nueva(mostrar_todas=True)

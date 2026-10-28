@@ -310,8 +310,6 @@ if not st.session_state["alias_sesion"]:
                                       on_click=guardar_alias)
             if st.session_state.get("alias_vacio"):
                 st.warning("Escribe un nombre con al menos una letra o número para continuar.")
-            st.caption("Escribe tu nombre para comenzar. No necesitas cuenta ni contraseña: el nombre solo se usa para "
-                       "saludarte y se borra al cerrar la pestaña.")
     st.stop()
 
 with st.container(horizontal=True, horizontal_alignment="distribute", vertical_alignment="center"):
@@ -662,6 +660,6 @@ else:
 st.divider()
 st.caption(
     "Datos del trazado © colaboradores de OpenStreetMap (ODbL 1.0) · Elevación: Copernicus DEM GLO-30 (Unión Europea/ESA) · "
-    "Mapas base: © OpenStreetMap contributors y © OpenTopoMap (CC-BY-SA) · Visor: Leaflet (BSD-2). "
+    "Mapas base: © OpenStreetMap contributors e imágenes satelitales © Esri, Maxar y Earthstar Geographics · Visor: Leaflet (BSD-2). "
     "Consulta acceso, clima y condiciones oficiales antes de salir; esta página no evalúa seguridad ni aptitud personal."
 )

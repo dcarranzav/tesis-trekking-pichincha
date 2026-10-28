@@ -110,3 +110,26 @@ class Visuales(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PlantillaVisorCapasTest(unittest.TestCase):
+    """El visor ofrece solo Calles y Satélite; no queda rastro de la capa topográfica retirada."""
+
+    @classmethod
+    def setUpClass(cls):
+        ruta = Path(__file__).resolve().parents[1] / "06_scripts" / "visor_ruta" / "plantilla.html"
+        cls.html = ruta.read_text(encoding="utf-8")
+
+    def test_botones_de_capa_son_solo_calles_y_satelite(self):
+        import re
+        capas = re.findall(r'data-capa="([a-z]+)"', self.html)
+        self.assertEqual(capas, ["calles", "satelite"])
+        self.assertNotIn("Topográfico", self.html)
+
+    def test_sin_referencias_a_opentopomap(self):
+        self.assertNotIn("opentopomap", self.html.lower())
+        self.assertNotIn("capas.topo", self.html)
+
+    def test_conserva_las_atribuciones_de_las_dos_capas(self):
+        self.assertIn("OpenStreetMap", self.html)
+        self.assertIn("Esri", self.html)
