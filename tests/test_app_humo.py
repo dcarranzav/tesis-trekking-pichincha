@@ -71,8 +71,12 @@ class StreamlitFalso:
     def llamadas_de(self, nombre):
         return [(a, k) for n, a, k, _ in self.llamadas if n == nombre]
 
-    def html(self, visibles=True):
-        """HTML de los bloques markdown, sin la hoja de estilos (y sin los desplegables técnicos si `visibles`)."""
+    def html(self, *args, visibles=True, **kwargs):
+        """Sin argumentos: HTML de los bloques markdown, sin la hoja de estilos (y sin los desplegables técnicos si `visibles`).
+        Con argumentos: es la llamada `st.html(...)` de la página y solo se registra (galería, ayuda de desplazamiento)."""
+        if args:
+            self._reg("html", *args, **kwargs)
+            return None
         return "".join(a[0] for n, a, k, p in self.llamadas if n == "markdown" and a and not a[0].startswith("<style>")
                        and not (visibles and any(e.startswith(TECNICOS) for e in p)))
 
@@ -148,7 +152,13 @@ class AppHumo(unittest.TestCase):
     def test_portada_responde_la_pregunta_sin_aviso_de_desarrollo(self):
         st = ejecutar()
         html = st.html()
-        self.assertIn("¿Qué tan exigente físicamente es esta ruta?", html)
+        self.assertIn("Elige tu próxima caminata sabiendo cuánto esfuerzo te espera", html)
+        self.assertIn("Explorar las 20 rutas", html)
+        self.assertEqual(len(st.llamadas_de("iframe")), 0)  # la galería usa st.html; el único iframe es el visor de la ficha
+        galerias = [a[0] for a, k in st.llamadas_de("html") if 'class="gal"' in a[0]]
+        self.assertEqual(len(galerias), 1)
+        self.assertEqual(galerias[0].count('class="gal-slide'), 6)
+        self.assertFalse(st.llamadas_de("html")[0][1].get("unsafe_allow_javascript", False))
         self.assertIn("20 rutas", html)
         self.assertNotIn("Versión en desarrollo", st.textos())
 

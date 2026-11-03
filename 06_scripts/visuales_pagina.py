@@ -112,6 +112,86 @@ def tarjeta_ruta(nombre: str, lugar: str, nivel: str, distancia_km, ascenso_m, t
     )
 
 
+def portada_marketing(conteos: dict[str, int]) -> str:
+    """Texto de bienvenida de «Explorar rutas»: promesa, llamada a la acción y tres ventajas reales de la página.
+
+    Los conteos por nivel vienen de la clasificación archivada y aquí solo se muestran. No usa valoraciones, popularidad
+    ni afirmaciones sobre calidad: lo que se promete es lo que la página hace (misma regla para las 20 rutas, mapa,
+    perfil, simulación del recorrido y entrada sin cuenta).
+    """
+    total = sum(conteos.values())
+    chips = "".join(f'<li style="--c:{COLOR_NIVEL[n]}"><b>{conteos.get(n, 0)}</b><span>{n}</span></li>' for n in NIVELES)
+    ventajas = (
+        ("Una sola vara para todas", "El mismo criterio de esfuerzo físico para las %d rutas, explicado en la página." % total),
+        ("Recórrela antes de caminarla", "Simulación de ida y vuelta sobre el mapa, con el perfil de altura en movimiento."),
+        ("Entra en segundos", "Escribe un apodo y explora. Sin cuentas ni contraseñas."),
+    )
+    cajas = "".join(f'<div><b>{escape(t)}</b><span>{escape(d)}</span></div>' for t, d in ventajas)
+    return _compacto(
+        f'<section class="pf" aria-label="Rutas de trekking en Pichincha">'
+        f'<p class="pf-eyebrow">Trekking en Pichincha</p>'
+        f'<p class="pf-titulo">Elige tu próxima caminata sabiendo cuánto esfuerzo te espera</p>'
+        f'<p class="pf-sub">{total} rutas de trekking de Pichincha clasificadas por nivel de dificultad física. '
+        f'Mira el mapa y el perfil de altura, y recorre el trazado antes de salir.</p>'
+        f'<div class="pf-cta"><a class="pf-boton" href="#elige-una-ruta">Explorar las {total} rutas</a>'
+        f'<ul class="pf-niveles" aria-label="Rutas por nivel de dificultad">{chips}</ul></div></section>'
+        f'<div class="pf-ventajas">{cajas}</div>'
+    )
+
+
+def galeria_interactiva(fotos: list[dict]) -> str:
+    """Galería con controles CSS: flechas, miniaturas y radios accesibles por teclado.
+
+    Streamlit puede eliminar los scripts incrustados en ``st.html``. Los radios
+    mantienen sincronizadas la foto, la miniatura y el contador sin JavaScript.
+    Las fotos son decorativas y no se asocian a una ruta concreta.
+    """
+    if not fotos:
+        return ""
+    total = len(fotos)
+    radios = "".join(
+        f'<input class="gal-radio" type="radio" name="gal-foto" id="gal-foto-{k}" '
+        f'aria-label="Fotografía {k + 1} de {total}"{" checked" if k == 0 else ""}>'
+        for k in range(total)
+    )
+    diapos = "".join(
+        f'<div class="gal-slide fo fo-{f["id"]}" role="img" aria-label="{escape(f["alt"])}"></div>'
+        for f in fotos)
+    flechas = "".join(
+        f'<label class="gal-nav gal-ant gal-nav-{k}" for="gal-foto-{(k - 1) % total}" '
+        f'aria-label="Fotografía anterior">&#8249;</label>'
+        f'<label class="gal-nav gal-sig gal-nav-{k}" for="gal-foto-{(k + 1) % total}" '
+        f'aria-label="Fotografía siguiente">&#8250;</label>'
+        for k in range(total)
+    )
+    cuentas = "".join(
+        f'<span class="gal-cuenta gal-cuenta-{k}" aria-hidden="true">{k + 1} / {total}</span>'
+        for k in range(total)
+    )
+    minis = "".join(
+        f'<label class="gal-mini fo fo-{f["id"]}" for="gal-foto-{k}" '
+        f'aria-label="Ver la fotografía {k + 1} de {total}"></label>'
+        for k, f in enumerate(fotos)
+    )
+    estilos = "".join(
+        f'.gal-radio:nth-of-type({k + 1}):checked~.gal-escena .gal-slide:nth-child({k + 1})'
+        '{opacity:1;animation:gal-kb 9s ease-out forwards}'
+        f'.gal-radio:nth-of-type({k + 1}):checked~.gal-escena .gal-nav-{k}'
+        '{display:flex}'
+        f'.gal-radio:nth-of-type({k + 1}):checked~.gal-escena .gal-cuenta-{k}'
+        '{display:block}'
+        f'.gal-radio:nth-of-type({k + 1}):checked~.gal-minis .gal-mini:nth-child({k + 1})'
+        '{opacity:1;border-color:#fff}'
+        for k in range(total)
+    )
+    return (
+        f'<style>{estilos}</style>'
+        f'<div class="gal" role="region" aria-roledescription="galería" aria-label="Galería de fotografías de senderos">'
+        f'{radios}<div class="gal-escena">{diapos}{flechas}{cuentas}</div>'
+        f'<div class="gal-minis">{minis}</div></div>'
+    )
+
+
 def rejilla(tarjetas: list[str], columnas: int = 3) -> str:
     """Rejilla de tarjetas de igual altura: 3 columnas por defecto, 2 para destinos con dos alternativas."""
     return f'<div class="rejilla n{columnas}">' + "".join(tarjetas) + "</div>"

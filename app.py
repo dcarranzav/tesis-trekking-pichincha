@@ -25,6 +25,7 @@ RAIZ = Path(__file__).resolve().parent
 sys.path.insert(0, str(RAIZ / "06_scripts"))
 import vista_rutas as vr  # noqa: E402
 import visuales_pagina as vz  # noqa: E402
+import fotos_pagina as fotos  # noqa: E402
 import clima_rutas as clima  # noqa: E402
 
 SECCIONES = ("Explorar rutas", "Comparar alternativas", "Metodología y límites")
@@ -143,6 +144,48 @@ svg.mini{width:100%;height:56px;display:block}
 .flujo-paso span:last-child{font-size:.86rem;opacity:.9;line-height:1.4}
 .flujo-n{display:inline-flex;align-items:center;justify-content:center;width:1.5rem;height:1.5rem;border-radius:50%;background:var(--acento);color:#fff;font-weight:700;font-size:.82rem}
 .stMarkdown p,.stMarkdown li,.stMarkdown a,.tabla td{overflow-wrap:anywhere;word-break:break-word}
+.fo{background-color:#24404a;background-image:linear-gradient(135deg,#2b4c57,#1b2f37);background-size:cover;background-repeat:no-repeat;background-position:center}
+.pf{margin:.3rem 0 1.1rem}
+.pf .pf-eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#5cc4d9;margin:0 0 .5rem}
+.pf .pf-titulo{font-size:2.75rem;font-weight:800;line-height:1.07;letter-spacing:-.027em;margin:0 0 .75rem;max-width:46rem}
+.pf .pf-sub{font-size:1.12rem;line-height:1.55;opacity:.9;max-width:42rem;margin:0 0 1.15rem}
+.pf .pf-cta{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1.2rem;margin:0 0 .2rem}
+.pf a.pf-boton{display:inline-block;background:#0f5f73;color:#fff!important;font-weight:700;font-size:1.02rem;padding:.72rem 1.4rem;border-radius:999px;text-decoration:none!important;box-shadow:0 6px 18px rgba(15,95,115,.5);transition:transform .15s,background .15s}
+.pf a.pf-boton:hover{background:#1384a0;transform:translateY(-1px)}
+.pf .pf-niveles{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0}
+.pf .pf-niveles li{display:flex;align-items:baseline;gap:.4rem;margin:0;padding:.28rem .8rem .28rem .7rem;border-radius:999px;border:1px solid var(--borde);border-left:5px solid var(--c)}
+.pf .pf-niveles b{font-size:1.1rem}
+.pf .pf-niveles span{font-size:.86rem;opacity:.9}
+.pf-ventajas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin:0 0 1.2rem}
+.pf-ventajas>div{border:1px solid var(--borde);border-radius:12px;padding:.8rem 1rem;display:flex;flex-direction:column;gap:.2rem;background:var(--suave)}
+.pf-ventajas b{font-size:.98rem}
+.pf-ventajas span{font-size:.88rem;line-height:1.45;opacity:.88}
+.gal{position:relative;margin:.2rem 0 1rem;outline:none}
+.gal:focus-visible .gal-escena{box-shadow:0 0 0 3px #5cc4d9}
+.gal-radio{position:absolute;width:1px;height:1px;opacity:0}
+.gal-radio:focus-visible~.gal-escena{box-shadow:0 0 0 3px #5cc4d9}
+.gal-escena{position:relative;aspect-ratio:16/7.2;border-radius:16px;overflow:hidden;background:#13232a;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.gal-escena::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,16,22,.5),rgba(6,16,22,0) 42%);pointer-events:none}
+.gal-slide{position:absolute;inset:-2%;opacity:0;transition:opacity .9s ease;transform:scale(1.02)}
+.gal-slide:nth-child(odd){--dx:-1.6%;--dy:-1%}
+.gal-slide:nth-child(even){--dx:1.6%;--dy:1%}
+.gal-slide.activa{opacity:1;animation:gal-kb 9s ease-out forwards}
+@keyframes gal-kb{from{transform:scale(1.02) translate(0,0)}to{transform:scale(1.12) translate(var(--dx),var(--dy))}}
+.gal-nav{position:absolute;top:50%;z-index:3;transform:translateY(-50%);width:2.7rem;height:2.7rem;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(8,18,24,.55);color:#fff;font-size:1.7rem;line-height:1;cursor:pointer;opacity:0;transition:opacity .2s,background .2s;display:none;align-items:center;justify-content:center}
+.gal-ant{left:.8rem}.gal-sig{right:.8rem}
+.gal-escena:hover .gal-nav,.gal-nav:focus-visible{opacity:1}
+.gal-nav:hover{background:rgba(8,18,24,.85)}
+.gal-cuenta{position:absolute;right:.9rem;bottom:.9rem;z-index:3;font-size:.82rem;font-weight:600;color:#fff;background:rgba(8,18,24,.6);padding:.12rem .6rem;border-radius:999px;display:none}
+.gal-barra{position:absolute;left:0;right:0;bottom:0;height:3px;z-index:3;background:rgba(255,255,255,.2)}
+.gal-barra span{display:block;height:100%;background:#fff;transform-origin:left;transform:scaleX(0);animation:gal-prog 5.5s linear forwards}
+@keyframes gal-prog{to{transform:scaleX(1)}}
+.gal.en-pausa .gal-barra span,.gal.en-pausa .gal-slide.activa{animation-play-state:paused}
+.gal-minis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.55rem;margin-top:.6rem}
+.gal-mini{display:block;aspect-ratio:16/10;border-radius:10px;border:2px solid transparent;padding:0;cursor:pointer;opacity:.6;transition:opacity .2s,transform .2s,border-color .2s}
+.gal-mini:hover{opacity:1;transform:translateY(-2px)}
+.gal-mini.activa{opacity:1;border-color:#fff}
+@media (prefers-reduced-motion:reduce){.gal-slide.activa{animation:none;transform:scale(1.02)}.gal-barra{display:none}.gal-slide{transition:none}}
+@media (hover:none){.gal-nav{opacity:1}}
 @media (max-width:900px){.tres{grid-template-columns:1fr}}
 @media (max-width:1000px){.rejilla.n4{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:760px){
@@ -157,6 +200,14 @@ svg.mini{width:100%;height:56px;display:block}
  .barra-fila{grid-template-columns:1fr 5.2rem}.barra-id{grid-column:1/-1}.barra-pista{grid-column:1}
 }
 @media (max-width:520px){.avisos-lateral{grid-template-columns:1fr}}
+@media (max-width:760px){
+ .pf .pf-titulo{font-size:1.85rem}.pf .pf-sub{font-size:1.02rem}
+ .pf-ventajas{grid-template-columns:1fr;gap:.5rem}
+ .gal-escena{aspect-ratio:4/3.2;border-radius:12px}
+ .gal-nav{width:2.3rem;height:2.3rem;font-size:1.4rem}
+ .gal-minis{gap:.3rem}.gal-mini{aspect-ratio:1/1;border-radius:8px}
+}
+}
 """
 st.markdown(f"<style>{ESTILO}</style>", unsafe_allow_html=True)
 
@@ -316,15 +367,6 @@ with st.container(horizontal=True, horizontal_alignment="distribute", vertical_a
     st.markdown(f'<p class="saludo">Hola, {escape(st.session_state["alias_sesion"])}.</p>', unsafe_allow_html=True, width="content")
     st.button("Cambiar nombre", key="cambiar_alias", type="tertiary", on_click=cambiar_alias)
 
-if st.session_state.get("seccion", SECCIONES[0]) == SECCIONES[0] and not st.session_state.get("ruta_detalle"):
-  st.markdown(
-    """<div class="hero"><p class="sello">Proyecto de titulación · PUCE · Sistemas de Información</p>
-<p class="titulo">¿Qué tan exigente físicamente es esta ruta?</p>
-<p class="lema">Explora 20 rutas de trekking de Pichincha con indicadores calculados de la misma manera para todas: distancia, subida, bajada y una categoría de dificultad física estimada (Fácil, Moderada o Difícil).</p>
-<p class="limite">Solo estima el esfuerzo físico. No evalúa dificultad técnica, acceso, clima ni seguridad, y no recomienda salidas.</p></div>""",
-    unsafe_allow_html=True,
-  )
-
 try:
     catalogo, inventario, destinos, verificacion = datos_base()
     rutas = rutas_estudio()
@@ -337,6 +379,16 @@ por_id = {r["id_ruta"]: r for r in rutas}
 if not rutas:
     st.warning("No hay alternativas elegibles para mostrar todavía.")
     st.stop()
+
+if st.session_state.get("seccion", SECCIONES[0]) == SECCIONES[0] and not st.session_state.get("ruta_detalle"):
+    conteos = {n: sum(1 for r in rutas if r["nivel"] == n) for n in vz.NIVELES}
+    st.markdown(f"<style>{fotos.css_fotos()}</style>", unsafe_allow_html=True)
+    ventajas = vz.portada_marketing(conteos)
+    texto, _, caja = ventajas.partition('<div class="pf-ventajas">')
+    st.markdown(texto, unsafe_allow_html=True)
+    galeria = vz.galeria_interactiva([fotos.foto_por_id(i) for i in fotos.ORDEN])
+    st.html(galeria)
+    st.markdown('<div class="pf-ventajas">' + caja, unsafe_allow_html=True)
 
 st.session_state.setdefault("seccion", SECCIONES[0])
 seccion = st.segmented_control("Sección", list(SECCIONES), key="seccion", label_visibility="collapsed") or SECCIONES[0]

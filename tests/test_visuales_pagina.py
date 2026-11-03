@@ -2,6 +2,7 @@
 import re
 import sys
 import unittest
+from html import escape
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -133,3 +134,69 @@ class PlantillaVisorCapasTest(unittest.TestCase):
     def test_conserva_las_atribuciones_de_las_dos_capas(self):
         self.assertIn("OpenStreetMap", self.html)
         self.assertIn("Esri", self.html)
+
+
+class PortadaConFotosTest(unittest.TestCase):
+    """Portada con mensaje de venta veraz y galería interactiva; las tarjetas de ruta no llevan fotografía."""
+
+    @classmethod
+    def setUpClass(cls):
+        import fotos_pagina
+        cls.fp = fotos_pagina
+        cls.galeria = vz.galeria_interactiva([fotos_pagina.foto_por_id(i) for i in fotos_pagina.ORDEN])
+        cls.texto = vz.portada_marketing({"Fácil": 8, "Moderada": 10, "Difícil": 2})
+
+    def test_existen_las_seis_fotos_y_la_galeria_las_usa_todas_una_vez(self):
+        for f in self.fp.FOTOS:
+            self.assertTrue((self.fp.CARPETA / f["archivo"]).is_file(), f["archivo"])
+        self.assertEqual(sorted(self.fp.ORDEN), sorted(f["id"] for f in self.fp.FOTOS))
+        self.assertEqual(len(self.fp.FOTOS), 6)
+        self.assertEqual(self.galeria.count('class="gal-slide'), 6)
+        self.assertEqual(self.galeria.count('class="gal-mini '), 6)
+
+    def test_el_css_incrusta_cada_foto_y_no_usa_rutas_locales(self):
+        css = self.fp.css_fotos()
+        for f in self.fp.FOTOS:
+            self.assertIn(f".fo-{f['id']}{{", css)
+        self.assertNotIn("C:\\", css)
+        self.assertNotIn("Users", css)
+
+    def test_las_fotos_con_personas_quedan_identificadas_para_revisar_su_uso(self):
+        self.assertEqual(sorted(self.fp.fotos_con_personas()),
+                         ["galeria_01.jpg", "galeria_03.jpg", "galeria_05.jpg", "galeria_06.jpg"])
+
+    def test_galeria_es_accesible_y_con_controles(self):
+        for f in self.fp.FOTOS:
+            self.assertIn(escape(f["alt"]), self.galeria)
+        self.assertIn('aria-label="Fotografía anterior"', self.galeria)
+        self.assertIn('aria-label="Fotografía siguiente"', self.galeria)
+        self.assertEqual(self.galeria.count('type="radio"'), 6)
+        self.assertEqual(self.galeria.count(' checked>'), 1)
+        for k in range(6):
+            self.assertIn(f'id="gal-foto-{k}"', self.galeria)
+            self.assertIn(f'for="gal-foto-{k}"', self.galeria)
+            self.assertIn(f'.gal-radio:nth-of-type({k + 1}):checked', self.galeria)
+        self.assertNotIn("<script>", self.galeria)
+        self.assertNotIn("<img", self.galeria)  # si una foto no carga, solo queda el degradado del recuadro
+
+    def test_texto_de_venta_cumple_y_no_inventa(self):
+        self.assertIn("Elige tu próxima caminata", self.texto)
+        self.assertIn("20 rutas", self.texto)
+        self.assertIn("Explorar las 20 rutas", self.texto)
+        self.assertIn('href="#elige-una-ruta"', self.texto)
+        self.assertIn("<b>8</b><span>Fácil</span>", self.texto)
+        for inventado in ("mejores", "popular", "estrellas", "valoraci", "usuarios", "reseña", "garantiz", "seguro"):
+            self.assertNotIn(inventado, self.texto.lower() + self.galeria.lower())
+        for retirado in ("referencial", "Proyecto de titulación", "Sistemas de Información", "no corresponden"):
+            self.assertNotIn(retirado, self.texto + self.galeria + self.fp.css_fotos())
+
+    def test_alt_no_afirma_ubicacion_ni_ruta_y_no_hay_emojis(self):
+        for f in self.fp.FOTOS:
+            self.assertNotRegex(f["alt"], r"Mindo|Rucu|Pichincha|Yanacocha|Ilal|Pondo|R\d{3}")
+        self.assertIsNone(re.search("[\U0001F300-\U0001FAFF]", self.texto + self.galeria))
+
+    def test_las_tarjetas_de_ruta_no_llevan_fotografia(self):
+        html = vz.tarjeta_ruta("Ruta", "Lugar", "Moderada", 5, 300, "Circuito", "Aviso")
+        self.assertNotIn("fo-", html)
+        self.assertNotIn('role="img"', html)
+        self.assertIn('class="tarjeta"', html)
