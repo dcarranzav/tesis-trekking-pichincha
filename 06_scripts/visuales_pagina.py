@@ -122,7 +122,7 @@ def portada_marketing(conteos: dict[str, int]) -> str:
     total = sum(conteos.values())
     chips = "".join(f'<li style="--c:{COLOR_NIVEL[n]}"><b>{conteos.get(n, 0)}</b><span>{n}</span></li>' for n in NIVELES)
     ventajas = (
-        ("Una sola vara para todas", "El mismo criterio de esfuerzo físico para las %d rutas, explicado en la página." % total),
+        ("Compara el esfuerzo", "Tres grupos relativos obtenidos con K-means para las %d rutas estudiadas." % total),
         ("Recórrela antes de caminarla", "Simulación de ida y vuelta sobre el mapa, con el perfil de altura en movimiento."),
         ("Entra en segundos", "Escribe un apodo y explora. Sin cuentas ni contraseñas."),
     )
@@ -131,7 +131,7 @@ def portada_marketing(conteos: dict[str, int]) -> str:
         f'<section class="pf" aria-label="Rutas de trekking en Pichincha">'
         f'<p class="pf-eyebrow">Trekking en Pichincha</p>'
         f'<p class="pf-titulo">Elige tu próxima caminata sabiendo cuánto esfuerzo te espera</p>'
-        f'<p class="pf-sub">{total} rutas de trekking de Pichincha clasificadas por nivel de dificultad física. '
+        f'<p class="pf-sub">{total} rutas de trekking de Pichincha agrupadas por esfuerzo físico relativo. '
         f'Mira el mapa y el perfil de altura, y recorre el trazado antes de salir.</p>'
         f'<div class="pf-cta"><a class="pf-boton" href="#elige-una-ruta">Explorar las {total} rutas</a>'
         f'<ul class="pf-niveles" aria-label="Rutas por nivel de dificultad">{chips}</ul></div></section>'
@@ -225,7 +225,7 @@ def resumen_niveles(conteos: dict[str, int]) -> str:
 
 
 def grafico_horas(rutas: list[dict]) -> str:
-    """Las rutas ordenadas por esfuerzo estimado, con los límites de 1 h y 3 h (barras HTML adaptables)."""
+    """Horas de referencia como contraste, coloreadas con el grupo K-means."""
     if not rutas:
         return ""
     maximo = max(5.0, math.ceil(max(float(r["horas"]) for r in rutas)))
@@ -236,12 +236,11 @@ def grafico_horas(rutas: list[dict]) -> str:
         sens = " *" if r.get("sensible") else ""
         filas.append(
             f'<div class="hg-fila"><span class="hg-nombre" title="{escape(r["nombre"])}">{escape(r["nombre"])}</span>'
-            f'<span class="hg-pista"><span class="hg-barra" style="width:{max(1.5, pos(float(r["horas"]))):.1f}%;--c:{color}"></span>'
-            f'<span class="hg-limite" style="left:{pos(UMBRALES_H[0]):.1f}%"></span><span class="hg-limite" style="left:{pos(UMBRALES_H[1]):.1f}%"></span></span>'
+            f'<span class="hg-pista"><span class="hg-barra" style="width:{max(1.5, pos(float(r["horas"]))):.1f}%;--c:{color}"></span></span>'
             f'<span class="hg-val">{numero(r["horas"], 2)} h · {escape(r["nivel"])}{sens}</span></div>'
         )
-    leyenda = ('<div class="hg-leyenda">Líneas verticales: límites de 1 h y 3 h estimadas. '
-               '* Categoría sensible a supuestos metodológicos.</div>')
+    leyenda = ('<div class="hg-leyenda">Longitud de la barra: horas de referencia estimadas; color: grupo K-means. '
+               'Las horas no determinan el grupo. * Asignación sensible en alguna prueba del modelo.</div>')
     return _compacto('<div class="hg">' + "".join(filas) + "</div>" + leyenda)
 
 

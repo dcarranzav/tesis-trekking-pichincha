@@ -1,10 +1,10 @@
 # Tesis: clasificación y recomendación de rutas de trekking en Pichincha
 
-Este repositorio construye un conjunto reproducible de rutas de trekking no técnico en Pichincha y una página para explorar y comparar recorridos al mismo destino. La salida principal clasifica la **dificultad física estimada** de las 20 rutas en **Fácil, Moderada y Difícil** mediante una regla reproducible inspirada en el componente de esfuerzo de MIDE. No es la evaluación MIDE completa, una escala de dificultad técnica, una certificación de seguridad ni una recomendación de salida. K-means queda como contraste exploratorio de la estructura de la muestra.
+Este repositorio construye un conjunto reproducible de rutas de trekking no técnico en Pichincha y una página para explorar y comparar recorridos al mismo destino. Desde el 10 de noviembre, la página muestra tres grupos de **esfuerzo físico relativo** (Fácil, Moderada y Difícil) asignados por **K-means k=3** sobre distancia total y subida acumulada de las 20 rutas. Son etiquetas experimentales relativas a esta muestra; no son una evaluación MIDE, una escala de dificultad técnica, una certificación de seguridad ni una recomendación de salida. La regla de marcha anterior queda como contraste.
 
 ## Interfaz de comparación y visor de rutas
 
-La página local `app.py` permite elegir un lugar y un destino exacto, comparar solo las alternativas que llegan a ese mismo destino (elegibles provisionales, no verificadas) y ver cada una sobre un mapa con inicio, llegada, perfil de elevación sincronizado y una **simulación** de ida y regreso. La capa de datos ya expone la clasificación Fácil/Moderada/Difícil; la adaptación visual queda especificada en `01_documentacion/prompt_claude_interfaz_plan_final_2026-10-23.md`. Incluye avisos por ruta, clima opcional bajo demanda, fuentes y licencias, y descarga en GeoJSON y GPX. **El GPX es un formato de intercambio derivado del trazado: no es una medición GPS de campo ni incluye elevaciones o tiempos inventados.** No hay recomendación de salida ni certificación de seguridad. Detalle metodológico en `01_documentacion/clasificacion_dificultad_fisica_tres_niveles_2026-10-23.md`.
+La página local `app.py` permite elegir un lugar y un destino exacto, comparar solo las alternativas que llegan a ese mismo destino (elegibles provisionales, no verificadas) y ver cada una sobre un mapa con inicio, llegada, perfil de elevación sincronizado y una **simulación** de ida y regreso. Muestra la clasificación relativa de K-means k=3, avisos por ruta, clima opcional bajo demanda, fuentes y licencias, y descarga en GeoJSON y GPX. **El GPX es un formato de intercambio derivado del trazado: no es una medición GPS de campo ni incluye elevaciones o tiempos inventados.** No hay recomendación de salida ni certificación de seguridad. Detalle en `01_documentacion/decision_interfaz_kmeans_k3_2026-11-10.md`.
 
 ```powershell
 $pythonProyecto = 'C:\Users\LENOVO\miniforge3\envs\trekking_pichincha\python.exe'
@@ -20,10 +20,9 @@ Abrir la dirección local que imprima Streamlit, normalmente `http://localhost:8
 - R001 está incluida según I10/E10, con aviso de altitud y T3; R024/R025 conservan advertencias sobre la falta de corroboración independiente del trazado y de confirmación de acceso; R026 exige cruzar una tarabita privada de pago (tarifa y horario por confirmar) y comparte su trazado con R005, que sigue no elegible. Ninguna inclusión certifica seguridad.
 - 7 rutas permanecen fuera del modelado mientras se resuelven verificaciones de identidad, geometría o compatibilidad temática. R011 y R013 también requieren confirmar el recorrido turístico completo.
 - 0 valores faltantes en las variables candidatas.
-- La clasificación física estimada asigna **8 rutas Fácil, 10 Moderada y 2 Difícil**. Seis rutas cambian de nivel en al menos un escenario de sensibilidad y deben mostrar ese aviso.
-- Los seis notebooks 00–05 tienen salidas guardadas; el 04 se reejecutó con R027 y 27 filas, y el 05 incluye la evaluación del nuevo K-means físico. El 02 contrasta archivos existentes sin sobrescribir trazados.
-- **Método categórico vigente:** tiempo efectivo estimado = mayor de los componentes horizontal y vertical + la mitad del menor; 4 km/h en horizontal, 400 m/h de ascenso y 600 m/h de descenso. Nivel de esfuerzo 1 = Fácil, 2 = Moderada y 3–5 = Difícil. Es una adaptación del esfuerzo MIDE porque no se dispone de la información homogénea necesaria para aplicar el MIDE completo.
-- K-means k=2 sobre distancia y ascenso, el ensayo previo de cuatro variables, Ward, DBSCAN y HEN quedan como contrastes metodológicos. No suministran las tres etiquetas públicas ni validación externa.
+- K-means k=3 asigna **12 rutas Fácil, 6 Moderada y 2 Difícil** en sentido relativo a la muestra. Seis rutas cambian de grupo en al menos una de las pruebas de sensibilidad consideradas en la página y muestran ese aviso.
+- Los seis notebooks 00–05 tienen salidas guardadas; el 04 se reejecutó con R027 y 27 filas, y el 05 incluye la evaluación del nuevo K-means físico y, desde el 10 de noviembre, el experimento k=3 (sección 11). El 02 contrasta archivos existentes sin sobrescribir trazados.
+- **Método categórico mostrado:** K-means k=3 sobre distancia total y ascenso acumulado estandarizados. Los grupos se ordenan por sus centroides y se nombran Fácil, Moderada y Difícil **solo en relación con estas 20 rutas**. La regla de horas inspirada en MIDE, K-means k=2, Ward, DBSCAN y HEN quedan como contrastes metodológicos.
 - `01_documentacion/informe_indicador_esfuerzo_2026-10-22.md` evalúa un indicador continuo Naismith de distancia y ascenso como referencia comparativa, sin tiempos medidos, clases ni recomendaciones.
 - El hito de cierre del 16 de octubre se resolvió **NO CONGELAR** por muestra insuficiente y verificaciones de fuente pendientes.
 - El EDA del 22 de octubre actualiza distribuciones y correlaciones (E38) para 20 rutas. Las alertas descriptivas no implican exclusión automática.
@@ -31,7 +30,16 @@ Abrir la dirección local que imprima Streamlit, normalmente `http://localhost:8
 - La página permite comparar por destino exacto, mostrar la clase relativa y marcar alternativas que coinciden con límites personales de distancia y ascenso. La recomendación de salida permanece bloqueada por las verificaciones de acceso y seguridad que este análisis no realiza.
 - La revisión adicional de Pasochoa, La Mica, Jerusalem, El Pahuma y Pululahua dejó candidatas pendientes de conexión, identidad o acceso. R022 se incorporó provisionalmente desde una instantánea OSM normalizada, contrastada después con el XML exacto archivado el 20 de octubre; aún faltan confirmar la apertura y dos puntos marcados como posibles vados. R023 procede de un XML OSM archivado y una mención municipal de la caminata, pero requiere verificar acceso y condiciones actuales. R021 requiere confirmar independencia práctica y apertura actual.
 
-La clasificación principal es una regla física explícita de tres niveles, no un modelo entrenado con etiquetas. K-means, Ward y DBSCAN se conservan como contrastes exploratorios; Random Forest no se utiliza porque no existen etiquetas externas confiables. La validez de contenido con especialistas y la prueba de comprensión con usuarios siguen pendientes.
+La clasificación que muestra la página es K-means k=3, un agrupamiento no supervisado. Los nombres Fácil, Moderada y Difícil son una interpretación de esfuerzo relativo, no etiquetas aprendidas de expertos. Ward, DBSCAN y la regla de marcha son contrastes; Random Forest no se utiliza porque no existen etiquetas externas confiables. La validez de contenido con especialistas y la prueba de comprensión con usuarios siguen pendientes.
+
+## Experimento K-means con k=3 (10 de noviembre de 2026)
+
+Se evaluó si K-means con k=3 sobre distancia total y ascenso total podía producir las tres categorías públicas. Los criterios de aceptación se fijaron antes de ejecutar (`01_documentacion/diseno_experimento_kmeans_k3_2026-11-10.md`) y el detalle está en `01_documentacion/informe_kmeans_k3_dificultad_2026-11-10.md` y en la sección 11 del notebook `05_notebooks/05_validacion_metodologica.ipynb`.
+
+- **Hallazgos:** k=3 forma grupos de 12/6/2 rutas, sin inversiones de esfuerzo, con silueta 0,5895 y la misma partición en las 50 semillas. El grupo de dos rutas es R001 y R006. La partición se mantiene con pesos moderados, con el ascenso de mediana de 5 puntos, al retirar una ruta cualquiera y al conservar una alternativa por destino. Es frágil con el perfil DEM crudo (prueba de estrés: cambian R003, R015, R019 y R023) y con pesos extremos, y depende de las variables elegidas. Ward coincide salvo en R022; DBSCAN deja de 3 a 6 rutas como ruido en las configuraciones que forman grupos y no forma tres grupos estables sobre las 20 rutas.
+- **Decisión B según los criterios fijados:** fallan C3 (grupo mínimo de 2 rutas) y C5 (estrés del DEM crudo). La conclusión científica es más matizada: k=3 **todavía no justifica sustituir** las categorías públicas, pero tampoco queda refutado.
+- **Comparación con la regla anterior:** 16 de las 20 rutas coinciden por orden; R004, R015, R023 y R026 están en el grupo menor de K-means y son Moderada según la regla. La regla no es verdad de terreno, de modo que esto no mide exactitud.
+- **Decisión posterior para el prototipo (10/11):** la página muestra los grupos k=3 como categorías **relativas y experimentales**: 12 Fácil, 6 Moderada y 2 Difícil. Esta decisión no cambia los resultados ni los criterios C1–C5 del experimento: la evaluación científica original eligió la opción B. El grupo superior sigue apoyado en dos rutas y el DEM sin filtrar cambia cuatro asignaciones. La regla anterior (8/10/2) se conserva como contraste histórico, no como fuente de las etiquetas de la página. Véase `01_documentacion/decision_interfaz_kmeans_k3_2026-11-10.md`.
 
 ## Estructura
 
@@ -58,6 +66,8 @@ La clasificación principal es una regla física explícita de tres niveles, no 
 - `01_documentacion/metodologia_clasificacion_recomendacion.md`: justificación del método.
 - `01_documentacion/clasificacion_dificultad_fisica_tres_niveles_2026-10-23.md`: definición, resultados, sensibilidad y límites de Fácil/Moderada/Difícil.
 - `06_scripts/clasificar_dificultad_fisica.py`: generación reproducible de la clasificación física estimada.
+- `06_scripts/evaluar_kmeans_k3_dificultad.py`: experimento K-means k=3 (10 de noviembre de 2026); escribe `07_resultados/tablas/kmeans_k3_*_2026-11-10.csv` y el JSON de parámetros. Desde la decisión posterior del 10/11, sus asignaciones se muestran en la página como grupos relativos experimentales.
+- `01_documentacion/diseno_experimento_kmeans_k3_2026-11-10.md` e `informe_kmeans_k3_dificultad_2026-11-10.md`: diseño con criterios a priori, resultados, decisión B e interpretación.
 - `07_resultados/tablas/clasificacion_dificultad_fisica_2026-10-23.csv`: matriz completa de asignación de las 20 rutas.
 - `01_documentacion/cronograma_2026-10-07_a_2026-10-27.md`: calendario y estado actualizado.
 - `01_documentacion/informe_auditoria_integridad_2026-10-22.md`: auditoría vigente del repositorio.
@@ -134,6 +144,13 @@ El contraste K-means se reproduce con:
 & $pythonProyecto 06_scripts/evaluar_kmeans_esfuerzo.py --fecha 2026-10-22
 ```
 
+El experimento K-means k=3 (contraste exploratorio, sin tocar los resultados anteriores) se reproduce con:
+
+```powershell
+& $pythonProyecto 06_scripts/evaluar_kmeans_k3_dificultad.py --fecha 2026-11-10
+& $pythonProyecto -m unittest tests.test_evaluar_kmeans_k3_dificultad -v
+```
+
 La clasificación principal de tres niveles se reproduce con:
 
 ```powershell
@@ -142,4 +159,4 @@ La clasificación principal de tres niveles se reproduce con:
 
 ## Siguiente hito
 
-Las 20 rutas y la clasificación reproducible en tres niveles están completadas. El siguiente hito es validar la regla y sus casos frontera con especialistas, probar la comprensión con usuarios, adaptar la interfaz según el prompt final y preparar la demostración. Siguen pendientes verificaciones de campo o del administrador para varios accesos; la interfaz no convierte la dificultad física estimada en recomendación de salida o garantía de seguridad.
+Las 20 rutas y la clasificación reproducible en tres grupos están completadas como prototipo. El siguiente hito es contrastar el significado de Fácil, Moderada y Difícil con especialistas y probar la comprensión con usuarios. Siguen pendientes verificaciones de campo o del administrador para varios accesos; la interfaz no convierte el grupo físico relativo en recomendación de salida o garantía de seguridad.

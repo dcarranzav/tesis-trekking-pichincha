@@ -1,0 +1,96 @@
+{
+  "version": "kmeans-k3-experimento-v1",
+  "fecha": "2026-11-10",
+  "estado": "contraste exploratorio; no sustituye la regla vigente",
+  "variables": [
+    "distancia_total_km",
+    "ascenso_total_m"
+  ],
+  "media_entrenamiento": [
+    3.517549999999999,
+    264.5262
+  ],
+  "desviacion_entrenamiento": [
+    2.473034279483404,
+    227.28871514146934
+  ],
+  "centroides_estandarizados_k3": [
+    [
+      -0.7114606866808993,
+      -0.6298921025514015
+    ],
+    [
+      0.8969885099193671,
+      0.443188009887054
+    ],
+    [
+      1.5777985903272982,
+      2.449788585647246
+    ]
+  ],
+  "orden_grupos": "suma de coordenadas z del centroide, ascendente",
+  "nombres_grupo": [
+    "G1 menor esfuerzo relativo",
+    "G2 esfuerzo intermedio relativo",
+    "G3 mayor esfuerzo relativo"
+  ],
+  "n_init": 10,
+  "semillas": [
+    0,
+    49
+  ],
+  "semilla_elegida_k3": 0,
+  "ids_entrenamiento": [
+    "R001",
+    "R003",
+    "R004",
+    "R006",
+    "R008",
+    "R011",
+    "R013",
+    "R015",
+    "R016",
+    "R017",
+    "R018",
+    "R019",
+    "R020",
+    "R021",
+    "R022",
+    "R023",
+    "R024",
+    "R025",
+    "R026",
+    "R027"
+  ],
+  "correlacion_distancia_ascenso": {
+    "pearson": 0.8289,
+    "spearman": 0.9263
+  },
+  "rango_entrenamiento": {
+    "distancia_total_km": [
+      0.515,
+      9.607
+    ],
+    "ascenso_total_m": [
+      19.661,
+      824.839
+    ]
+  },
+  "sha256_dataset": "d2af49640741c71c0797c1d3509465bd3dae3cf5dac622baa49624ee5027b3f2",
+  "versiones": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1"
+  },
+  "comparacion_con_regla": {
+    "ari_k3_vs_regla": 0.3921,
+    "spearman_grupo_vs_esfuerzo_h": 0.8706,
+    "n_coinciden_por_orden": 16,
+    "n_discrepantes": 4,
+    "aviso": "La regla vigente no es verdad de terreno: ARI y coincidencia son descriptivos, no exactitud"
+  },
+  "decision_reglas_a_priori": "B",
+  "limite": "Grupos relativos a la muestra; no predicen seguridad, acceso, técnica, clima ni aptitud personal"
+}

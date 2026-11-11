@@ -2,12 +2,12 @@
 
 Ejecutar con `streamlit run app.py`. No usa base de datos ni cuentas: la bienvenida pide un nombre solo para
 saludar, y ese nombre vive en la memoria de la sesión del navegador. La categoría Fácil/Moderada/Difícil
-viene de `vista_rutas.dificultad_fisica_estimada()` (regla archivada en 07_resultados/tablas); esta página
-no calcula umbrales ni crea otro puntaje. No recomienda salidas ni evalúa seguridad, acceso, técnica ni clima.
+procede de K-means k=3 sobre distancia y ascenso de las 20 rutas; es relativa y experimental.
+No recomienda salidas ni evalúa seguridad, acceso, técnica ni clima.
 
 Secciones: «Explorar rutas» (filtros, tarjetas y ficha con mapa), «Comparar alternativas» (solo rutas que llegan
-al mismo destino exacto) y «Metodología y límites». K-means, DBSCAN y el índice HEN se mencionan únicamente
-como contrastes en el detalle metodológico.
+al mismo destino exacto) y «Metodología y límites». La regla MIDE adaptada, Ward y DBSCAN
+se conservan como contrastes metodológicos.
 """
 
 from __future__ import annotations
@@ -35,6 +35,12 @@ ESCENARIOS = {
     "piso_favorable_5_kmh": "caminar a 5 km/h en horizontal (terreno más rápido)",
     "dem_crudo": "usar las subidas y bajadas sin filtrar el ruido del modelo de elevación",
     "dem_mediana5": "filtrar el ruido del modelo de elevación con una ventana más amplia",
+}
+ESCENARIOS_K3 = {
+    "peso_distancia_x2": "dar el doble de peso a la distancia (prueba de estrés)",
+    "peso_ascenso_x0.5": "dar la mitad de peso a la subida (prueba de estrés)",
+    "ascenso_crudo": "calcular la subida con el modelo de elevación sin filtrar el ruido",
+    "mas_pendiente_media": "añadir la pendiente media como tercera variable",
 }
 
 st.set_page_config(page_title="Rutas de trekking · Pichincha", page_icon=":material/hiking:", layout="wide")
@@ -225,30 +231,28 @@ def datos_visor(id_ruta: str, fila: dict):
 
 @st.cache_data
 def rutas_estudio():
-    """Las 20 rutas elegibles con su categoría archivada. No se recalcula nada: se lee y se enlaza al catálogo."""
+    """Las rutas elegibles con su asignación K-means archivada y contrastada con el catálogo."""
     catalogo = vr.cargar_catalogo()
     destinos = vr.cargar_destinos()
+    if not any(f["estado_modelado"] == vr.ELEGIBLE for f in catalogo):
+        return []
+    k3 = vr.clasificacion_kmeans_k3(catalogo)
     archivo = vr.archivo_clasificacion_dificultad()
     desniveles = {}
     with archivo.open(encoding="utf-8-sig", newline="") as f:
         for fila in csv.DictReader(f):
             desniveles[fila["id_ruta"]] = float(fila["desnivel_negativo_total_m"])
-    cambios = {}
-    sens = archivo.with_name(archivo.name.replace("clasificacion_dificultad_fisica_", "clasificacion_dificultad_fisica_sensibilidad_"))
-    if sens.exists():
-        with sens.open(encoding="utf-8-sig", newline="") as f:
-            for fila in csv.DictReader(f):
-                if fila["cambia_frente_base"] == "si":
-                    cambios.setdefault(fila["id_ruta"], []).append((fila["escenario"], fila["nivel"]))
     rutas = []
     for fila in catalogo:
         if fila["estado_modelado"] != vr.ELEGIBLE:
             continue
-        d = vr.dificultad_fisica_estimada(fila["id_ruta"], catalogo)
+        d = k3[fila["id_ruta"]]
+        regla = vr.dificultad_fisica_estimada(fila["id_ruta"], catalogo)
         lugar, destino = vr._destino_de(fila, destinos)
         rutas.append({**fila, "lugar": lugar, "destino_exacto": destino, "nivel": d["nivel"], "orden": d["orden"],
-                      "horas": d["horas_estimadas"], "sensible": d["sensible"],
-                      "descenso_m": desniveles.get(fila["id_ruta"], 0.0), "cambios": cambios.get(fila["id_ruta"], [])})
+                      "horas": regla["horas_estimadas"], "sensible": d["sensible"],
+                      "descenso_m": desniveles.get(fila["id_ruta"], 0.0), "cambios": d["escenarios_cambio"],
+                      "cerca_de_frontera": d["cerca_de_frontera"], "nivel_regla": regla["nivel"]})
     return rutas
 
 
@@ -402,10 +406,12 @@ def ficha(fila):
     st.subheader(fila["nombre_ruta"])
     st.caption(f"{fila['lugar']} · destino: {fila['destino_exacto']} · {tipo_texto(fila)}")
     st.markdown(vz.insignia_nivel(fila["nivel"], fila["sensible"]), unsafe_allow_html=True)
-    st.caption("Describe solo el esfuerzo físico estimado del recorrido completo. No mide dificultad técnica, acceso, clima, seguridad "
-               "ni aptitud personal.")
+    st.caption("Categoría relativa obtenida con K-means a partir de distancia y subida, comparada con las 20 rutas de este estudio. "
+               "Es experimental; no mide dificultad técnica, acceso, clima, seguridad ni aptitud personal.")
     if fila["sensible"]:
-        st.caption("La categoría cambia en algunos escenarios metodológicos. Más detalle en «Cómo se obtuvo esta categoría», abajo.")
+        st.caption("La categoría cambia en al menos una prueba de sensibilidad del modelo. Ver «Cómo se obtuvo esta categoría».")
+    elif fila["cerca_de_frontera"]:
+        st.caption("Esta ruta está cerca del límite entre dos grupos de la muestra.")
     for texto_destacado in vr.advertencias_destacadas(id_ruta, verificacion):
         st.warning(humanizar(texto_destacado, nombres))
 
@@ -428,10 +434,8 @@ def ficha(fila):
         ("altitud", num(fila["elevacion_max_m"], 0), "m", "Altitud máxima"),
     ]), unsafe_allow_html=True)
 
-    st.markdown("**Dónde cae esta ruta en la escala de esfuerzo estimado**")
-    st.markdown(vz.escala_esfuerzo(fila["horas"], fila["nivel"]), unsafe_allow_html=True)
-    st.caption(f"Esfuerzo estimado de {num(fila['horas'], 2)} horas de marcha equivalentes. Es un valor de la regla de clasificación, no "
-               "una duración garantizada: depende del ritmo, la carga y el estado del sendero.")
+    st.caption(f"Referencia adicional: {num(fila['horas'], 2)} horas de esfuerzo estimado por una regla de marcha. "
+               "Este valor no determina el grupo K-means ni es una duración garantizada.")
 
     st.markdown("#### Avisos de esta ruta")
     st.caption("Son independientes de la categoría: una ruta Fácil puede tener altitud, acceso restringido o terreno exigente.")
@@ -459,18 +463,21 @@ def ficha(fila):
 
     with st.expander("Cómo se obtuvo esta categoría"):
         st.markdown(
-            f"Para el recorrido completo ({num(fila['distancia_total_km'])} km, {num(fila['ascenso_total_m'], 0)} m de subida y "
-            f"{num(fila['descenso_m'], 0)} m de bajada) la regla estima {num(fila['horas'], 2)} horas de esfuerzo. "
-            f"Eso corresponde a la categoría **{fila['nivel']}**: Fácil hasta 1 h, Moderada de más de 1 h a 3 h y Difícil por encima de 3 h."
+            f"K-means agrupó 20 recorridos según dos medidas del trayecto completo: distancia "
+            f"({num(fila['distancia_total_km'])} km) y subida acumulada ({num(fila['ascenso_total_m'], 0)} m). "
+            f"Las dos medidas se estandarizaron antes de agrupar. Esta ruta quedó en el grupo **{fila['nivel']}**. "
+            "Los nombres Fácil, Moderada y Difícil ordenan los tres grupos por su esfuerzo relativo en esta muestra; "
+            "no son umbrales universales ni un juicio de seguridad."
         )
+        st.caption(f"Como contraste, la regla de marcha estima {num(fila['horas'], 2)} h y la clasifica "
+                   f"como {fila['nivel_regla']}. Esa regla no asignó la categoría mostrada arriba.")
         if fila["sensible"]:
-            st.markdown("**Esta ruta es sensible a los supuestos.** Si se cambia alguno de los siguientes, la categoría sería otra:")
-            for escenario, nivel in fila["cambios"]:
-                st.markdown(f"- {'; '.join(ESCENARIOS.get(e, e) for e in escenario.split('|'))}: {nivel}.")
-            st.caption("La categoría publicada es la del escenario base (4 km/h y filtro de elevación de tres puntos). "
-                       "Ningún escenario es más verdadero que otro: no hay medidas de campo con las que contrastarlos.")
+            st.markdown("**La asignación cambia al repetir el análisis en estos escenarios:**")
+            for escenario in fila["cambios"]:
+                st.markdown(f"- {ESCENARIOS_K3.get(escenario, escenario)}.")
+            st.caption("Se muestra el grupo del modelo base. Los escenarios alternativos son pruebas de sensibilidad, no mediciones de campo.")
         else:
-            st.caption("La categoría no cambió en ninguno de los escenarios probados (3 y 5 km/h; elevación filtrada con ventanas de tres y cinco puntos, o sin filtrar).")
+            st.caption("La asignación no cambió en las pruebas consideradas para los avisos de la página.")
 
     with st.expander("Clima estimado cerca del recorrido (opcional)"):
         st.caption(
@@ -562,9 +569,9 @@ def explorar():
         return
     filtrado = filtro_lugar != TODOS or filtro_nivel != TODOS or bool(consulta)
     visibles = lista if (filtrado or st.session_state.get("mostrar_todas")) else lista[:INICIALES]
-    st.markdown("**Dificultad física estimada:** Fácil (hasta 1 h de esfuerzo estimado) · Moderada (más de 1 h y hasta 3 h) · "
-                "Difícil (más de 3 h).")
-    st.caption(f"{len(visibles)} de {len(rutas)} rutas. Ordenadas de menor a mayor esfuerzo físico estimado; el orden no indica cuál elegir. "
+    st.markdown("**Dificultad física relativa:** Fácil, Moderada y Difícil son los tres grupos que K-means formó "
+                "con distancia y subida de estas 20 rutas; son categorías experimentales, no límites de horas.")
+    st.caption(f"{len(visibles)} de {len(rutas)} rutas. Ordenadas primero por grupo y luego por horas de referencia; el orden no indica cuál elegir. "
                "Pulsa «Ver ruta» para abrir el mapa, el perfil y los avisos.")
     for inicio in range(0, len(visibles), 4):
         columnas = st.columns(4)
@@ -596,7 +603,7 @@ def comparar():
     vr.validar_comparacion(alternativas)
     alternativas.sort(key=lambda r: (r["horas"], r["nombre_ruta"]))
     st.markdown(vz.rejilla([tarjeta(r, verificacion) for r in alternativas], columnas=min(3, len(alternativas))), unsafe_allow_html=True)
-    st.caption("Ordenadas de menor a mayor esfuerzo físico estimado. Esto no indica cuál elegir: no se evalúan el acceso, el estado del sendero "
+    st.caption("Ordenadas por horas de referencia dentro de este destino. El color muestra el grupo K-means relativo. Esto no indica cuál elegir: no se evalúan el acceso, el estado del sendero "
                "ni tu condición física.")
     barras = [dict(r, etiqueta=r["nombre_ruta"]) for r in alternativas]
     b1, b2 = st.columns(2)
@@ -649,55 +656,56 @@ def metodologia():
     conteos = {n: sum(1 for r in rutas if r["nivel"] == n) for n in vz.NIVELES}
     st.markdown("#### El resultado en una mirada")
     st.markdown(vz.resumen_niveles(conteos), unsafe_allow_html=True)
-    st.caption("Cada ruta tiene una sola categoría de dificultad física estimada. Las 20 rutas son una muestra intencional, no todas las rutas de Pichincha.")
+    st.caption("Cada ruta tiene un grupo K-means de esfuerzo físico relativo. Las 20 rutas son una muestra intencional, no todas las rutas de Pichincha. Las etiquetas son experimentales.")
     st.markdown(vz.grafico_horas([{"nombre": r["nombre_ruta"], "horas": r["horas"], "nivel": r["nivel"], "sensible": r["sensible"]} for r in rutas]),
                 unsafe_allow_html=True)
 
     st.markdown("#### Cómo se calculó")
     st.markdown(vz.flujo([
         ("Reunir trazados", "Recorridos de OpenStreetMap con fuente, licencia y fecha registradas; cada uno se revisó antes de incluirlo."),
-        ("Medir", "Distancia, subida y bajada de cada ruta completa (ida y vuelta, o circuito) con la misma fórmula."),
-        ("Estimar el esfuerzo", "Se estiman las horas de esfuerzo según la distancia horizontal y el desnivel."),
-        ("Categorizar", "Hasta 1 h es Fácil, más de 1 h hasta 3 h es Moderada y más de 3 h es Difícil."),
-        ("Probar la sensibilidad", "Se repite con otros ritmos y otros filtros de elevación para ver qué rutas cambian."),
+        ("Medir", "Distancia total y subida acumulada de cada ruta completa (ida y vuelta, o circuito)."),
+        ("Agrupar", "K-means estandariza las dos medidas y forma tres grupos entre las 20 rutas estudiadas."),
+        ("Nombrar", "Los grupos se ordenan por distancia y subida: Fácil, Moderada y Difícil en sentido relativo."),
+        ("Comprobar", "Se contrastan los grupos con Ward, DBSCAN, otros pesos y variantes del modelo de elevación."),
     ]), unsafe_allow_html=True)
     st.markdown(
-        "La regla se inspira en el componente de cantidad de esfuerzo del método MIDE, pero **no es el método MIDE completo**: "
-        "el proyecto no tiene una valoración homogénea del firme, la orientación ni la severidad del medio de las 20 rutas."
+        "K-means con **k=3** es el método que asigna la categoría mostrada en la página. Usa solo distancia total y subida acumulada, "
+        "estandarizadas antes del agrupamiento. Los nombres son relativos a esta muestra; una ruta nueva podría cambiar los grupos. "
+        "La regla inspirada en el esfuerzo MIDE se conserva como contraste y **no es el método MIDE completo**."
     )
-    with st.expander("La regla de esfuerzo, con detalle"):
+    with st.expander("Cómo se nombraron los grupos"):
         st.markdown(
-            "- **Componente horizontal:** distancia total ÷ 4 km/h.\n"
-            "- **Componente de desnivel:** subida ÷ 400 m/h + bajada ÷ 600 m/h.\n"
-            "- **Esfuerzo estimado:** el mayor de los dos componentes más la mitad del menor.\n"
-            "- En rutas de ida y vuelta, la bajada del regreso es la subida de la ida y viceversa; en circuitos se usa el perfil completo.\n"
-            "- Las elevaciones salen del modelo digital Copernicus DEM GLO-30 (celdas de 30 m), filtradas con la mediana de tres puntos."
+            "- **Fácil:** grupo con menor distancia y subida relativas dentro de estas 20 rutas.\n"
+            "- **Moderada:** grupo intermedio en esas dos medidas.\n"
+            "- **Difícil:** grupo con mayor esfuerzo relativo; contiene solo dos rutas.\n"
+            "- Los grupos no proceden de umbrales de horas ni equivalen a una escala de seguridad o dificultad técnica.\n"
+            "- La subida procede de Copernicus DEM GLO-30, filtrado con mediana de tres puntos."
         )
         st.markdown(vz.tabla_html(
-            ["Categoría", "Esfuerzo estimado", "Rutas", "Distancia"],
-            [[escape(n), c, str(conteos[n]), rango_km(rutas, n)]
-             for n, c in zip(vz.NIVELES, ("hasta 1 h", "más de 1 h y hasta 3 h", "más de 3 h"))]), unsafe_allow_html=True)
+            ["Categoría relativa", "Rutas", "Distancia observada"],
+            [[escape(n), str(conteos[n]), rango_km(rutas, n)] for n in vz.NIVELES]), unsafe_allow_html=True)
     with st.expander("Qué significa cada categoría, y qué no"):
         st.markdown(
-            "- **Fácil, Moderada y Difícil** describen únicamente el **esfuerzo físico estimado** del recorrido completo.\n"
+            "- **Fácil, Moderada y Difícil** nombran grupos de **esfuerzo físico relativo** del recorrido completo en esta muestra.\n"
             "- **No** describen dificultad técnica, orientación, estado del sendero, acceso vigente, clima, seguridad ni aptitud personal.\n"
             "- La altitud, el acceso y el carácter técnico se muestran aparte, como avisos de cada ruta."
         )
     sensibles = [r for r in rutas if r["sensible"]]
-    with st.expander(f"Sensibilidad: {len(sensibles)} rutas cambian de categoría en algún escenario"):
-        st.write("Se repitió la clasificación con 3 y 5 km/h en horizontal y con la elevación filtrada con otra ventana o sin filtrar. "
-                 "Las rutas de la tabla cambian al menos en un escenario; la categoría publicada es la del escenario base.")
+    with st.expander(f"Sensibilidad: {len(sensibles)} rutas cambian de grupo en alguna prueba"):
+        st.write("Se repitió K-means con otros pesos, con el ascenso sin filtrar y con la pendiente como variable adicional. "
+                 "Se excluye la prueba de añadir altitud máxima al aviso individual, porque la altitud no mide trabajo acumulado. "
+                 "Las rutas de la tabla cambian al menos en una de las pruebas indicadas.")
         filas = []
         for r in sorted(sensibles, key=lambda r: r["nombre_ruta"]):
-            texto = "; ".join(f"{' y '.join(ESCENARIOS.get(e, e) for e in esc.split('|'))}: {nivel}" for esc, nivel in r["cambios"])
+            texto = "; ".join(ESCENARIOS_K3.get(esc, esc) for esc in r["cambios"])
             filas.append([escape(r["nombre_ruta"]), escape(r["nivel"]), escape(texto)])
-        st.markdown(vz.tabla_html(["Ruta", "Categoría publicada", "Escenarios en que cambia"], filas), unsafe_allow_html=True)
+        st.markdown(vz.tabla_html(["Ruta", "Categoría del modelo base", "Pruebas en que cambia"], filas), unsafe_allow_html=True)
     with st.expander("Contrastes metodológicos (para quien revisa la tesis)"):
         st.markdown(
-            "- **K-means (dos grupos)** sobre distancia y subida muestra la estructura de la muestra, pero no produce las tres categorías públicas.\n"
-            "- **Ward y DBSCAN** se usaron como contraste de esa estructura. DBSCAN deja varias rutas de mayor subida sin grupo y no confirma la clasificación.\n"
-            "- **Índice de esfuerzo de referencia (distancia ÷ 5 + subida ÷ 600)** es un antecedente descriptivo; no compite con la categoría.\n"
-            "- Ninguno de estos análisis se usa como etiqueta pública ni como recomendación."
+            "- **Ward** coincide con K-means k=3 salvo en una ruta; **DBSCAN** no respalda tres grupos para las 20 rutas.\n"
+            "- La **regla de marcha inspirada en MIDE** da otra categoría a cuatro rutas. Se mantiene como contraste, no como verdad de terreno.\n"
+            "- El ensayo previo de K-means k=2 y el índice HEN son análisis complementarios.\n"
+            "- Según dos criterios prefijados, la evaluación científica original concluyó que todavía no está justificado sustituir la regla por k=3 como clasificación validada: el grupo superior tiene solo dos rutas y el ascenso sin filtrar mueve cuatro asignaciones. Esto no refuta definitivamente k=3. La página muestra sus grupos como resultado experimental, con estos límites visibles."
         )
 
 

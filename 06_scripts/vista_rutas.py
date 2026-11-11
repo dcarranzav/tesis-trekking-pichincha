@@ -1,8 +1,8 @@
 """Capa de datos de la interfaz pública (comparación neutral y visor de ruta).
 
-Solo lee los archivos del repositorio; no modifica datos científicos, no entrena
-modelos y no asigna dificultad. Mientras no exista una clasificación final
-validada, la interfaz muestra «clasificación en desarrollo».
+Solo lee los archivos del repositorio; no modifica datos científicos ni entrena
+modelos. Desde el 10/11, carga grupos K-means k=3 archivados para la página
+como categorías físicas relativas y experimentales.
 
 Usa únicamente la biblioteca estándar para que pueda probarse sin dependencias
 geoespaciales.
@@ -37,6 +37,9 @@ VALIDACION_MODELO = TABLAS / "validacion_modelo_final.json"
 VISOR = Path(__file__).resolve().parent / "visor_ruta"
 PERFILES_CRUDOS = RAIZ / "03_datos_intermedios" / "elevacion"
 CATEGORIAS_AVISOS = RAIZ / "01_documentacion" / "categorias_avisos_interfaz.csv"
+ASIGNACIONES_K3 = TABLAS / "kmeans_k3_asignaciones_2026-11-10.csv"
+SENSIBILIDAD_K3 = TABLAS / "kmeans_k3_sensibilidad_2026-11-10.csv"
+PARAMETROS_K3 = TABLAS / "kmeans_k3_parametros_2026-11-10.json"
 
 META_ELEGIBLES = 20
 ELEGIBLE = "elegible_actual"
@@ -485,7 +488,7 @@ def grupo_kmeans_descriptivo(
 
 
 def archivo_clasificacion_dificultad(carpeta: Path = TABLAS) -> Path:
-    """Última clasificación física estimada de tres niveles disponible."""
+    """Archivo de la regla de marcha anterior, conservado para contraste."""
     archivos = sorted(carpeta.glob("clasificacion_dificultad_fisica_????-??-??.csv"))
     if not archivos:
         raise FileNotFoundError("No existe la clasificación Fácil/Moderada/Difícil")
@@ -497,7 +500,7 @@ def dificultad_fisica_estimada(
     catalogo: list[dict[str, str]] | None = None,
     archivo: Path | None = None,
 ) -> dict:
-    """Lee el nivel físico de tres categorías si cubre exactamente la muestra actual.
+    """Lee el nivel de la regla de marcha histórica si cubre la muestra actual.
 
     Esta categoría no habilita recomendaciones y no representa técnica, acceso,
     estado del sendero, clima, seguridad ni aptitud personal.
@@ -523,6 +526,60 @@ def dificultad_fisica_estimada(
         "metodo": fila["metodo"],
         "advertencia": fila["advertencia"],
     }
+
+
+def clasificacion_kmeans_k3(catalogo: list[dict[str, str]] | None = None,
+                             archivo: Path = ASIGNACIONES_K3,
+                             sensibilidad: Path = SENSIBILIDAD_K3,
+                             parametros: Path = PARAMETROS_K3) -> dict[str, dict]:
+    """Grupos k=3 archivados para la página; relativos a las 20 rutas del estudio.
+
+    La regla de horas se conserva como contraste, pero no asigna estas etiquetas.
+    Se rechaza una muestra distinta o valores distintos de los que se agruparon.
+    """
+    catalogo = cargar_catalogo() if catalogo is None else catalogo
+    elegibles = {f["id_ruta"]: f for f in catalogo if f["estado_modelado"] == ELEGIBLE}
+    filas = _leer_csv(archivo)
+    por_id = {f["id_ruta"]: f for f in filas}
+    if len(filas) != len(por_id) or set(por_id) != set(elegibles):
+        raise ValueError("Las asignaciones K-means no corresponden a las rutas elegibles actuales")
+    modelo = json.loads(parametros.read_text(encoding="utf-8"))
+    if set(modelo["ids_entrenamiento"]) != set(elegibles) or modelo["variables"] != ["distancia_total_km", "ascenso_total_m"]:
+        raise ValueError("Los parámetros K-means no corresponden a la muestra y variables actuales")
+    medias, desvios = modelo["media_entrenamiento"], modelo["desviacion_entrenamiento"]
+    centros = modelo["centroides_estandarizados_k3"]
+    if len(medias) != 2 or len(desvios) != 2 or len(centros) != 3 or any(len(c) != 2 for c in centros):
+        raise ValueError("Parámetros K-means incompletos")
+    nombres = ("Fácil", "Moderada", "Difícil")
+    cambios: dict[str, list[str]] = {}
+    for escenario in _leer_csv(sensibilidad):
+        if escenario["n_rutas"] != str(len(elegibles)) or escenario["escenario"] == "mas_elevacion_maxima":
+            continue  # la altitud es exposición; no es una variable de esfuerzo del modelo
+        for id_ruta in filter(None, escenario["rutas_cambian_de_grupo"].split("|")):
+            cambios.setdefault(id_ruta, []).append(escenario["escenario"])
+    resultado = {}
+    for id_ruta, fila in por_id.items():
+        grupo = int(fila["grupo_k3"])
+        if grupo not in (0, 1, 2):
+            raise ValueError(f"Grupo K-means inválido en {id_ruta}")
+        actual = elegibles[id_ruta]
+        for campo in ("distancia_total_km", "ascenso_total_m"):
+            if abs(float(fila[campo]) - float(actual[campo])) > 0.001:
+                raise ValueError(f"{id_ruta}: el valor de {campo} difiere del utilizado por K-means")
+        z = [(float(fila[campo]) - medias[i]) / desvios[i]
+             for i, campo in enumerate(("distancia_total_km", "ascenso_total_m"))]
+        grupo_calculado = min(range(3), key=lambda i: sum((z[j] - centros[i][j]) ** 2 for j in range(2)))
+        if grupo_calculado != grupo:
+            raise ValueError(f"{id_ruta}: la asignación difiere del centroide K-means archivado")
+        resultado[id_ruta] = {
+            "nivel": nombres[grupo], "orden": grupo + 1, "grupo": grupo,
+            "sensible": bool(cambios.get(id_ruta)), "escenarios_cambio": cambios.get(id_ruta, []),
+            "cerca_de_frontera": fila["cerca_de_frontera"] == "si",
+            "metodo": "K-means k=3 sobre distancia total y ascenso acumulado estandarizados",
+        }
+    if set(r["nivel"] for r in resultado.values()) != set(nombres):
+        raise ValueError("K-means no produjo los tres niveles esperados")
+    return resultado
 
 
 def ruta_perfil_crudo(id_ruta: str, carpeta: Path = PERFILES_CRUDOS) -> Path:

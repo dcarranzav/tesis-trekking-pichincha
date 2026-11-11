@@ -1,0 +1,21 @@
+id_ruta,nombre_ruta,id_destino,destino_exacto,distancia_total_km,ascenso_total_m,pendiente_media_abs_pct,elevacion_max_m,esfuerzo_estimado_h,nivel_regla_orden,dificultad_regla,grupo_k2,grupo_k3,grupo_k3_nombre,grupo_ward_k3,silueta_individual_k3,distancia_centroide_propio_z,distancia_segundo_centroide_z,margen_relativo_k3,cerca_de_frontera,ruta_a_revisar
+R001,Sendero Cumbre Rucu Pichincha,D001,Cumbre del Rucu Pichincha por el sendero del arenal,9.607,824.839,17.171,4678.573,4.6377,3,Difícil,2,2,G3 mayor esfuerzo relativo,3,0.3182,0.8847,2.5571,1.8905,si,si
+R003,Sendero Cascada Cóndor Machay,D003,Cascada Cóndor Machay,7.484,448.981,11.998,3289.859,2.8064,2,Moderada,2,1,G2 esfuerzo intermedio relativo,2,0.4346,0.7971,1.6385,1.0555,no,si
+R004,Circuito Pondoña (Sendero Pondoña),D004,Circuito Pondoña (recorrido circular),1.663,192.821,23.187,2745.402,1.0113,2,Moderada,1,0,G1 menor esfuerzo relativo,1,0.709,0.3168,1.8132,4.7245,no,no
+R006,Sendero al Ilaló,D006,Cima del Cerro Ilaló,5.232,817.832,31.262,3181.26,4.0616,3,Difícil,2,2,G3 mayor esfuerzo relativo,3,0.1391,0.8847,2.0016,1.2625,si,si
+R008,Sendero de ascenso al Pondoña,D004,Parte alta del Pondoña desde la base oriental,1.57,138.994,17.704,2724.113,0.7754,1,Fácil,1,0,G1 menor esfuerzo relativo,1,0.7796,0.1086,1.9567,17.0093,no,no
+R011,Sendero Masked Trogon,D009,Extremo común de los senderos de Yanacocha,0.781,50.672,12.968,3535.71,0.3088,1,Fácil,1,0,G1 menor esfuerzo relativo,1,0.7559,0.5028,2.4351,3.843,no,no
+R013,Sendero Oso de Anteojos,D009,Extremo común de los senderos de Yanacocha,1.289,81.341,12.626,3549.287,0.5,1,Fácil,1,0,G1 menor esfuerzo relativo,1,0.7888,0.2588,2.1894,7.46,no,no
+R015,Mindo Hermit Trail - Cascada Corazón,D010,Cascada Corazón (Mindo Hermit Trail),3.155,239.27,15.17,1400.471,1.3913,2,Moderada,1,0,G1 menor esfuerzo relativo,1,0.3152,0.7669,1.1817,0.5408,si,no
+R016,Mindo Hermit Trail - Mirador,D010,Mirador (Mindo Hermit Trail),1.634,128.932,15.78,1408.271,0.7415,1,Fácil,1,0,G1 menor esfuerzo relativo,1,0.7842,0.0602,1.9576,31.5017,no,no
+R017,Yellow House Trail,D010,Yellow House,5.469,279.978,10.238,1520.28,1.9505,2,Moderada,2,1,G2 esfuerzo intermedio relativo,2,0.6044,0.3904,1.6549,3.2389,no,si
+R018,Sendero de la Cascada de Maquipucuna,D008,Cascada de Maquipucuna,0.515,19.661,7.628,1284.225,0.1697,1,Fácil,1,0,G1 menor esfuerzo relativo,1,0.7169,0.673,2.6017,2.8661,no,no
+R019,Sendero Tarabita - Cascada La Reina,D011,Cascada La Reina,4.661,312.715,13.418,1651.464,1.8856,2,Moderada,2,1,G2 esfuerzo intermedio relativo,2,0.4691,0.4923,1.4445,1.9344,no,si
+R020,Yellow House Trail vía Sendero 3,D010,Yellow House,6.633,339.038,10.222,1539.781,2.3646,2,Moderada,2,1,G2 esfuerzo intermedio relativo,2,0.6765,0.3807,2.1457,4.6364,no,si
+R021,Yellow House Trail vía Senderos 1 y 2,D010,Yellow House,5.805,289.526,9.975,1520.28,2.0544,2,Moderada,2,1,G2 esfuerzo intermedio relativo,2,0.6491,0.3344,1.7959,4.371,no,si
+R022,Camino a la Cruz del Ilaló desde Los Olivos,D012,Cruz del Ilaló,4.363,521.309,23.894,3082.381,2.7175,2,Moderada,2,1,G2 esfuerzo intermedio relativo,3,0.4013,0.8829,1.8083,1.0481,no,si
+R023,Sendero a Cascada Guagrapamba,D013,Cascada Guagrapamba,3.339,203.427,12.185,2876.723,1.265,2,Moderada,1,0,G1 menor esfuerzo relativo,1,0.3447,0.7342,1.2026,0.638,si,no
+R024,Cerro de la Luz - sendero directo al mirador,D014,Mirador Cerro de la Luz,1.011,27.112,5.364,2389.015,0.3092,1,Fácil,1,0,G1 menor esfuerzo relativo,1,0.75,0.513,2.4215,3.7199,no,no
+R025,Cerro de la Luz - sendero superior al mirador,D014,Mirador Cerro de la Luz,2.55,127.66,10.012,2389.015,0.9035,1,Fácil,1,0,G1 menor esfuerzo relativo,1,0.6757,0.3214,1.659,4.1615,no,no
+R026,Sendero Tarabita - Cascada Guarumos,D015,Cascada Guarumos,2.133,180.045,16.883,1505.709,1.0168,2,Moderada,1,0,G1 menor esfuerzo relativo,1,0.6963,0.2994,1.6693,4.575,no,no
+R027,Sendero del Viento - sector recreativo Moraspungo,D016,Sector recreativo del Sendero del Viento,1.457,66.371,9.11,3053.263,0.5025,1,Fácil,1,0,G1 menor esfuerzo relativo,1,0.7817,0.2708,2.1732,7.0241,no,no

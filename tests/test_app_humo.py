@@ -187,7 +187,7 @@ class AppHumo(unittest.TestCase):
 
     def test_metodologia_explica_la_regla_sin_lista_de_pendientes(self):
         texto = ejecutar("Metodología y límites").textos()
-        self.assertIn("Hasta 1 h es Fácil", texto)
+        self.assertIn("K-means con **k=3**", texto)
         self.assertNotIn("Qué falta por validar", texto)
         self.assertNotIn("Recomendación de salida activa", texto)
 

@@ -397,6 +397,7 @@ def auditar_codigo_y_documentacion(auditoria: Auditoria) -> None:
         "metodologia_elevacion_piloto.md",
         "metodologia_clasificacion_recomendacion.md",
         "clasificacion_dificultad_fisica_tres_niveles_2026-10-23.md",
+        "decision_interfaz_kmeans_k3_2026-11-10.md",
         "prompt_claude_interfaz_plan_final_2026-10-23.md",
         "cronograma_2026-10-07_a_2026-10-27.md",
         "registro_descargas_osm.md",
@@ -432,6 +433,26 @@ def auditar_codigo_y_documentacion(auditoria: Auditoria) -> None:
         )
     except Exception as exc:
         auditoria.registrar("clasificacion_fisica", "tres_niveles", False, "", str(exc))
+
+    try:
+        k3 = pd.read_csv(RESULTADOS / "tablas" / "kmeans_k3_asignaciones_2026-11-10.csv")
+        base = pd.read_csv(RESULTADOS / "tablas" / "dataset_clasificacion_rutas.csv")
+        elegibles = base.loc[base["estado_modelado"].eq("elegible_actual")]
+        valores = k3.merge(elegibles[["id_ruta", "distancia_total_km", "ascenso_total_m"]],
+                           on="id_ruta", how="outer", suffixes=("_k3", "_dataset"), indicator=True)
+        valido = (
+            len(k3) == len(elegibles) == 20
+            and k3["id_ruta"].is_unique
+            and valores["_merge"].eq("both").all()
+            and k3["grupo_k3"].value_counts().to_dict() == {0: 12, 1: 6, 2: 2}
+            and (valores["distancia_total_km_k3"] - valores["distancia_total_km_dataset"]).abs().le(0.001).all()
+            and (valores["ascenso_total_m_k3"] - valores["ascenso_total_m_dataset"]).abs().le(0.001).all()
+        )
+        auditoria.registrar("clasificacion_fisica", "kmeans_k3_interfaz", valido,
+                            "20 asignaciones K-means k=3: 12/6/2 y medidas coincidentes",
+                            "Revisar IDs, grupos o medidas del modelo publicado")
+    except Exception as exc:
+        auditoria.registrar("clasificacion_fisica", "kmeans_k3_interfaz", False, "", str(exc))
 
 
 def guardar_resultados(auditoria: Auditoria, dataset: pd.DataFrame) -> None:

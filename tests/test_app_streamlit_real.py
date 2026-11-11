@@ -21,7 +21,7 @@ RAIZ = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(RAIZ / "06_scripts"))
 CODIGO_RUTA = re.compile(r"\bR\d{3}\b")
 EMOJI = re.compile("[\U0001F300-\U0001FAFF☀-➿⭐✅]")
-OTROS = re.compile(r"k-?means|dbscan|índice de esfuerzo|clase física relativa", re.I)
+OTROS = re.compile(r"dbscan|índice de esfuerzo", re.I)
 
 
 def nueva(seccion=None, registrado=True, **estado):
@@ -53,7 +53,7 @@ class AppStreamlitReal(unittest.TestCase):
         at = nueva()
         self.assertFalse(at.exception, [e.value for e in at.exception])
         t = texto(at)
-        self.assertIn("¿Qué tan exigente físicamente es esta ruta?", t)
+        self.assertIn("Dificultad física relativa", t)
         self.assertNotIn("Versión en desarrollo", t)
         self.assertEqual(len(at.get("iframe")), 0)  # la ficha se abre con «Ver ruta»
         self.assertEqual(len([b for b in at.button if b.key and b.key.startswith("ver_")]), 12)
@@ -103,11 +103,11 @@ class AppStreamlitReal(unittest.TestCase):
         self.assertFalse(at.exception, [e.value for e in at.exception])
         self.assertEqual(len([b for b in at.button if b.key and b.key.startswith("ver_")]), 20)
 
-    def test_las_20_tarjetas_y_el_reparto_8_10_2(self):
+    def test_las_20_tarjetas_y_el_reparto_12_6_2(self):
         at = nueva(mostrar_todas=True)
         html = "".join(str(e.value) for e in at.markdown if '<div class="tarjeta' in str(e.value))
         self.assertEqual(html.count('<div class="tarjeta'), 20)
-        for nivel, n in (("Fácil", 8), ("Moderada", 10), ("Difícil", 2)):
+        for nivel, n in (("Fácil", 12), ("Moderada", 6), ("Difícil", 2)):
             self.assertEqual(html.count(f"<b>{nivel}</b>"), n, nivel)
 
     def test_filtro_de_dificultad_y_busqueda_por_nombre(self):
@@ -131,7 +131,7 @@ class AppStreamlitReal(unittest.TestCase):
             self.assertIsNone(OTROS.search(v), seccion)
 
     def test_ruta_sensible_muestra_el_aviso_y_las_demas_no(self):
-        frase = "La categoría cambia en algunos escenarios metodológicos"
+        frase = "La categoría cambia en al menos una prueba de sensibilidad del modelo"
         self.assertIn(frase, texto(nueva(ruta_detalle="R003")))
         self.assertNotIn(frase, texto(nueva(ruta_detalle="R011")))
 

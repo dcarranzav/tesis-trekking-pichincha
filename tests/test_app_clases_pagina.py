@@ -1,7 +1,4 @@
-"""Experiencia de tres niveles en la página (Streamlit simulado): Fácil/Moderada/Difícil, sin códigos ni K-means.
-
-El nombre del archivo es histórico: antes comprobaba las dos clases K-means, que ya no aparecen en la vista principal.
-"""
+"""Clasificación pública relativa de tres grupos K-means en la página."""
 
 import re
 import sys
@@ -14,8 +11,8 @@ sys.path.insert(0, str(RAIZ / "06_scripts"))
 from test_app_humo import CODIGO_RUTA, EMOJI, ejecutar  # noqa: E402
 import vista_rutas as vr  # noqa: E402
 
-SENSIBLES = {"R003", "R004", "R008", "R019", "R025", "R026"}
-OTROS_NIVELES = re.compile(r"k-?means|dbscan|\bward\b|\bhen\b|índice de esfuerzo|clase física relativa|exigencia física estimada", re.I)
+SENSIBLES = {"R003", "R006", "R015", "R019", "R022", "R023"}
+OTROS_NIVELES = re.compile(r"dbscan|\bward\b|\bhen\b|índice de esfuerzo", re.I)
 SIN_RECOMENDAR = re.compile(r"mejor ruta|te recomendamos|recomendada", re.I)
 
 
@@ -24,11 +21,32 @@ def nombre(id_ruta):
 
 
 class TresNiveles(unittest.TestCase):
-    def test_las_20_rutas_tienen_una_categoria_y_el_reparto_es_8_10_2(self):
+    def test_las_20_rutas_tienen_una_categoria_kmeans_y_el_reparto_es_12_6_2(self):
         cat = vr.cargar_catalogo()
-        niveles = [vr.dificultad_fisica_estimada(f["id_ruta"], cat)["nivel"] for f in cat if f["estado_modelado"] == vr.ELEGIBLE]
+        niveles = [vr.clasificacion_kmeans_k3(cat)[f["id_ruta"]]["nivel"] for f in cat if f["estado_modelado"] == vr.ELEGIBLE]
         self.assertEqual(len(niveles), 20)
-        self.assertEqual({n: niveles.count(n) for n in ("Fácil", "Moderada", "Difícil")}, {"Fácil": 8, "Moderada": 10, "Difícil": 2})
+        self.assertEqual({n: niveles.count(n) for n in ("Fácil", "Moderada", "Difícil")}, {"Fácil": 12, "Moderada": 6, "Difícil": 2})
+
+    def test_kmeans_es_la_fuente_publica_y_la_regla_queda_como_contraste(self):
+        catalogo = vr.cargar_catalogo()
+        modelo = vr.clasificacion_kmeans_k3(catalogo)
+        discrepancias = {id_ruta for id_ruta, grupo in modelo.items()
+                         if grupo["nivel"] != vr.dificultad_fisica_estimada(id_ruta, catalogo)["nivel"]}
+        self.assertEqual(discrepancias, {"R004", "R015", "R023", "R026"})
+        st = ejecutar(valores={"ruta_detalle": "R004"})
+        self.assertIn("K-means agrupó 20 recorridos", st.textos(visibles=False))
+        self.assertIn("la clasifica como Moderada", st.textos(visibles=False))
+
+    def test_modelo_rechaza_muestra_o_medidas_alteradas(self):
+        catalogo = vr.cargar_catalogo()
+        alterado = [dict(f) for f in catalogo]
+        elegible = next(f for f in alterado if f["id_ruta"] == "R004")
+        elegible["distancia_total_km"] = "999"
+        with self.assertRaisesRegex(ValueError, "difiere"):
+            vr.clasificacion_kmeans_k3(alterado)
+        elegible["estado_modelado"] = "no_elegible_aun"
+        with self.assertRaisesRegex(ValueError, "no corresponden"):
+            vr.clasificacion_kmeans_k3(alterado)
 
     def test_explorar_empieza_con_12_tarjetas_y_un_boton_para_ver_el_resto(self):
         st = ejecutar()
@@ -52,10 +70,10 @@ class TresNiveles(unittest.TestCase):
         for t in tarjetas:
             self.assertEqual(len(re.findall(r"<b>(Fácil|Moderada|Difícil)</b>", t)), 1)
         conteo = {n: sum(f"<b>{n}</b>" in t for t in tarjetas) for n in ("Fácil", "Moderada", "Difícil")}
-        self.assertEqual(conteo, {"Fácil": 8, "Moderada": 10, "Difícil": 2})
-        self.assertIn("Dificultad física estimada", st.textos() + st.html())
+        self.assertEqual(conteo, {"Fácil": 12, "Moderada": 6, "Difícil": 2})
+        self.assertIn("Dificultad física relativa", st.textos() + st.html())
 
-    def test_la_vista_principal_no_muestra_codigos_emojis_ni_clases_kmeans(self):
+    def test_la_vista_principal_no_muestra_codigos_emojis_ni_modelos_secundarios(self):
         for seccion in ("Explorar rutas", "Comparar alternativas"):
             st = ejecutar(seccion)
             todo = st.textos() + st.html()
@@ -76,7 +94,7 @@ class TresNiveles(unittest.TestCase):
             self.assertIn(fila["nombre_ruta"], visible)
 
     def test_aviso_de_categoria_sensible_solo_en_las_seis_rutas(self):
-        frase = "La categoría cambia en algunos escenarios metodológicos"
+        frase = "La categoría cambia en al menos una prueba de sensibilidad del modelo"
         for fila in vr.cargar_catalogo():
             if fila["estado_modelado"] != vr.ELEGIBLE:
                 continue
@@ -85,7 +103,7 @@ class TresNiveles(unittest.TestCase):
 
     def test_filtros_por_dificultad_lugar_y_nombre(self):
         self.assertEqual(len(ejecutar(valores={"filtro_nivel": "Difícil"}).tarjetas()), 2)
-        self.assertEqual(len(ejecutar(valores={"filtro_nivel": "Fácil"}).tarjetas()), 8)
+        self.assertEqual(len(ejecutar(valores={"filtro_nivel": "Fácil"}).tarjetas()), 12)
         self.assertEqual(len(ejecutar(valores={"filtro_lugar": "Mindo"}).tarjetas()), 5)
         cascadas = ejecutar(valores={"filtro_nombre": "cascada"}).tarjetas()
         self.assertTrue(cascadas and all("ascada" in t for t in cascadas))
@@ -111,12 +129,11 @@ class TresNiveles(unittest.TestCase):
         self.assertIn("Difícil", st.html())
         self.assertIn("independientes de la categoría", t)
 
-    def test_la_escala_y_la_explicacion_de_la_categoria_estan_en_la_ficha(self):
+    def test_la_explicacion_kmeans_esta_en_la_ficha_sin_umbrales_de_horas(self):
         st = ejecutar(valores={"ruta_detalle": "R003"})
-        html = st.html()
-        self.assertIn('class="escala"', html)
         self.assertTrue(any(n == "expander" and a[0] == "Cómo se obtuvo esta categoría" for n, a, k, _ in st.llamadas))
-        self.assertIn("3 km/h", st.textos(visibles=False))
+        self.assertIn("K-means agrupó 20 recorridos", st.textos(visibles=False))
+        self.assertNotIn('class="escala"', st.html())
 
     def test_el_clima_es_secundario_y_va_en_un_desplegable(self):
         st = ejecutar(valores={"ruta_detalle": "R003"})
@@ -167,25 +184,22 @@ class CompararAlternativas(unittest.TestCase):
 
 
 class Metodologia(unittest.TestCase):
-    def test_explica_regla_categorias_y_sensibilidad_sin_lista_de_pendientes(self):
+    def test_explica_kmeans_categorias_y_sensibilidad_sin_lista_de_pendientes(self):
         st = ejecutar("Metodología y límites")
         html = st.html(visibles=False)
         todo = html + st.textos(visibles=False)
-        for frase in ("no es el método MIDE completo", "distancia total ÷ 4 km/h", "subida ÷ 400 m/h", "bajada ÷ 600 m/h", "hasta 1 h",
-                      "más de 1 h y hasta 3 h", "más de 3 h", "6 rutas cambian"):
+        for frase in ("no es el método MIDE completo", "K-means", "k=3", "distancia total", "subida acumulada", "6 rutas cambian"):
             self.assertIn(frase, todo, frase)
         self.assertNotIn("Qué falta por validar", todo)
         self.assertNotIn("Recomendación de salida activa", todo)
-        self.assertIn("dificultad física estimada", todo)
+        self.assertIn("esfuerzo físico relativo", todo)
         self.assertEqual(len(re.findall(r'class="hg-fila"', html)), 20)
 
-    def test_los_contrastes_kmeans_dbscan_y_hen_solo_aparecen_en_el_detalle_metodologico(self):
+    def test_los_contrastes_dbscan_y_hen_solo_aparecen_en_el_detalle_metodologico(self):
         st = ejecutar("Metodología y límites")
         contrastes = [(a, p) for n, a, k, p in st.llamadas if n == "markdown" and "Contrastes metodológicos (para quien revisa la tesis)" in p]
         self.assertTrue(contrastes)
-        fuera = [a[0] for n, a, k, p in st.llamadas if n in ("markdown", "caption") and a
-                 and "Contrastes metodológicos (para quien revisa la tesis)" not in p and re.search(r"k-?means|dbscan", a[0], re.I)]
-        self.assertEqual(fuera, [])
+        self.assertIn("DBSCAN", st.textos(visibles=False) + st.html(visibles=False))
 
     def test_no_se_habilitan_recomendaciones(self):
         self.assertFalse(vr.NIVELES_FINALES.exists())

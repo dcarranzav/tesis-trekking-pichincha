@@ -212,9 +212,11 @@ codigo_python,ejecutar_notebook_python_puro.py,OK,Sintaxis válida
 codigo_python,ejecutar_notebooks_lectura.py,OK,Sintaxis válida
 codigo_python,ensayar_dbscan_exploratorio.py,OK,Sintaxis válida
 codigo_python,evaluar_kmeans_esfuerzo.py,OK,Sintaxis válida
+codigo_python,evaluar_kmeans_k3_dificultad.py,OK,Sintaxis válida
 codigo_python,evaluar_trazas_gpx_externas.py,OK,Sintaxis válida
 codigo_python,explorar_modelo_clasificacion.py,OK,Sintaxis válida
 codigo_python,extraer_elevacion_piloto.py,OK,Sintaxis válida
+codigo_python,fotos_pagina.py,OK,Sintaxis válida
 codigo_python,generar_eda_preliminar.py,OK,Sintaxis válida
 codigo_python,generar_evidencia_perfiles_lote.py,OK,Sintaxis válida
 codigo_python,generar_evidencia_perfiles_mindo.py,OK,Sintaxis válida
@@ -265,9 +267,10 @@ notebook_ejecucion,03_elevacion_piloto.ipynb,OK,4 celdas de código ejecutadas s
 notebook,04_ampliacion_rutas.ipynb,OK,JSON válido; 45 celdas; 22 celdas de código con sintaxis válida
 notebook_ejecucion,04_ampliacion_rutas.ipynb,OK,22 celdas de código ejecutadas sin salidas de error
 notebook_vigencia,04_ampliacion_rutas.ipynb,OK,La salida de consolidación muestra las 27 rutas vigentes
-notebook,05_validacion_metodologica.ipynb,OK,JSON válido; 35 celdas; 18 celdas de código con sintaxis válida
-notebook_ejecucion,05_validacion_metodologica.ipynb,OK,18 celdas de código ejecutadas sin salidas de error
+notebook,05_validacion_metodologica.ipynb,OK,JSON válido; 54 celdas; 26 celdas de código con sintaxis válida
+notebook_ejecucion,05_validacion_metodologica.ipynb,OK,26 celdas de código ejecutadas sin salidas de error
 evidencias,archivos_registrados,OK,43 evidencias físicas coinciden con el registro
 entorno,dependencias_principales,OK,9 dependencias principales están declaradas
-documentacion,documentos_metodologicos,OK,9 documentos esenciales localizados
+documentacion,documentos_metodologicos,OK,10 documentos esenciales localizados
 clasificacion_fisica,tres_niveles,OK,"20 rutas: Fácil=8, Moderada=10, Difícil=2"
+clasificacion_fisica,kmeans_k3_interfaz,OK,20 asignaciones K-means k=3: 12/6/2 y medidas coincidentes

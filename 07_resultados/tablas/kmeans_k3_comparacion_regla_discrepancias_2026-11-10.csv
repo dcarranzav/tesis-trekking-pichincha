@@ -1,0 +1,5 @@
+id_ruta,id_destino,distancia_total_km,ascenso_total_m,esfuerzo_estimado_h,dificultad_regla,grupo_k3_nombre,silueta_individual_k3,margen_relativo_k3
+R004,D004,1.663,192.821,1.0113,Moderada,G1 menor esfuerzo relativo,0.709,4.7245
+R015,D010,3.155,239.27,1.3913,Moderada,G1 menor esfuerzo relativo,0.3152,0.5408
+R023,D013,3.339,203.427,1.265,Moderada,G1 menor esfuerzo relativo,0.3447,0.638
+R026,D015,2.133,180.045,1.0168,Moderada,G1 menor esfuerzo relativo,0.6963,4.575

@@ -1,0 +1,10 @@
+k,grupo,n,centroide_distancia_z,centroide_ascenso_z,centroide_distancia_km,centroide_ascenso_m
+3,G1 menor esfuerzo relativo,12,-0.7115,-0.6299,1.7581,121.3588
+3,G2 esfuerzo intermedio relativo,6,0.897,0.4432,5.7358,365.2578
+3,G3 mayor esfuerzo relativo,2,1.5778,2.4498,7.4195,821.3355
+2,grupo 1 de 2,12,-0.7115,-0.6299,1.7581,121.3588
+2,grupo 2 de 2,8,1.0672,0.9448,6.1568,479.2772
+4,grupo 1 de 4,7,-0.9454,-0.8413,1.1796,73.2976
+4,grupo 2 de 4,5,-0.384,-0.3339,2.568,188.6446
+4,grupo 3 de 4,6,0.897,0.4432,5.7358,365.2578
+4,grupo 4 de 4,2,1.5778,2.4498,7.4195,821.3355

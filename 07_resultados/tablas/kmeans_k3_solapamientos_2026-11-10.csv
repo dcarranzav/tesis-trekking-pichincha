@@ -1,0 +1,7 @@
+grupos_adyacentes,medida,max_inferior,min_superior,se_solapan
+G1-G2,distancia_km,3.339,4.363,no
+G1-G2,ascenso_m,239.27,279.978,no
+G1-G2,esfuerzo_h,1.391,1.886,no
+G2-G3,distancia_km,7.484,5.232,si
+G2-G3,ascenso_m,521.309,817.832,no
+G2-G3,esfuerzo_h,2.806,4.062,no

@@ -1,0 +1,4 @@
+grupo,indice,n,rutas,distancia_km_min,distancia_km_mediana,distancia_km_media,distancia_km_max,ascenso_m_min,ascenso_m_mediana,ascenso_m_media,ascenso_m_max,esfuerzo_h_min,esfuerzo_h_mediana,esfuerzo_h_media,esfuerzo_h_max
+G1 menor esfuerzo relativo,1,12,R004|R008|R011|R013|R015|R016|R018|R023|R024|R025|R026|R027,0.515,1.602,1.758,3.339,19.661,128.296,121.359,239.27,0.17,0.758,0.741,1.391
+G2 esfuerzo intermedio relativo,2,6,R003|R017|R019|R020|R021|R022,4.363,5.637,5.736,7.484,279.978,325.876,365.258,521.309,1.886,2.21,2.296,2.806
+G3 mayor esfuerzo relativo,3,2,R001|R006,5.232,7.419,7.419,9.607,817.832,821.336,821.336,824.839,4.062,4.35,4.35,4.638

@@ -1,0 +1,13 @@
+criterio,valor,umbral,cumple
+C1 estabilidad entre semillas (ARI mín),1.0,>= 0.95,si
+C2a silueta k=3,0.5895,>= 0.50,si
+C2b silueta k=3 vs k=2 (diferencia),-0.0024,>= -0.05,si
+C3 tamaño mínimo de grupo,2.0,>= 3,no
+C4a inversiones de esfuerzo entre grupos adyacentes,0.0,== 0,si
+C4b solapamiento de rangos de esfuerzo entre adyacentes,0.0,== 0,si
+C5a pesos moderados (ARI mín),1.0,>= 0.80,si
+C5b alternativas DEM mediana5 y crudo (ARI mín),0.5606,>= 0.80,no
+C5c retiradas de una ruta con ARI >= 0.80 (proporción),1.0,>= 0.90,si
+C5d una alternativa por destino (ARI mín),1.0,>= 0.80,si
+Criterios que fallan,2.0,C3|C5,
+Decisión según reglas a priori,,B,
