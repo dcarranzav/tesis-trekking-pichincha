@@ -21,7 +21,7 @@ RAIZ = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(RAIZ / "06_scripts"))
 CODIGO_RUTA = re.compile(r"\bR\d{3}\b")
 EMOJI = re.compile("[\U0001F300-\U0001FAFF☀-➿⭐✅]")
-OTROS = re.compile(r"dbscan|índice de esfuerzo", re.I)
+OTROS = re.compile(r"k-means|dbscan|ward|mide|centroide|estandariz|índice de esfuerzo", re.I)
 
 
 def nueva(seccion=None, registrado=True, **estado):
@@ -49,11 +49,20 @@ def visible(at):
 
 @unittest.skipIf(AppTest is None, "Streamlit no está instalado en este entorno")
 class AppStreamlitReal(unittest.TestCase):
+    def test_el_modo_claro_funciona_en_bienvenida_y_en_la_pagina(self):
+        entrada = nueva(registrado=False, modo_visual="Claro")
+        self.assertFalse(entrada.exception, [e.value for e in entrada.exception])
+        self.assertEqual(entrada.session_state["modo_visual"], "Claro")
+        self.assertIn("fondo-cambio", "".join(str(e.value) for e in entrada.markdown))
+        pagina = nueva(modo_visual="Claro")
+        self.assertFalse(pagina.exception, [e.value for e in pagina.exception])
+        self.assertIn("#f2f6f3", "".join(str(e.value) for e in pagina.markdown))
+
     def test_arranque_sin_excepciones_con_portada_sin_aviso_de_desarrollo(self):
         at = nueva()
         self.assertFalse(at.exception, [e.value for e in at.exception])
         t = texto(at)
-        self.assertIn("Dificultad física relativa", t)
+        self.assertIn("Niveles de esfuerzo", t)
         self.assertNotIn("Versión en desarrollo", t)
         self.assertEqual(len(at.get("iframe")), 0)  # la ficha se abre con «Ver ruta»
         self.assertEqual(len([b for b in at.button if b.key and b.key.startswith("ver_")]), 12)
@@ -131,7 +140,7 @@ class AppStreamlitReal(unittest.TestCase):
             self.assertIsNone(OTROS.search(v), seccion)
 
     def test_ruta_sensible_muestra_el_aviso_y_las_demas_no(self):
-        frase = "La categoría cambia en al menos una prueba de sensibilidad del modelo"
+        frase = "Este nivel puede variar si se revisan las medidas de la ruta"
         self.assertIn(frase, texto(nueva(ruta_detalle="R003")))
         self.assertNotIn(frase, texto(nueva(ruta_detalle="R011")))
 
@@ -164,11 +173,12 @@ class AppStreamlitReal(unittest.TestCase):
         self.assertEqual(at.session_state["seccion"], "Explorar rutas")
         self.assertTrue(any("Sendero 3" in str(s.value) for s in at.subheader))
 
-    def test_metodologia_explica_limites_sin_lista_de_pendientes(self):
-        at = nueva("Metodología y límites")
+    def test_como_funciona_explica_limites_sin_lista_de_pendientes(self):
+        at = nueva("Cómo funciona")
         self.assertFalse(at.exception, [e.value for e in at.exception])
         t = texto(at)
-        self.assertIn("no es el método MIDE completo", t)
+        self.assertIn("distancia total", t)
+        self.assertIsNone(OTROS.search(t))
         self.assertNotIn("Qué falta por validar", t)
         self.assertNotIn("Recomendación de salida activa", t)
 
@@ -192,7 +202,7 @@ class AppStreamlitReal(unittest.TestCase):
             at.button(key="consultar_clima_R003").click().run()
         self.assertFalse(at.exception)
         html = "".join(str(e.value) for e in at.markdown)
-        for frase in ("Temperatura", "Precipitación", "20,7 °C", "1,2 mm", "Condición según el modelo"):
+        for frase in ("Temperatura", "Precipitación", "20,7 °C", "1,2 mm", "Tiempo estimado"):
             self.assertIn(frase, html)
 
     def test_recorre_todas_las_rutas_sin_errores(self):

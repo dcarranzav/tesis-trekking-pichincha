@@ -92,9 +92,9 @@ def insignia_nivel(nivel: str, sensible: bool = False, rotulo: bool = True) -> s
     if nivel not in NIVELES:
         raise ValueError("Nivel desconocido")
     color = COLOR_NIVEL[nivel]
-    pre = '<span class="ins-pre">Dificultad física estimada:</span> ' if rotulo else ""
-    sens = ('<span class="ins-sens" title="La categoría cambia en algunos escenarios metodológicos">'
-            'categoría sensible</span>') if sensible else ""
+    pre = '<span class="ins-pre">Nivel de esfuerzo:</span> ' if rotulo else ""
+    sens = ('<span class="ins-sens" title="Este nivel puede variar al revisar las medidas de la ruta">'
+            'puede variar</span>') if sensible else ""
     return (f'<span class="insignia" style="--c:{color}">{_barras_nivel(nivel)}{pre}<b>{escape(nivel)}</b></span>{sens}')
 
 
@@ -116,13 +116,13 @@ def portada_marketing(conteos: dict[str, int]) -> str:
     """Texto de bienvenida de «Explorar rutas»: promesa, llamada a la acción y tres ventajas reales de la página.
 
     Los conteos por nivel vienen de la clasificación archivada y aquí solo se muestran. No usa valoraciones, popularidad
-    ni afirmaciones sobre calidad: lo que se promete es lo que la página hace (misma regla para las 20 rutas, mapa,
+    ni afirmaciones sobre calidad: lo que se promete es lo que la página hace (niveles para las 20 rutas, mapa,
     perfil, simulación del recorrido y entrada sin cuenta).
     """
     total = sum(conteos.values())
     chips = "".join(f'<li style="--c:{COLOR_NIVEL[n]}"><b>{conteos.get(n, 0)}</b><span>{n}</span></li>' for n in NIVELES)
     ventajas = (
-        ("Compara el esfuerzo", "Tres grupos relativos obtenidos con K-means para las %d rutas estudiadas." % total),
+        ("Encuentra tu ritmo", "Compara distancia, subida y nivel de esfuerzo entre %d rutas." % total),
         ("Recórrela antes de caminarla", "Simulación de ida y vuelta sobre el mapa, con el perfil de altura en movimiento."),
         ("Entra en segundos", "Escribe un apodo y explora. Sin cuentas ni contraseñas."),
     )
@@ -130,9 +130,9 @@ def portada_marketing(conteos: dict[str, int]) -> str:
     return _compacto(
         f'<section class="pf" aria-label="Rutas de trekking en Pichincha">'
         f'<p class="pf-eyebrow">Trekking en Pichincha</p>'
-        f'<p class="pf-titulo">Elige tu próxima caminata sabiendo cuánto esfuerzo te espera</p>'
-        f'<p class="pf-sub">{total} rutas de trekking de Pichincha agrupadas por esfuerzo físico relativo. '
-        f'Mira el mapa y el perfil de altura, y recorre el trazado antes de salir.</p>'
+        f'<p class="pf-titulo">Descubre tu próxima caminata en Pichincha</p>'
+        f'<p class="pf-sub">Explora {total} rutas, compara la distancia y la subida, y conoce cada recorrido '
+        f'en el mapa antes de salir.</p>'
         f'<div class="pf-cta"><a class="pf-boton" href="#elige-una-ruta">Explorar las {total} rutas</a>'
         f'<ul class="pf-niveles" aria-label="Rutas por nivel de dificultad">{chips}</ul></div></section>'
         f'<div class="pf-ventajas">{cajas}</div>'
@@ -372,7 +372,7 @@ def panel_clima(perfil: list[dict], puntos: list[dict]) -> str:
         tarjetas.append(
             f'<div class="clima-tarjeta"><div class="clima-cab">{escape(str(p["nombre"]))}'
             f'<small>{float(p["lat"]):.4f}, {float(p["lon"]):.4f} · altitud del trazado {numero(p.get("elev", 0), 0)} m</small></div>'
-            f'<div class="clima-cond">{icono_clima(str(p["condicion"]), 44)}<span><small>Condición según el modelo</small>{escape(str(p["condicion"]))}</span></div>'
+            f'<div class="clima-cond">{icono_clima(str(p["condicion"]), 44)}<span><small>Tiempo estimado</small>{escape(str(p["condicion"]))}</span></div>'
             + _fila_dato(_ICONO_TERMO, "Temperatura", f'{numero(p["temperatura_c"], 1)} °C')
             + _fila_dato(_ICONO_GOTA, "Precipitación", f'{numero(p["precipitacion_mm"], 1)} mm')
             + _fila_dato(_ICONO_VIENTO, "Viento", f'{numero(p["viento_kmh"], 0)} km/h')

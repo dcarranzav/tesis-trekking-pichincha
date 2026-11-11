@@ -73,11 +73,11 @@ class Visuales(unittest.TestCase):
 
     def test_una_sola_etiqueta_principal_con_el_rotulo_pedido(self):
         html = vz.insignia_nivel("Fácil")
-        self.assertIn("Dificultad física estimada:", html)
+        self.assertIn("Nivel de esfuerzo:", html)
         self.assertEqual(html.count("<b>"), 1)
 
     def test_el_aviso_de_sensibilidad_usa_la_frase_acordada(self):
-        self.assertIn("La categoría cambia en algunos escenarios metodológicos", vz.insignia_nivel("Moderada", True))
+        self.assertIn("puede variar", vz.insignia_nivel("Moderada", True))
         self.assertNotIn("sensible", vz.insignia_nivel("Moderada", False))
 
     def test_la_tarjeta_reserva_el_area_de_aviso_aunque_este_vacia(self):
@@ -96,7 +96,7 @@ class Visuales(unittest.TestCase):
 
     def test_el_clima_separa_temperatura_precipitacion_y_condicion(self):
         html = vz.panel_clima(PERFIL, PUNTOS)
-        for frase in ("Temperatura", "Precipitación", "Viento", "Condición según el modelo", "20,7 °C", "1,2 mm", "Lluvia", "Válido:"):
+        for frase in ("Temperatura", "Precipitación", "Viento", "Tiempo estimado", "20,7 °C", "1,2 mm", "Lluvia", "Válido:"):
             self.assertIn(frase, html)
         self.assertNotRegex(html, r"calor|frío|caluroso")
         self.assertEqual(html.count("clima-dato-et"), 6)
@@ -180,7 +180,7 @@ class PortadaConFotosTest(unittest.TestCase):
         self.assertNotIn("<img", self.galeria)  # si una foto no carga, solo queda el degradado del recuadro
 
     def test_texto_de_venta_cumple_y_no_inventa(self):
-        self.assertIn("Elige tu próxima caminata", self.texto)
+        self.assertIn("Descubre tu próxima caminata", self.texto)
         self.assertIn("20 rutas", self.texto)
         self.assertIn("Explorar las 20 rutas", self.texto)
         self.assertIn('href="#elige-una-ruta"', self.texto)

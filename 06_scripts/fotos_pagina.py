@@ -54,3 +54,17 @@ def css_fotos() -> str:
 
 def fotos_con_personas() -> list[str]:
     return [f["archivo"] for f in FOTOS if f["personas"]]
+
+
+@lru_cache(maxsize=1)
+def fondos_bienvenida() -> tuple[str, str]:
+    """La foto elegida por el autor y otro paisaje para la transición de entrada."""
+    fondos = []
+    for archivo in ("fondo_entrada_pichincha.jpg", "galeria_04.jpg"):
+        try:
+            datos = base64.b64encode((CARPETA / archivo).read_bytes()).decode("ascii")
+        except OSError:
+            fondos.append("")
+        else:
+            fondos.append(f"url(data:image/jpeg;base64,{datos})")
+    return tuple(fondos)

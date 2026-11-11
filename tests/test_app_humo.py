@@ -149,10 +149,27 @@ def ejecutar(seccion=None, valores=None, parchear=None, registrado=True):
 
 
 class AppHumo(unittest.TestCase):
+    def test_bienvenida_tiene_paisajes_animados_y_opcion_clara(self):
+        oscuro = ejecutar(registrado=False)
+        css_oscuro = "".join(a[0] for a, _ in oscuro.llamadas_de("markdown") if a[0].startswith("<style>"))
+        self.assertIn("data:image/jpeg;base64,", css_oscuro)
+        self.assertIn("@keyframes fondo-cambio", css_oscuro)
+        self.assertIn("prefers-reduced-motion:reduce", css_oscuro)
+        self.assertEqual(oscuro.opciones["modo_visual"], ["Oscuro", "Claro"])
+        claro = ejecutar(valores={"modo_visual": "Claro"}, registrado=False)
+        css_claro = "".join(a[0] for a, _ in claro.llamadas_de("markdown") if a[0].startswith("<style>"))
+        self.assertIn("#f2f6f3", css_claro)
+        self.assertIn("rgba(255,255,255,.91)", css_claro)
+
+    def test_modo_claro_tambien_esta_disponible_despues_de_entrar(self):
+        pagina = ejecutar(valores={"modo_visual": "Claro"})
+        self.assertEqual(pagina.session_state["modo_visual"], "Claro")
+        self.assertIn("Apariencia", pagina.textos(visibles=False))
+
     def test_portada_responde_la_pregunta_sin_aviso_de_desarrollo(self):
         st = ejecutar()
         html = st.html()
-        self.assertIn("Elige tu próxima caminata sabiendo cuánto esfuerzo te espera", html)
+        self.assertIn("Descubre tu próxima caminata en Pichincha", html)
         self.assertIn("Explorar las 20 rutas", html)
         self.assertEqual(len(st.llamadas_de("iframe")), 0)  # la galería usa st.html; el único iframe es el visor de la ficha
         galerias = [a[0] for a, k in st.llamadas_de("html") if 'class="gal"' in a[0]]
@@ -166,6 +183,8 @@ class AppHumo(unittest.TestCase):
         st = ejecutar(registrado=False)
         self.assertTrue(st.detenido)
         self.assertNotIn("Escribe tu nombre para comenzar", "\n".join(st.textos()))
+        self.assertIn("Privacidad y protección de datos", [a[0] for a, _ in st.llamadas_de("expander")])
+        self.assertIn("danycv2022@gmail.com", st.textos())
         etiquetas = [args[0] for nombre, args, kwargs, pila in st.llamadas if nombre == "text_input" and args]
         self.assertIn("¿Cómo te llamas?", etiquetas)
         self.assertEqual(st.tarjetas(), [])
@@ -184,10 +203,13 @@ class AppHumo(unittest.TestCase):
         st = ejecutar()
         self.assertIn("Hola, Usuario de prueba.", st.html())
         self.assertIn("cambiar_alias", [k.get("key") for a, k in st.llamadas_de("button")])
+        self.assertIn("Privacidad y protección de datos", [a[0] for a, _ in st.llamadas_de("expander")])
+        self.assertIn("danycv2022@gmail.com", st.textos())
 
-    def test_metodologia_explica_la_regla_sin_lista_de_pendientes(self):
-        texto = ejecutar("Metodología y límites").textos()
-        self.assertIn("K-means con **k=3**", texto)
+    def test_como_funciona_explica_el_esfuerzo_en_lenguaje_claro(self):
+        texto = ejecutar("Cómo funciona").textos()
+        self.assertIn("distancia total", texto)
+        self.assertNotIn("K-means", texto)
         self.assertNotIn("Qué falta por validar", texto)
         self.assertNotIn("Recomendación de salida activa", texto)
 

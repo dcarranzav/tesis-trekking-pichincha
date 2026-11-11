@@ -12,7 +12,7 @@ from test_app_humo import CODIGO_RUTA, EMOJI, ejecutar  # noqa: E402
 import vista_rutas as vr  # noqa: E402
 
 SENSIBLES = {"R003", "R006", "R015", "R019", "R022", "R023"}
-OTROS_NIVELES = re.compile(r"dbscan|\bward\b|\bhen\b|índice de esfuerzo", re.I)
+OTROS_NIVELES = re.compile(r"k-?means|dbscan|\bward\b|\bhen\b|\bmide\b|centroide|estandariz", re.I)
 SIN_RECOMENDAR = re.compile(r"mejor ruta|te recomendamos|recomendada", re.I)
 
 
@@ -34,8 +34,8 @@ class TresNiveles(unittest.TestCase):
                          if grupo["nivel"] != vr.dificultad_fisica_estimada(id_ruta, catalogo)["nivel"]}
         self.assertEqual(discrepancias, {"R004", "R015", "R023", "R026"})
         st = ejecutar(valores={"ruta_detalle": "R004"})
-        self.assertIn("K-means agrupó 20 recorridos", st.textos(visibles=False))
-        self.assertIn("la clasifica como Moderada", st.textos(visibles=False))
+        self.assertIn("su nivel de esfuerzo es **Fácil**", st.textos(visibles=False))
+        self.assertNotRegex(st.textos(visibles=False), OTROS_NIVELES)
 
     def test_modelo_rechaza_muestra_o_medidas_alteradas(self):
         catalogo = vr.cargar_catalogo()
@@ -71,7 +71,7 @@ class TresNiveles(unittest.TestCase):
             self.assertEqual(len(re.findall(r"<b>(Fácil|Moderada|Difícil)</b>", t)), 1)
         conteo = {n: sum(f"<b>{n}</b>" in t for t in tarjetas) for n in ("Fácil", "Moderada", "Difícil")}
         self.assertEqual(conteo, {"Fácil": 12, "Moderada": 6, "Difícil": 2})
-        self.assertIn("Dificultad física relativa", st.textos() + st.html())
+        self.assertIn("Niveles de esfuerzo", st.textos() + st.html())
 
     def test_la_vista_principal_no_muestra_codigos_emojis_ni_modelos_secundarios(self):
         for seccion in ("Explorar rutas", "Comparar alternativas"):
@@ -94,7 +94,7 @@ class TresNiveles(unittest.TestCase):
             self.assertIn(fila["nombre_ruta"], visible)
 
     def test_aviso_de_categoria_sensible_solo_en_las_seis_rutas(self):
-        frase = "La categoría cambia en al menos una prueba de sensibilidad del modelo"
+        frase = "Este nivel puede variar si se revisan las medidas de la ruta"
         for fila in vr.cargar_catalogo():
             if fila["estado_modelado"] != vr.ELEGIBLE:
                 continue
@@ -131,15 +131,15 @@ class TresNiveles(unittest.TestCase):
 
     def test_la_explicacion_kmeans_esta_en_la_ficha_sin_umbrales_de_horas(self):
         st = ejecutar(valores={"ruta_detalle": "R003"})
-        self.assertTrue(any(n == "expander" and a[0] == "Cómo se obtuvo esta categoría" for n, a, k, _ in st.llamadas))
-        self.assertIn("K-means agrupó 20 recorridos", st.textos(visibles=False))
+        self.assertTrue(any(n == "expander" and a[0] == "¿Qué significa este nivel?" for n, a, k, _ in st.llamadas))
+        self.assertIn("distancia y la subida", st.textos(visibles=False))
         self.assertNotIn('class="escala"', st.html())
 
     def test_el_clima_es_secundario_y_va_en_un_desplegable(self):
         st = ejecutar(valores={"ruta_detalle": "R003"})
         etiquetas = [a[0] for n, a, k, _ in st.llamadas if n == "expander"]
         self.assertIn("Clima estimado cerca del recorrido (opcional)", etiquetas)
-        self.assertLess(etiquetas.index("Cómo se obtuvo esta categoría"), etiquetas.index("Clima estimado cerca del recorrido (opcional)"))
+        self.assertLess(etiquetas.index("¿Qué significa este nivel?"), etiquetas.index("Clima estimado cerca del recorrido (opcional)"))
         self.assertTrue(any(n == "button" and a and a[0] == "Consultar clima de esta ruta" for n, a, k, _ in st.llamadas))
 
 
@@ -167,7 +167,7 @@ class CompararAlternativas(unittest.TestCase):
         etiqueta = next(e for e in ejecutar("Comparar alternativas").opciones["destino_comparar"] if "Yellow House" in e)
         filas = ejecutar("Comparar alternativas", {"destino_comparar": etiqueta}).llamadas_de("dataframe")[0][0][0]
         self.assertEqual([f["Ruta"] for f in filas], [nombre("R017"), nombre("R021"), nombre("R020")])
-        self.assertTrue(all(f["Dificultad física estimada"].startswith("Moderada") for f in filas))
+        self.assertTrue(all(f["Nivel de esfuerzo"].startswith("Moderada") for f in filas))
 
     def test_los_destinos_de_una_sola_ruta_no_generan_comparacion(self):
         st = ejecutar("Comparar alternativas")
@@ -184,27 +184,24 @@ class CompararAlternativas(unittest.TestCase):
 
 
 class Metodologia(unittest.TestCase):
-    def test_explica_kmeans_categorias_y_sensibilidad_sin_lista_de_pendientes(self):
-        st = ejecutar("Metodología y límites")
+    def test_explica_los_niveles_en_lenguaje_claro(self):
+        st = ejecutar("Cómo funciona")
         html = st.html(visibles=False)
         todo = html + st.textos(visibles=False)
-        for frase in ("no es el método MIDE completo", "K-means", "k=3", "distancia total", "subida acumulada", "6 rutas cambian"):
+        for frase in ("distancia total", "subida acumulada", "Fácil", "Moderada", "Difícil", "Antes de salir"):
             self.assertIn(frase, todo, frase)
-        self.assertNotIn("Qué falta por validar", todo)
-        self.assertNotIn("Recomendación de salida activa", todo)
-        self.assertIn("esfuerzo físico relativo", todo)
-        self.assertEqual(len(re.findall(r'class="hg-fila"', html)), 20)
+        self.assertIsNone(OTROS_NIVELES.search(todo))
+        self.assertIn("¿Por qué algunas rutas dicen «puede variar»?", todo)
 
-    def test_los_contrastes_dbscan_y_hen_solo_aparecen_en_el_detalle_metodologico(self):
-        st = ejecutar("Metodología y límites")
-        contrastes = [(a, p) for n, a, k, p in st.llamadas if n == "markdown" and "Contrastes metodológicos (para quien revisa la tesis)" in p]
-        self.assertTrue(contrastes)
-        self.assertIn("DBSCAN", st.textos(visibles=False) + st.html(visibles=False))
+    def test_la_pagina_completa_no_expone_nombres_de_algoritmos(self):
+        for seccion in ("Explorar rutas", "Comparar alternativas", "Cómo funciona"):
+            st = ejecutar(seccion)
+            self.assertIsNone(OTROS_NIVELES.search(st.textos(visibles=False) + st.html(visibles=False)), seccion)
 
     def test_no_se_habilitan_recomendaciones(self):
         self.assertFalse(vr.NIVELES_FINALES.exists())
         self.assertEqual(vr.conteo_estados(vr.cargar_catalogo())["habilitadas_recomendacion"], 0)
-        todo = ejecutar("Metodología y límites").textos()
+        todo = ejecutar("Cómo funciona").textos()
         self.assertIsNone(SIN_RECOMENDAR.search(todo))
 
 

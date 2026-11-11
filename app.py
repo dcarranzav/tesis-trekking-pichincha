@@ -1,7 +1,7 @@
 """Rutas de trekking en Pichincha: dificultad física estimada de 20 recorridos.
 
-Ejecutar con `streamlit run app.py`. No usa base de datos ni cuentas: la bienvenida pide un nombre solo para
-saludar, y ese nombre vive en la memoria de la sesión del navegador. La categoría Fácil/Moderada/Difícil
+Ejecutar con `streamlit run app.py`. No usa base de datos ni cuentas: la bienvenida pide un nombre o apodo
+para saludar durante la sesión de Streamlit en el servidor. La categoría Fácil/Moderada/Difícil
 procede de K-means k=3 sobre distancia y ascenso de las 20 rutas; es relativa y experimental.
 No recomienda salidas ni evalúa seguridad, acceso, técnica ni clima.
 
@@ -18,6 +18,7 @@ import sys
 import time
 from html import escape
 from pathlib import Path
+from textwrap import dedent
 
 import streamlit as st
 
@@ -28,7 +29,7 @@ import visuales_pagina as vz  # noqa: E402
 import fotos_pagina as fotos  # noqa: E402
 import clima_rutas as clima  # noqa: E402
 
-SECCIONES = ("Explorar rutas", "Comparar alternativas", "Metodología y límites")
+SECCIONES = ("Explorar rutas", "Comparar alternativas", "Cómo funciona")
 TODOS = "Todos"
 ESCENARIOS = {
     "piso_desfavorable_3_kmh": "caminar a 3 km/h en horizontal (terreno más lento)",
@@ -217,6 +218,73 @@ svg.mini{width:100%;height:56px;display:block}
 """
 st.markdown(f"<style>{ESTILO}</style>", unsafe_allow_html=True)
 
+ESTILO_CLARO = """
+:root{--acento:#0c6173;--borde:rgba(32,64,67,.22);--suave:rgba(30,84,87,.07)}
+html,body,.stApp{background:#f2f6f3!important;color:#183038!important}
+[data-testid="stAppViewContainer"],[data-testid="stMain"]{background:#f2f6f3!important;color:#183038!important}
+[data-testid="stHeader"]{background:rgba(242,246,243,.92)!important}
+.stApp [data-testid="stMarkdownContainer"],.stApp [data-testid="stWidgetLabel"],
+.stApp [data-testid="stExpander"],.stApp [data-testid="stCaptionContainer"]{color:#183038}
+.stApp [data-testid="stVerticalBlockBorderWrapper"],
+.stApp [data-baseweb="select"]>div,.stApp [data-baseweb="input"]>div,
+.stApp [data-baseweb="base-input"]{background:#fff!important;color:#183038!important}
+.stApp [data-testid="stTextInputRootElement"]{background:#fff!important}
+.stApp input,.stApp textarea{color:#183038!important;background:transparent!important}
+.stApp input::placeholder{color:#587074!important}
+.stApp [data-testid="stDataFrame"],.stApp [data-testid="stExpander"]{background:#fff;border-radius:10px}
+.stApp [data-testid="stButton"] button:not([kind="primary"]),
+.stApp [data-testid="stDownloadButton"] button{color:#183038;background:#fff;border-color:var(--borde)}
+.stApp .pf .pf-eyebrow{color:#0c6173}
+.stApp .pf a.pf-boton{color:#fff!important}
+.stApp [data-testid="stButtonGroup"] button[role="radio"]{background:rgba(255,255,255,.88)!important}
+.stApp [data-testid="stButtonGroup"] button[role="radio"] p{color:#183038!important}
+.stApp [data-testid="stButtonGroup"] button[aria-checked="true"]{background:#0c6173!important}
+.stApp [data-testid="stButtonGroup"] button[aria-checked="true"] p{color:#fff!important}
+.stApp button[kind="primaryFormSubmit"] p{color:#fff!important}
+"""
+
+
+def estilo_bienvenida(claro: bool) -> str:
+    """Paisajes del proyecto con transición lenta; el texto queda sobre un panel legible."""
+    primero, segundo = fotos.fondos_bienvenida()
+    # El degradado conserva el contraste incluso si falta alguna fotografía.
+    tinte = "rgba(242,248,244,.42)" if claro else "rgba(7,20,25,.55)"
+    panel = "rgba(255,255,255,.91)" if claro else "rgba(12,24,29,.88)"
+    letra = "#173039" if claro else "#f6faf8"
+    borde = "rgba(26,65,68,.25)" if claro else "rgba(255,255,255,.28)"
+    return """
+[data-testid="stAppViewContainer"]{position:relative;background:#233d43!important;isolation:isolate}
+[data-testid="stAppViewContainer"]::before,[data-testid="stAppViewContainer"]::after{
+ content:"";position:fixed;inset:0;pointer-events:none;background-size:cover;background-position:center;
+ background-repeat:no-repeat;z-index:0;will-change:opacity,transform}
+[data-testid="stAppViewContainer"]::before{background-image:linear-gradient(TINTE,TINTE),FONDO1;
+ animation:fondo-viaje 28s ease-in-out infinite alternate}
+[data-testid="stAppViewContainer"]::after{background-image:linear-gradient(TINTE,TINTE),FONDO2;
+ opacity:0;animation:fondo-cambio 28s ease-in-out infinite}
+[data-testid="stMain"]{position:relative;z-index:1;background:transparent!important}
+[data-testid="stHeader"]{background:transparent!important}
+.st-key-bienvenida_panel{background:PANEL!important;color:LETRA!important;border:1px solid BORDE!important;
+ border-radius:18px!important;box-shadow:0 22px 65px rgba(0,0,0,.28);backdrop-filter:blur(12px)}
+.st-key-bienvenida_panel [data-testid="stMarkdownContainer"],
+.st-key-bienvenida_panel [data-testid="stWidgetLabel"]{color:LETRA!important}
+.st-key-bienvenida_panel .b-datos li{background:rgba(128,128,128,.09);border-color:BORDE}
+.stApp [data-testid="stButtonGroup"] button[role="radio"]{border-color:BORDE}
+SELECTOR_OSCURO
+@keyframes fondo-viaje{from{transform:scale(1.02) translateX(0)}to{transform:scale(1.12) translateX(-1.5%)}}
+@keyframes fondo-cambio{0%,58%{opacity:0;transform:scale(1.03)}68%,82%{opacity:1;transform:scale(1.12)}95%,100%{opacity:0;transform:scale(1.03)}}
+@media (prefers-reduced-motion:reduce){[data-testid="stAppViewContainer"]::before,
+ [data-testid="stAppViewContainer"]::after{animation:none!important}
+ [data-testid="stAppViewContainer"]::after{display:none}}
+@media (max-width:760px){.st-key-bienvenida_panel{backdrop-filter:none}}
+""".replace("FONDO1", primero or "linear-gradient(#315b60,#173239)") \
+       .replace("FONDO2", segundo or "linear-gradient(#233d43,#173239)") \
+       .replace("TINTE", tinte).replace("PANEL", panel).replace("LETRA", letra).replace("BORDE", borde) \
+       .replace("SELECTOR_OSCURO", "" if claro else """
+.stApp [data-testid="stButtonGroup"] button[role="radio"]{background:rgba(12,24,29,.75)!important}
+.stApp [data-testid="stButtonGroup"] button[role="radio"] p{color:#f6faf8!important}
+.stApp [data-testid="stButtonGroup"] button[aria-checked="true"]{background:#0f8098!important}
+""")
+
 
 # ------------------------------------------------------------------ datos (cacheados)
 @st.cache_data
@@ -342,11 +410,59 @@ def cambiar_alias():
     st.session_state["alias_vacio"] = False
 
 
+def mostrar_privacidad():
+    """Información visible antes de solicitar el nombre y durante toda la visita."""
+    st.markdown(dedent("""
+        **Responsable del tratamiento:** Daniel Carranza. Contacto:
+        [danycv2022@gmail.com](mailto:danycv2022@gmail.com) · 0984017687.
+
+        **Qué datos usa esta página:** el nombre o apodo que escribes para saludarte,
+        la ruta y los filtros que eliges y, si los ingresas, tus límites de distancia y subida.
+        La página no solicita tu ubicación GPS, contraseña, documento de identidad ni datos de salud.
+
+        **Para qué y durante cuánto tiempo:** estos datos se usan para mostrar tu visita y tus elecciones.
+        El apodo y las preferencias se mantienen en la sesión de Streamlit del servidor; la aplicación
+        no crea cuentas ni una base de datos de visitantes. La sesión termina al cerrar o recargar la pestaña,
+        aunque una desconexión breve puede conservarla temporalmente. Puedes cambiar el nombre desde la página.
+        Si no deseas usar tu nombre real, puedes escribir un apodo.
+
+        **Servicios externos:** la página está alojada en Streamlit Community Cloud, con infraestructura
+        en Estados Unidos. Al abrir el mapa, el navegador solicita imágenes a OpenStreetMap o Esri según
+        la capa elegida; esos proveedores pueden recibir datos técnicos de la conexión, como la dirección IP.
+        Solo si pulsas «Consultar clima de esta ruta», el servidor envía las coordenadas de la ruta a
+        Open-Meteo; no envía tu apodo. El alojamiento y esos servicios pueden conservar registros técnicos
+        según sus propias políticas.
+
+        **Clasificación:** los niveles de esfuerzo se calculan sobre las rutas, no sobre las personas.
+        La página no crea perfiles personales ni decide automáticamente tu aptitud para caminar.
+
+        **Tus derechos:** puedes solicitar acceso, rectificación, eliminación, oposición, limitación o
+        portabilidad de tus datos, y presentar un reclamo, escribiendo al correo del responsable.
+        También puedes acudir a la [Superintendencia de Protección de Datos Personales](https://www.spdp.gob.ec/).
+        Cambiar el apodo modifica el saludo de esta sesión; para retirar el apodo de la sesión actual,
+        cierra o recarga la pestaña. Esto no borra los posibles registros técnicos de los proveedores externos.
+
+        Consulta las políticas de [Streamlit](https://streamlit.io/privacy-policy),
+        [OpenStreetMap](https://osmfoundation.org/wiki/Privacy_Policy),
+        [Esri](https://www.esri.com/en-us/privacy/privacy-statements/privacy-statement) y
+        [Open-Meteo](https://open-meteo.com/en/terms) para conocer su tratamiento independiente.
+        """).strip())
+
+
+if st.session_state.get("modo_visual") not in ("Oscuro", "Claro"):
+    st.session_state["modo_visual"] = "Oscuro"
+with st.container(horizontal=True, horizontal_alignment="right"):
+    st.segmented_control("Apariencia", ["Oscuro", "Claro"], key="modo_visual")
+modo_claro = st.session_state["modo_visual"] == "Claro"
+if modo_claro:
+    st.markdown(f"<style>{ESTILO_CLARO}</style>", unsafe_allow_html=True)
+
 st.session_state["alias_sesion"] = vr.limpiar_alias(st.session_state.get("alias_sesion", ""))
 if not st.session_state["alias_sesion"]:
+    st.markdown(f"<style>{estilo_bienvenida(modo_claro)}</style>", unsafe_allow_html=True)
     st.markdown('<div class="bienvenida-esp"></div>', unsafe_allow_html=True)
     with st.columns([1, 2, 1])[1]:
-        with st.container(border=True):
+        with st.container(border=True, key="bienvenida_panel"):
             st.markdown(
                 """<div class="bienvenida">
 <p class="b-sello">Proyecto de titulación · PUCE</p>
@@ -359,6 +475,9 @@ if not st.session_state["alias_sesion"]:
 </ul></div>""",
                 unsafe_allow_html=True,
             )
+            st.caption("Tu nombre o apodo se usa para saludarte durante esta visita. Lee cómo se tratan tus datos antes de continuar.")
+            with st.expander("Privacidad y protección de datos"):
+                mostrar_privacidad()
             with st.form("bienvenida", border=False):
                 st.text_input("¿Cómo te llamas?", max_chars=40, placeholder="Tu nombre o un apodo", key="alias_borrador")
                 st.form_submit_button("Entrar a explorar", key="guardar_alias", type="primary", width="stretch",
@@ -394,7 +513,8 @@ if st.session_state.get("seccion", SECCIONES[0]) == SECCIONES[0] and not st.sess
     st.html(galeria)
     st.markdown('<div class="pf-ventajas">' + caja, unsafe_allow_html=True)
 
-st.session_state.setdefault("seccion", SECCIONES[0])
+if st.session_state.get("seccion") not in SECCIONES:
+    st.session_state["seccion"] = SECCIONES[0]
 seccion = st.segmented_control("Sección", list(SECCIONES), key="seccion", label_visibility="collapsed") or SECCIONES[0]
 
 
@@ -406,12 +526,12 @@ def ficha(fila):
     st.subheader(fila["nombre_ruta"])
     st.caption(f"{fila['lugar']} · destino: {fila['destino_exacto']} · {tipo_texto(fila)}")
     st.markdown(vz.insignia_nivel(fila["nivel"], fila["sensible"]), unsafe_allow_html=True)
-    st.caption("Categoría relativa obtenida con K-means a partir de distancia y subida, comparada con las 20 rutas de este estudio. "
-               "Es experimental; no mide dificultad técnica, acceso, clima, seguridad ni aptitud personal.")
+    st.caption("El nivel de esfuerzo es orientativo: compara la distancia y la subida de las rutas de esta página. "
+               "Revisa también el terreno, el acceso y el clima antes de salir.")
     if fila["sensible"]:
-        st.caption("La categoría cambia en al menos una prueba de sensibilidad del modelo. Ver «Cómo se obtuvo esta categoría».")
+        st.caption("Este nivel puede variar si se revisan las medidas de la ruta.")
     elif fila["cerca_de_frontera"]:
-        st.caption("Esta ruta está cerca del límite entre dos grupos de la muestra.")
+        st.caption("El esfuerzo de esta ruta se parece al de rutas de otro nivel.")
     for texto_destacado in vr.advertencias_destacadas(id_ruta, verificacion):
         st.warning(humanizar(texto_destacado, nombres))
 
@@ -434,9 +554,6 @@ def ficha(fila):
         ("altitud", num(fila["elevacion_max_m"], 0), "m", "Altitud máxima"),
     ]), unsafe_allow_html=True)
 
-    st.caption(f"Referencia adicional: {num(fila['horas'], 2)} horas de esfuerzo estimado por una regla de marcha. "
-               "Este valor no determina el grupo K-means ni es una duración garantizada.")
-
     st.markdown("#### Avisos de esta ruta")
     st.caption("Son independientes de la categoría: una ruta Fácil puede tener altitud, acceso restringido o terreno exigente.")
     if acceso["nota"]:
@@ -454,36 +571,28 @@ def ficha(fila):
 
     st.markdown("#### Descargas")
     d = st.columns(2)
-    d[0].download_button("Descargar trazado (GeoJSON)", data=vr.ruta_trazado(id_ruta).read_bytes(),
+    d[0].download_button("Descargar datos del mapa (GeoJSON)", data=vr.ruta_trazado(id_ruta).read_bytes(),
                          file_name=f"{id_ruta}_trazado.geojson", mime="application/geo+json", width="stretch")
-    d[1].download_button("Descargar trazado de ida (GPX, sin elevaciones ni tiempos)",
+    d[1].download_button("Descargar ruta para GPS (GPX)",
                          data=vr.gpx_ida(id_ruta, fila["nombre_ruta"]),
                          file_name=f"{id_ruta}_trazado.gpx", mime="application/gpx+xml", width="stretch")
-    st.caption("El GPX es un formato de intercambio derivado del trazado de OpenStreetMap: no es una grabación GPS de campo.")
+    st.caption("El archivo GPX muestra el camino de ida. Procede de OpenStreetMap y no es una grabación hecha sobre el terreno.")
 
-    with st.expander("Cómo se obtuvo esta categoría"):
+    with st.expander("¿Qué significa este nivel?"):
         st.markdown(
-            f"K-means agrupó 20 recorridos según dos medidas del trayecto completo: distancia "
-            f"({num(fila['distancia_total_km'])} km) y subida acumulada ({num(fila['ascenso_total_m'], 0)} m). "
-            f"Las dos medidas se estandarizaron antes de agrupar. Esta ruta quedó en el grupo **{fila['nivel']}**. "
-            "Los nombres Fácil, Moderada y Difícil ordenan los tres grupos por su esfuerzo relativo en esta muestra; "
-            "no son umbrales universales ni un juicio de seguridad."
+            f"Esta ruta tiene **{num(fila['distancia_total_km'])} km** en total y acumula "
+            f"**{num(fila['ascenso_total_m'], 0)} m de subida**. Al compararla con las otras rutas de la página, "
+            f"su nivel de esfuerzo es **{fila['nivel']}**. Este nivel te ayuda a comparar caminatas; "
+            "no indica cómo está el sendero ni si es adecuado para ti."
         )
-        st.caption(f"Como contraste, la regla de marcha estima {num(fila['horas'], 2)} h y la clasifica "
-                   f"como {fila['nivel_regla']}. Esa regla no asignó la categoría mostrada arriba.")
         if fila["sensible"]:
-            st.markdown("**La asignación cambia al repetir el análisis en estos escenarios:**")
-            for escenario in fila["cambios"]:
-                st.markdown(f"- {ESCENARIOS_K3.get(escenario, escenario)}.")
-            st.caption("Se muestra el grupo del modelo base. Los escenarios alternativos son pruebas de sensibilidad, no mediciones de campo.")
-        else:
-            st.caption("La asignación no cambió en las pruebas consideradas para los avisos de la página.")
+            st.caption("Las medidas de subida y pendiente proceden de mapas de elevación y pueden cambiar al revisarse. "
+                       "Por eso este nivel podría variar.")
 
     with st.expander("Clima estimado cerca del recorrido (opcional)"):
         st.caption(
-            "Estimación de un modelo meteorológico externo para el inicio y la llegada (o el punto más alto, en circuitos). "
-            "No es una medición en el sendero ni describe cada tramo; puede cambiar rápido en montaña. "
-            "No interviene en la categoría de dificultad y no sirve por sí sola para decidir si es seguro salir."
+            "Consulta el tiempo aproximado en el inicio y la llegada (o el punto más alto, si la ruta es circular). "
+            "No es una medición hecha en el sendero. El tiempo puede cambiar rápido en montaña: comprueba los avisos oficiales antes de salir."
         )
         if st.button("Consultar clima de esta ruta", key=f"consultar_clima_{id_ruta}"):
             try:
@@ -502,9 +611,8 @@ def ficha(fila):
     if consulta:
         st.markdown(vz.panel_clima(perfil, consulta["puntos"]), unsafe_allow_html=True)
         st.caption(
-            "Fuente: Open-Meteo (CC BY 4.0), valores actuales derivados de modelos. La temperatura, la precipitación y el viento son "
-            "variables distintas: pueden coincidir, por ejemplo, una temperatura templada con lluvia. La precipitación corresponde al "
-            "último intervalo del modelo (normalmente de unos 15 minutos) y la hora indicada es la validez del dato. "
+            "Fuente: Open-Meteo (CC BY 4.0). Son estimaciones recientes, no mediciones en el sendero. "
+            "La hora indica cuándo corresponden los datos; la lluvia se refiere al periodo reciente. "
             "Verifica pronósticos y avisos oficiales antes de caminar."
         )
 
@@ -556,7 +664,7 @@ def explorar():
     c1, c2, c3 = st.columns([1.1, 1.3, 1])
     filtro_lugar = c1.selectbox("Lugar", [TODOS] + lugares_lista, key="filtro_lugar")
     filtro_nombre = c2.text_input("Buscar por nombre", key="filtro_nombre", placeholder="Por ejemplo: cascada, mirador, sendero")
-    filtro_nivel = c3.selectbox("Dificultad física estimada", [TODOS] + list(vz.NIVELES), key="filtro_nivel")
+    filtro_nivel = c3.selectbox("Nivel de esfuerzo", [TODOS] + list(vz.NIVELES), key="filtro_nivel")
     consulta = (filtro_nombre or "").strip().lower()
     lista = [r for r in rutas
              if (filtro_lugar == TODOS or r["lugar"] == filtro_lugar)
@@ -569,9 +677,9 @@ def explorar():
         return
     filtrado = filtro_lugar != TODOS or filtro_nivel != TODOS or bool(consulta)
     visibles = lista if (filtrado or st.session_state.get("mostrar_todas")) else lista[:INICIALES]
-    st.markdown("**Dificultad física relativa:** Fácil, Moderada y Difícil son los tres grupos que K-means formó "
-                "con distancia y subida de estas 20 rutas; son categorías experimentales, no límites de horas.")
-    st.caption(f"{len(visibles)} de {len(rutas)} rutas. Ordenadas primero por grupo y luego por horas de referencia; el orden no indica cuál elegir. "
+    st.markdown("**Niveles de esfuerzo:** Fácil, Moderada y Difícil te ayudan a comparar las rutas según "
+                "su distancia y subida. Mira los avisos de cada sendero antes de elegir.")
+    st.caption(f"{len(visibles)} de {len(rutas)} rutas. El orden facilita la exploración; la primera no necesariamente es la mejor para ti. "
                "Pulsa «Ver ruta» para abrir el mapa, el perfil y los avisos.")
     for inicio in range(0, len(visibles), 4):
         columnas = st.columns(4)
@@ -603,8 +711,8 @@ def comparar():
     vr.validar_comparacion(alternativas)
     alternativas.sort(key=lambda r: (r["horas"], r["nombre_ruta"]))
     st.markdown(vz.rejilla([tarjeta(r, verificacion) for r in alternativas], columnas=min(3, len(alternativas))), unsafe_allow_html=True)
-    st.caption("Ordenadas por horas de referencia dentro de este destino. El color muestra el grupo K-means relativo. Esto no indica cuál elegir: no se evalúan el acceso, el estado del sendero "
-               "ni tu condición física.")
+    st.caption("Compara las opciones que llegan al mismo lugar. El nivel resume el esfuerzo de la caminata; revisa también el acceso, el estado del sendero "
+               "y tu condición física.")
     barras = [dict(r, etiqueta=r["nombre_ruta"]) for r in alternativas]
     b1, b2 = st.columns(2)
     b1.markdown(vz.barras_relativas(barras, "distancia_total_km", "Distancia total", "km", 1), unsafe_allow_html=True)
@@ -612,7 +720,7 @@ def comparar():
     tabla = [
         {
             "Ruta": r["nombre_ruta"],
-            "Dificultad física estimada": r["nivel"] + (" (sensible)" if r["sensible"] else ""),
+            "Nivel de esfuerzo": r["nivel"] + (" (puede variar)" if r["sensible"] else ""),
             "Distancia total (km)": round(float(r["distancia_total_km"]), 2),
             "Subida (m)": round(float(r["ascenso_total_m"])),
             "Bajada (m)": round(float(r["descenso_m"])),
@@ -623,7 +731,7 @@ def comparar():
         for r in alternativas
     ]
     st.dataframe(tabla, hide_index=True, width="stretch")
-    st.caption("«Sensible» indica que la categoría cambia en algunos escenarios metodológicos.")
+    st.caption("«Puede variar» indica que el nivel podría cambiar al revisar las medidas de la ruta.")
     st.markdown("**Ver una alternativa en detalle**")
     columnas = st.columns(len(alternativas))
     for columna, r in zip(columnas, alternativas):
@@ -637,7 +745,7 @@ def comparar():
             key=f"limite_distancia_{clave}", help="0 = sin límite; incluye la ida y el regreso.")
         ascenso_preferido = controles[1].number_input(
             "Subida máxima (m)", min_value=0.0, value=0.0, step=50.0,
-            key=f"limite_ascenso_{clave}", help="0 = sin límite; es una estimación del modelo de elevación.")
+            key=f"limite_ascenso_{clave}", help="0 = sin límite; la subida es aproximada.")
         distancia_preferida = float(distancia_preferida or 0)
         ascenso_preferido = float(ascenso_preferido or 0)
         if distancia_preferida or ascenso_preferido:
@@ -651,62 +759,46 @@ def comparar():
             st.caption("Esto no indica cuál ruta es mejor: revisa el mapa, el acceso, el clima y las condiciones oficiales.")
 
 
-# ================================================================== sección: metodología y límites
+# ================================================================== sección: explicación para visitantes
 def metodologia():
     conteos = {n: sum(1 for r in rutas if r["nivel"] == n) for n in vz.NIVELES}
-    st.markdown("#### El resultado en una mirada")
+    st.markdown("#### Encuentra una caminata a tu ritmo")
+    st.write("Explora el mapa, compara la distancia y la subida, y revisa los avisos de cada ruta antes de elegir.")
     st.markdown(vz.resumen_niveles(conteos), unsafe_allow_html=True)
-    st.caption("Cada ruta tiene un grupo K-means de esfuerzo físico relativo. Las 20 rutas son una muestra intencional, no todas las rutas de Pichincha. Las etiquetas son experimentales.")
-    st.markdown(vz.grafico_horas([{"nombre": r["nombre_ruta"], "horas": r["horas"], "nivel": r["nivel"], "sensible": r["sensible"]} for r in rutas]),
-                unsafe_allow_html=True)
+    st.caption("Los niveles sirven para comparar las 20 rutas incluidas aquí; no abarcan todos los senderos de Pichincha.")
 
-    st.markdown("#### Cómo se calculó")
+    st.markdown("#### ¿Qué tiene en cuenta el nivel?")
+    st.write("La distancia total que caminarías y la subida acumulada del recorrido. En una ruta de ida y vuelta, "
+             "la distancia incluye el regreso; en un circuito se considera la vuelta completa.")
     st.markdown(vz.flujo([
-        ("Reunir trazados", "Recorridos de OpenStreetMap con fuente, licencia y fecha registradas; cada uno se revisó antes de incluirlo."),
-        ("Medir", "Distancia total y subida acumulada de cada ruta completa (ida y vuelta, o circuito)."),
-        ("Agrupar", "K-means estandariza las dos medidas y forma tres grupos entre las 20 rutas estudiadas."),
-        ("Nombrar", "Los grupos se ordenan por distancia y subida: Fácil, Moderada y Difícil en sentido relativo."),
-        ("Comprobar", "Se contrastan los grupos con Ward, DBSCAN, otros pesos y variantes del modelo de elevación."),
+        ("Explora", "Elige un lugar o busca una cascada, un mirador o un sendero."),
+        ("Compara", "Mira cuánto caminarías y cuánto subirías; si hay varias rutas al mismo destino, verás sus opciones juntas."),
+        ("Revisa", "Abre el mapa y consulta los avisos de acceso, terreno, altitud y clima."),
     ]), unsafe_allow_html=True)
-    st.markdown(
-        "K-means con **k=3** es el método que asigna la categoría mostrada en la página. Usa solo distancia total y subida acumulada, "
-        "estandarizadas antes del agrupamiento. Los nombres son relativos a esta muestra; una ruta nueva podría cambiar los grupos. "
-        "La regla inspirada en el esfuerzo MIDE se conserva como contraste y **no es el método MIDE completo**."
-    )
-    with st.expander("Cómo se nombraron los grupos"):
+
+    with st.expander("¿Qué significan Fácil, Moderada y Difícil?"):
         st.markdown(
-            "- **Fácil:** grupo con menor distancia y subida relativas dentro de estas 20 rutas.\n"
-            "- **Moderada:** grupo intermedio en esas dos medidas.\n"
-            "- **Difícil:** grupo con mayor esfuerzo relativo; contiene solo dos rutas.\n"
-            "- Los grupos no proceden de umbrales de horas ni equivalen a una escala de seguridad o dificultad técnica.\n"
-            "- La subida procede de Copernicus DEM GLO-30, filtrado con mediana de tres puntos."
+            "- **Fácil:** menor esfuerzo al comparar estas rutas por distancia y subida.\n"
+            "- **Moderada:** esfuerzo intermedio entre las rutas de la página.\n"
+            "- **Difícil:** mayor esfuerzo dentro de esta selección.\n"
+            "\nEl nivel habla del esfuerzo de caminar, no de obstáculos, experiencia necesaria o seguridad. "
+            "Incluso una ruta Fácil puede tener tramos exigentes o acceso restringido."
         )
         st.markdown(vz.tabla_html(
-            ["Categoría relativa", "Rutas", "Distancia observada"],
+            ["Nivel", "Rutas", "Distancia total"],
             [[escape(n), str(conteos[n]), rango_km(rutas, n)] for n in vz.NIVELES]), unsafe_allow_html=True)
-    with st.expander("Qué significa cada categoría, y qué no"):
+
+    with st.expander("Antes de salir"):
         st.markdown(
-            "- **Fácil, Moderada y Difícil** nombran grupos de **esfuerzo físico relativo** del recorrido completo en esta muestra.\n"
-            "- **No** describen dificultad técnica, orientación, estado del sendero, acceso vigente, clima, seguridad ni aptitud personal.\n"
-            "- La altitud, el acceso y el carácter técnico se muestran aparte, como avisos de cada ruta."
+            "- Consulta si el sendero está abierto y si requiere entrada o permiso.\n"
+            "- Revisa el clima y lleva equipo adecuado para el terreno y la altitud.\n"
+            "- Valora tu experiencia y condición física. El nivel no sustituye tu criterio ni las indicaciones del lugar."
         )
     sensibles = [r for r in rutas if r["sensible"]]
-    with st.expander(f"Sensibilidad: {len(sensibles)} rutas cambian de grupo en alguna prueba"):
-        st.write("Se repitió K-means con otros pesos, con el ascenso sin filtrar y con la pendiente como variable adicional. "
-                 "Se excluye la prueba de añadir altitud máxima al aviso individual, porque la altitud no mide trabajo acumulado. "
-                 "Las rutas de la tabla cambian al menos en una de las pruebas indicadas.")
-        filas = []
-        for r in sorted(sensibles, key=lambda r: r["nombre_ruta"]):
-            texto = "; ".join(ESCENARIOS_K3.get(esc, esc) for esc in r["cambios"])
-            filas.append([escape(r["nombre_ruta"]), escape(r["nivel"]), escape(texto)])
-        st.markdown(vz.tabla_html(["Ruta", "Categoría del modelo base", "Pruebas en que cambia"], filas), unsafe_allow_html=True)
-    with st.expander("Contrastes metodológicos (para quien revisa la tesis)"):
-        st.markdown(
-            "- **Ward** coincide con K-means k=3 salvo en una ruta; **DBSCAN** no respalda tres grupos para las 20 rutas.\n"
-            "- La **regla de marcha inspirada en MIDE** da otra categoría a cuatro rutas. Se mantiene como contraste, no como verdad de terreno.\n"
-            "- El ensayo previo de K-means k=2 y el índice HEN son análisis complementarios.\n"
-            "- Según dos criterios prefijados, la evaluación científica original concluyó que todavía no está justificado sustituir la regla por k=3 como clasificación validada: el grupo superior tiene solo dos rutas y el ascenso sin filtrar mueve cuatro asignaciones. Esto no refuta definitivamente k=3. La página muestra sus grupos como resultado experimental, con estos límites visibles."
-        )
+    with st.expander("¿Por qué algunas rutas dicen «puede variar»?"):
+        st.write("La subida y la pendiente se estiman con mapas de altura. Si esas medidas se revisan, algunas rutas "
+                 "podrían cambiar de nivel. En cada ficha marcamos los casos que necesitan más cautela.")
+        st.markdown("**Rutas con esa indicación:** " + ", ".join(sorted(r["nombre_ruta"] for r in sensibles)) + ".")
 
 
 subir_al_inicio()
@@ -718,6 +810,8 @@ else:
     metodologia()
 
 st.divider()
+with st.expander("Privacidad y protección de datos"):
+    mostrar_privacidad()
 st.caption(
     "Datos del trazado © colaboradores de OpenStreetMap (ODbL 1.0) · Elevación: Copernicus DEM GLO-30 (Unión Europea/ESA) · "
     "Mapas base: © OpenStreetMap contributors e imágenes satelitales © Esri, Maxar y Earthstar Geographics · Visor: Leaflet (BSD-2). "
