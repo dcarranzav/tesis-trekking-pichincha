@@ -303,6 +303,18 @@ html,body,.stApp{background:#f2f6f3!important;color:#183038!important}
 .stApp [data-testid="stButtonGroup"] button[aria-checked="true"]{background:#0c6173!important}
 .stApp [data-testid="stButtonGroup"] button[aria-checked="true"] p{color:#fff!important}
 .stApp button[kind="primaryFormSubmit"] p{color:#fff!important}
+.stApp [data-testid="stAlertContainer"]{background:#e3f1f6!important;border:1px solid #9cc7d4;border-radius:12px;color:#183038!important}
+.stApp [data-testid="stAlertContainer"]:has([data-testid="stAlertContentWarning"]){background:#fdf1d6!important;border-color:#e0b562}
+.stApp [data-testid="stAlertContainer"]:has([data-testid="stAlertContentError"]){background:#fce4e2!important;border-color:#e29a95}
+.stApp [data-testid="stAlertContainer"]:has([data-testid="stAlertContentSuccess"]){background:#e0f2e5!important;border-color:#8cc79b}
+.stApp [data-testid="stAlertContainer"] p,.stApp [data-testid="stAlertContainer"] li,.stApp [data-testid="stAlertContainer"] span,.stApp [data-testid="stAlertContainer"] strong{color:#183038!important}
+.stApp [data-testid="stAlertContainer"] a{color:#0c6173!important;text-decoration:underline}
+.stApp [data-testid="stMarkdownContainer"] a:not(.pf-boton){color:#0a5568!important;text-decoration:underline;text-underline-offset:2px}
+.stApp [data-testid="stMarkdownContainer"] a:not(.pf-boton):hover{color:#073d4c!important}
+.stApp [data-testid="stAlertContentInfo"] svg{color:#0c6173!important;fill:#0c6173!important}
+.stApp [data-testid="stAlertContentWarning"] svg{color:#8a5a00!important;fill:#8a5a00!important}
+.stApp [data-testid="stAlertContentError"] svg{color:#a3261d!important;fill:#a3261d!important}
+.stApp [data-testid="stAlertContentSuccess"] svg{color:#1f6b3a!important;fill:#1f6b3a!important}
 """
 
 
