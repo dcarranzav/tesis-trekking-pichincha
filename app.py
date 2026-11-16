@@ -289,6 +289,15 @@ html,body,.stApp{background:radial-gradient(1100px 560px at 8% -8%,rgba(31,150,1
 """
 st.markdown(f"<style>{ESTILO}</style>", unsafe_allow_html=True)
 st.markdown(f"<style>{ESTILO_PULIDO}</style>", unsafe_allow_html=True)
+ESTILO_BOTONES = """
+.stApp .st-key-seccion [data-testid="stButtonGroup"]{gap:.9rem!important;column-gap:.9rem!important;row-gap:.6rem!important;padding:.15rem 0}
+.stApp .st-key-seccion [data-testid="stButtonGroup"] button[role="radio"]{min-height:2.6rem!important;padding:.35rem 1.3rem!important;margin:0!important;box-sizing:border-box;line-height:1.2}
+.stApp .st-key-seccion [data-testid="stButtonGroup"] button[role="radio"] p{font-size:.95rem!important;font-weight:650!important;line-height:1.2}
+.stApp .st-key-cambiar_alias button{min-height:2.2rem!important;padding:.25rem 1rem!important;border-radius:999px!important;font-size:.88rem!important;border:1px solid var(--borde)!important;background:var(--superficie)!important;width:auto!important}
+.stApp .st-key-cambiar_alias button p{font-size:.88rem!important;font-weight:600!important;line-height:1.2;white-space:nowrap}
+.stApp .st-key-cambiar_alias button:hover{border-color:var(--realce)!important}
+"""
+st.markdown(f"<style>{ESTILO_BOTONES}</style>", unsafe_allow_html=True)
 
 ESTILO_CLARO = """
 :root{--acento:#0c6173;--realce:#0c8aa6;--foco:#0c6173;--superficie:#fff;--ambar:#b87612;--borde:rgba(32,64,67,.22);--suave:rgba(30,84,87,.07)}
@@ -637,6 +646,11 @@ def ficha(fila):
     except (OSError, ValueError, KeyError) as error:
         st.error(f"No se puede representar esta ruta: {error}")
         return
+    if st.session_state.get("modo_visual") == "Claro":
+        visor_html = visor_html.replace("@media (prefers-color-scheme:dark)", "@media not all").replace(
+            "</head>", "<style>:root{--fondo:#fbf5e6;--panel:#ffffff;--borde:#8fc4d1;--acento:#0c6173;--ejes:#4d6a70;--area:rgba(12,138,166,.18)}.mapwrap,.perfil{border-width:1px}</style></head>", 1)
+    else:
+        visor_html = visor_html.replace("@media (prefers-color-scheme:dark)", "@media all")
     st.iframe(visor_html, height=800, alt=f"Mapa interactivo y perfil de elevación de {fila['nombre_ruta']}")
     if fila["tipo_recorrido"] != "circular":
         st.caption("En el mapa se dibuja la ida; la distancia, la subida y la bajada incluyen el regreso por el mismo camino. "
