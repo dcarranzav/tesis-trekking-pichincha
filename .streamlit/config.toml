@@ -4,6 +4,10 @@
 base = "dark"
 # Azul petróleo del proyecto en lugar del rojo predeterminado (el rojo se confunde con un error).
 primaryColor = "#1f8299"
+# Fondo azul petróleo profundo en lugar de negro, con superficies un tono más claras.
+backgroundColor = "#0d2f3c"
+secondaryBackgroundColor = "#15485a"
+textColor = "#f2f8f7"
 
 [client]
 # Oculta el botón «Deploy» de desarrollo; el menú sigue disponible.

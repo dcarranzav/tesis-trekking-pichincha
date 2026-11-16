@@ -217,8 +217,10 @@ svg.mini{width:100%;height:56px;display:block}
 }
 """
 ESTILO_PULIDO = """
-:root{--realce:#35b0c9;--foco:#5cc4d9;--superficie:rgba(128,128,128,.07);--ambar:#d99a2b}
+:root{--realce:#4fd1e8;--foco:#8be3f3;--superficie:rgba(255,255,255,.075);--borde:rgba(143,212,226,.30);--suave:rgba(120,200,215,.09);--ambar:#f0b44c}
 .stApp :focus-visible{outline:3px solid var(--foco)!important;outline-offset:2px}
+.stApp :focus:not(:focus-visible){outline:none!important}
+.stApp [data-testid="stExpander"] summary:focus:not(:focus-visible){box-shadow:none!important;border-color:transparent!important}
 .stApp [data-baseweb="select"]:focus-within>div,.stApp [data-baseweb="input"]:focus-within{box-shadow:0 0 0 3px var(--foco)!important}
 .stApp h4[id="elige-una-ruta"],.stApp h4[id="comparar-alternativas-al-mismo-destino"],.stApp h4[id="encuentra-una-caminata-a-tu-ritmo"]{font-size:1.75rem;font-weight:780;letter-spacing:-.02em;line-height:1.15;margin:.2rem 0 0;padding:.1rem 0 .1rem .85rem;border-left:5px solid var(--realce)}
 .stApp .st-key-seccion{border-bottom:1px solid var(--borde);padding-bottom:.75rem;margin-bottom:.9rem}
@@ -262,15 +264,37 @@ ESTILO_PULIDO = """
  .tarjeta.fija{height:auto;min-height:13.8rem}
 }
 @media (prefers-reduced-motion:reduce){.tarjeta,.stApp button{transition:none!important}}
+html,body,.stApp{background:radial-gradient(1100px 560px at 8% -8%,rgba(31,150,176,.55),transparent 62%),radial-gradient(900px 520px at 100% 4%,rgba(61,96,158,.45),transparent 58%),linear-gradient(185deg,#0e3a47 0%,#0d2f3c 48%,#0a2330 100%) fixed!important}
+[data-testid="stAppViewContainer"],[data-testid="stMain"],[data-testid="stHeader"]{background:transparent!important}
+.stApp [data-baseweb="select"]>div,.stApp [data-baseweb="input"]>div,.stApp [data-baseweb="base-input"]{background:#15485a}
+.stApp [data-baseweb="select"]>div,.stApp [data-baseweb="input"]>div{border:1px solid rgba(143,212,226,.35)}
+[data-baseweb="popover"] [data-baseweb="menu"],[data-baseweb="popover"] ul[role="listbox"]{background:#15485a}
+.stApp .tarjeta:has([style*="#1f7a5c"]){--nv:#34c38f}
+.stApp .tarjeta:has([style*="#b7791f"]){--nv:#f0b44c}
+.stApp .tarjeta:has([style*="#b4442f"]){--nv:#ff7a5c}
+.stApp .tarjeta{background:linear-gradient(165deg,rgba(255,255,255,.11),rgba(255,255,255,.04));box-shadow:inset 0 4px 0 var(--nv,transparent),0 8px 22px rgba(0,0,0,.28)}
+.stApp .tarjeta.fija:hover{border-color:var(--realce);box-shadow:inset 0 4px 0 var(--nv,transparent),0 14px 32px rgba(0,0,0,.4)}
+.stApp [data-testid="stHorizontalBlock"]:has(.st-key-filtro_lugar){background:linear-gradient(135deg,rgba(79,209,232,.20),rgba(79,209,232,.06));border-color:rgba(79,209,232,.4)}
+.stApp h4[id="elige-una-ruta"],.stApp h4[id="comparar-alternativas-al-mismo-destino"],.stApp h4[id="encuentra-una-caminata-a-tu-ritmo"]{border-image:linear-gradient(180deg,#4fd1e8,#34c38f) 1}
+.stApp .kpi,.stApp .aviso-card,.stApp .clima-tarjeta,.stApp .tres>div,.stApp .flujo-paso{background:var(--superficie);box-shadow:0 6px 18px rgba(0,0,0,.22)}
+.stApp .kpi-ico{color:#6fe0f2}
+.stApp [data-testid="stExpander"] details{border:1px solid var(--borde)!important;border-radius:12px;background:rgba(255,255,255,.06)}
+.stApp .st-key-seccion button[role="radio"]{border-radius:999px;background:rgba(255,255,255,.09);border:1px solid var(--borde)}
+.stApp .st-key-seccion button[role="radio"][aria-checked="true"]{background:linear-gradient(135deg,#0e809b,#0b6a80)!important;border-color:transparent}
+.stApp .st-key-seccion button[role="radio"][aria-checked="true"] p{color:#fff!important}
+.stApp [data-testid="stButtonGroup"] button[aria-checked="true"]{background:#0e809b!important;border-color:transparent!important}
+.stApp [data-testid="stButtonGroup"] button[aria-checked="true"] p{color:#fff!important}
+.stApp [class*="st-key-ver_"] button{background:linear-gradient(135deg,#0e809b,#0b6a80)!important;box-shadow:0 4px 14px rgba(17,138,166,.35)}
+.stApp [class*="st-key-ver_"] button:hover{background:linear-gradient(135deg,#0d86a2,#0a6279)!important}
 """
 st.markdown(f"<style>{ESTILO}</style>", unsafe_allow_html=True)
 st.markdown(f"<style>{ESTILO_PULIDO}</style>", unsafe_allow_html=True)
 
 ESTILO_CLARO = """
-:root{--acento:#0c6173;--realce:#0c6173;--foco:#0c6173;--superficie:#fff;--ambar:#b87612;--borde:rgba(32,64,67,.22);--suave:rgba(30,84,87,.07)}
-html,body,.stApp{background:#f2f6f3!important;color:#183038!important}
-[data-testid="stAppViewContainer"],[data-testid="stMain"]{background:#f2f6f3!important;color:#183038!important}
-[data-testid="stHeader"]{background:rgba(242,246,243,.92)!important}
+:root{--acento:#0c6173;--realce:#0c8aa6;--foco:#0c6173;--superficie:#fff;--ambar:#b87612;--borde:rgba(32,64,67,.22);--suave:rgba(30,84,87,.07)}
+html,body,.stApp{background:radial-gradient(900px 480px at 0% -5%,rgba(120,205,215,.55),transparent 60%),radial-gradient(800px 460px at 100% 0%,rgba(255,214,150,.45),transparent 58%),linear-gradient(180deg,#e2f2f1 0%,#eef6ee 45%,#fbf2e0 100%) fixed!important;color:#183038!important}
+[data-testid="stAppViewContainer"],[data-testid="stMain"]{background:transparent!important;color:#183038!important}
+[data-testid="stHeader"]{background:rgba(226,242,241,.35)!important;backdrop-filter:blur(6px)}
 .stApp [data-testid="stMarkdownContainer"],.stApp [data-testid="stWidgetLabel"],
 .stApp [data-testid="stExpander"],.stApp [data-testid="stCaptionContainer"]{color:#183038}
 .stApp [data-testid="stVerticalBlockBorderWrapper"],
@@ -311,6 +335,24 @@ html,body,.stApp{background:#f2f6f3!important;color:#183038!important}
 .stApp [data-testid="stAlertContainer"] a{color:#0c6173!important;text-decoration:underline}
 .stApp [data-testid="stMarkdownContainer"] a:not(.pf-boton){color:#0a5568!important;text-decoration:underline;text-underline-offset:2px}
 .stApp [data-testid="stMarkdownContainer"] a:not(.pf-boton):hover{color:#073d4c!important}
+.stApp .kpi,.stApp .aviso-card,.stApp .clima-tarjeta,.stApp .tres>div,.stApp .flujo-paso{background:#fff;border-color:rgba(12,97,115,.2);box-shadow:0 6px 18px rgba(12,97,115,.1)}
+.stApp .pf-ventajas>div{background:rgba(255,255,255,.78)}
+.stApp .tarjeta{background:#fff;border-color:rgba(12,97,115,.2);box-shadow:inset 0 4px 0 var(--nv,transparent),0 8px 22px rgba(12,97,115,.13)}
+.stApp .tarjeta:has([style*="#1f7a5c"]){--nv:#1f7a5c}
+.stApp .tarjeta:has([style*="#b7791f"]){--nv:#d99a2b}
+.stApp .tarjeta:has([style*="#b4442f"]){--nv:#c9503a}
+.stApp .tarjeta.fija:hover{border-color:#0c8aa6;box-shadow:inset 0 4px 0 var(--nv,transparent),0 14px 30px rgba(12,97,115,.22)}
+.stApp [data-testid="stHorizontalBlock"]:has(.st-key-filtro_lugar){background:linear-gradient(135deg,#cfeaf0,#e3f4ea);border-color:#8fc4d1;box-shadow:0 6px 18px rgba(12,97,115,.1)}
+.stApp [data-baseweb="select"]>div,.stApp [data-baseweb="input"]>div{border:1px solid #8fc4d1}
+.stApp h4[id="elige-una-ruta"],.stApp h4[id="comparar-alternativas-al-mismo-destino"],.stApp h4[id="encuentra-una-caminata-a-tu-ritmo"]{color:#0a4f61;border-image:linear-gradient(180deg,#0c8aa6,#1f7a5c) 1}
+.stApp [data-testid="stExpander"],.stApp [data-testid="stExpander"] details{background:#fff}
+.stApp [data-testid="stExpander"] details{border:1px solid #8fc4d1!important;border-radius:12px}
+.stApp [data-testid="stExpander"] summary,.stApp [data-testid="stExpander"] summary:hover,.stApp [data-testid="stExpander"] summary:focus{background:transparent!important;color:#183038!important}
+.stApp [data-testid="stExpander"] summary:focus-visible{outline:3px solid #0c8aa6!important;outline-offset:2px}
+.stApp .st-key-seccion [data-testid="stButtonGroup"] button[role="radio"]{border-radius:999px!important;background:#fff!important;border:1px solid #8fc4d1!important}
+.stApp .st-key-seccion [data-testid="stButtonGroup"] button[role="radio"][aria-checked="true"]{background:linear-gradient(135deg,#0b7c96,#0a6379)!important;border-color:transparent!important}
+.stApp [class*="st-key-ver_"] button{background:linear-gradient(135deg,#0b7c96,#0a6379)!important;box-shadow:0 4px 12px rgba(12,97,115,.3)}
+.stApp [class*="st-key-ver_"] button:hover{background:linear-gradient(135deg,#0c86a1,#095f73)!important}
 .stApp [data-testid="stAlertContentInfo"] svg{color:#0c6173!important;fill:#0c6173!important}
 .stApp [data-testid="stAlertContentWarning"] svg{color:#8a5a00!important;fill:#8a5a00!important}
 .stApp [data-testid="stAlertContentError"] svg{color:#a3261d!important;fill:#a3261d!important}
