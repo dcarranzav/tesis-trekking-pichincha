@@ -13,7 +13,6 @@ se conservan como contrastes metodológicos.
 from __future__ import annotations
 
 import csv
-import re
 import sys
 import time
 from html import escape
@@ -28,6 +27,7 @@ import vista_rutas as vr  # noqa: E402
 import visuales_pagina as vz  # noqa: E402
 import fotos_pagina as fotos  # noqa: E402
 import clima_rutas as clima  # noqa: E402
+import informacion_visitante as iv  # noqa: E402
 
 SECCIONES = ("Explorar rutas", "Comparar alternativas", "Cómo funciona")
 TODOS = "Todos"
@@ -216,10 +216,58 @@ svg.mini{width:100%;height:56px;display:block}
 }
 }
 """
+ESTILO_PULIDO = """
+:root{--realce:#35b0c9;--foco:#5cc4d9;--superficie:rgba(128,128,128,.07);--ambar:#d99a2b}
+.stApp :focus-visible{outline:3px solid var(--foco)!important;outline-offset:2px}
+.stApp [data-baseweb="select"]:focus-within>div,.stApp [data-baseweb="input"]:focus-within{box-shadow:0 0 0 3px var(--foco)!important}
+.stApp h4[id="elige-una-ruta"],.stApp h4[id="comparar-alternativas-al-mismo-destino"],.stApp h4[id="encuentra-una-caminata-a-tu-ritmo"]{font-size:1.75rem;font-weight:780;letter-spacing:-.02em;line-height:1.15;margin:.2rem 0 0;padding:.1rem 0 .1rem .85rem;border-left:5px solid var(--realce)}
+.stApp .st-key-seccion{border-bottom:1px solid var(--borde);padding-bottom:.75rem;margin-bottom:.9rem}
+.stApp .st-key-seccion [data-testid="stButtonGroup"]{flex-wrap:wrap;gap:.4rem}
+.stApp .st-key-seccion button[role="radio"]{min-height:2.7rem;padding:.4rem 1.15rem;font-weight:650}
+.stApp .st-key-seccion button[role="radio"] p{font-size:.98rem;font-weight:650}
+.stApp [data-testid="stHorizontalBlock"]:has(.st-key-filtro_lugar){background:var(--superficie);border:1px solid var(--borde);border-radius:14px;padding:.9rem 1rem 1rem;gap:1rem;align-items:flex-end;flex-wrap:wrap;margin:.6rem 0 .5rem}
+.stApp [data-testid="stHorizontalBlock"]:has(.st-key-filtro_lugar)>[data-testid="stColumn"]{min-width:13rem!important;flex:1 1 13rem!important;width:auto!important}
+.stApp [data-testid="stHorizontalBlock"]:has(.st-key-filtro_lugar) [data-testid="stWidgetLabel"] p{font-size:.82rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;opacity:.9}
+.stApp [data-testid="stHorizontalBlock"]:has(.st-key-filtro_lugar) [data-baseweb="select"]>div,
+.stApp [data-testid="stHorizontalBlock"]:has(.st-key-filtro_lugar) [data-baseweb="input"]>div{min-height:2.9rem;border-radius:10px}
+.stApp .st-key-filtro_nombre input{padding-left:2.4rem!important;background-repeat:no-repeat!important;background-position:.8rem center!important;background-size:1.1rem!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%237d9097' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E")!important}
+.stApp [data-testid="stHorizontalBlock"]:has(.st-key-filtro_lugar)+[data-testid="stElementContainer"]:not(:has([data-testid="stAlert"])){margin-top:.2rem}
+.stApp [data-testid="stHorizontalBlock"]:has(.st-key-filtro_lugar)+[data-testid="stElementContainer"]:not(:has([data-testid="stAlert"])) p{font-size:.98rem;line-height:1.5;max-width:60rem}
+.stApp [data-testid="stHorizontalBlock"]:has(.st-key-filtro_lugar)+[data-testid="stElementContainer"]+[data-testid="stElementContainer"] [data-testid="stCaptionContainer"]{font-size:.88rem;line-height:1.45;max-width:60rem}
+.stApp [data-testid="stHorizontalBlock"]:has(.tarjeta.fija){display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+@media (max-width:1100px){.stApp [data-testid="stHorizontalBlock"]:has(.tarjeta.fija){grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.stApp [data-testid="stHorizontalBlock"]:has(.tarjeta.fija){grid-template-columns:minmax(0,1fr)}}
+.stApp [data-testid="stHorizontalBlock"]:has(.tarjeta.fija)>[data-testid="stColumn"]{width:auto!important;min-width:0!important;flex:none!important}
+.tarjeta{border-radius:14px;background:var(--superficie);gap:.5rem;padding:1rem 1.05rem .9rem}
+.tarjeta.sel{padding:calc(1rem - 1px) calc(1.05rem - 1px)}
+.tarjeta.fija{height:13.8rem;transition:border-color .2s,box-shadow .2s,transform .2s}
+.tarjeta.fija:hover{border-color:var(--realce);box-shadow:0 10px 26px rgba(0,0,0,.2)}
+@media (prefers-reduced-motion:no-preference){.tarjeta.fija:hover{transform:translateY(-2px)}}
+.t-lugar{font-size:.74rem;font-weight:650;letter-spacing:.06em;opacity:.8}
+.t-nombre{font-size:1.06rem;font-weight:720;line-height:1.28;min-height:2.56em}
+.t-datos{gap:.5rem;flex-wrap:wrap}
+.t-datos span{background:rgba(128,128,128,.14);padding:.2rem .6rem;border-radius:999px;font-weight:600;font-size:.9rem}
+.t-tipo{font-size:.82rem;opacity:.8}
+.t-aviso{font-size:.8rem;line-height:1.35;border-top:0;padding-top:0;min-height:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.t-aviso:empty{display:none}
+.t-aviso:not(:empty){border-left:3px solid var(--ambar);background:rgba(217,154,43,.12);padding:.3rem .55rem;border-radius:0 8px 8px 0;opacity:1}
+.stApp [class*="st-key-ver_"]{margin-top:.65rem}
+.stApp [class*="st-key-ver_"] button{background:#0f6b82!important;color:#fff!important;border:0!important;border-radius:10px!important;min-height:2.7rem;font-weight:700;transition:background .15s}
+.stApp [class*="st-key-ver_"] button p{color:#fff!important;font-weight:700}
+.stApp [class*="st-key-ver_"] button:hover{background:#0b86a2!important}
+@media (max-width:640px){
+ .stApp h4[id="elige-una-ruta"],.stApp h4[id="comparar-alternativas-al-mismo-destino"],.stApp h4[id="encuentra-una-caminata-a-tu-ritmo"]{font-size:1.4rem}
+ .stApp [data-testid="stHorizontalBlock"]:has(.st-key-filtro_lugar){padding:.75rem .8rem .85rem;gap:.7rem}
+ .stApp [data-testid="stHorizontalBlock"]:has(.st-key-filtro_lugar)>[data-testid="stColumn"]{flex:1 1 100%!important;min-width:100%!important}
+ .tarjeta.fija{height:auto;min-height:13.8rem}
+}
+@media (prefers-reduced-motion:reduce){.tarjeta,.stApp button{transition:none!important}}
+"""
 st.markdown(f"<style>{ESTILO}</style>", unsafe_allow_html=True)
+st.markdown(f"<style>{ESTILO_PULIDO}</style>", unsafe_allow_html=True)
 
 ESTILO_CLARO = """
-:root{--acento:#0c6173;--borde:rgba(32,64,67,.22);--suave:rgba(30,84,87,.07)}
+:root{--acento:#0c6173;--realce:#0c6173;--foco:#0c6173;--superficie:#fff;--ambar:#b87612;--borde:rgba(32,64,67,.22);--suave:rgba(30,84,87,.07)}
 html,body,.stApp{background:#f2f6f3!important;color:#183038!important}
 [data-testid="stAppViewContainer"],[data-testid="stMain"]{background:#f2f6f3!important;color:#183038!important}
 [data-testid="stHeader"]{background:rgba(242,246,243,.92)!important}
@@ -229,6 +277,20 @@ html,body,.stApp{background:#f2f6f3!important;color:#183038!important}
 .stApp [data-baseweb="select"]>div,.stApp [data-baseweb="input"]>div,
 .stApp [data-baseweb="base-input"]{background:#fff!important;color:#183038!important}
 .stApp [data-testid="stTextInputRootElement"]{background:#fff!important}
+.stApp [data-baseweb="select"] *,.stApp [data-baseweb="select"] input{color:#183038!important;-webkit-text-fill-color:#183038!important}
+.stApp [data-baseweb="select"] svg{fill:#183038!important;color:#183038!important}
+.stApp [data-testid="stSelectbox"] .react-aria-ComboBox [role="group"]{background:#fff!important;color:#183038!important;border-color:var(--borde)!important}
+.stApp [data-testid="stSelectbox"] .react-aria-ComboBox input[role="combobox"]{color:#183038!important;-webkit-text-fill-color:#183038!important;background:transparent!important}
+.stApp [data-testid="stSelectbox"] .react-aria-ComboBox button,.stApp [data-testid="stSelectbox"] .react-aria-ComboBox svg{color:#183038!important;fill:#183038!important}
+[data-testid="stSelectboxVirtualDropdown"]{background:#fff!important;color:#183038!important}
+[data-testid="stSelectboxVirtualDropdown"] [role="option"],[data-testid="stSelectboxVirtualDropdown"] [role="option"] *{color:#183038!important;-webkit-text-fill-color:#183038!important}
+[data-testid="stSelectboxVirtualDropdown"] [role="option"][aria-selected="true"],[data-testid="stSelectboxVirtualDropdown"] [role="option"]:hover{background:rgba(12,97,115,.12)!important}
+.stApp [data-baseweb="select"] [data-baseweb="tag"]{background:#0c6173!important}
+.stApp [data-baseweb="select"] [data-baseweb="tag"] *{color:#fff!important;-webkit-text-fill-color:#fff!important}
+[data-baseweb="popover"] [data-baseweb="menu"],[data-baseweb="popover"] ul[role="listbox"]{background:#fff!important}
+[data-baseweb="popover"] li,[data-baseweb="popover"] li *,[data-baseweb="popover"] [role="option"],[data-baseweb="popover"] [role="option"] *{color:#183038!important;-webkit-text-fill-color:#183038!important}
+[data-baseweb="popover"] li:hover,[data-baseweb="popover"] [role="option"][aria-selected="true"]{background:rgba(12,97,115,.12)!important}
+.stApp input::placeholder,.stApp textarea::placeholder{-webkit-text-fill-color:#587074!important}
 .stApp input,.stApp textarea{color:#183038!important;background:transparent!important}
 .stApp input::placeholder{color:#587074!important}
 .stApp [data-testid="stDataFrame"],.stApp [data-testid="stExpander"]{background:#fff;border-radius:10px}
@@ -324,15 +386,6 @@ def rutas_estudio():
     return rutas
 
 
-def humanizar(texto: str, nombres: dict[str, str]) -> str:
-    """Los avisos vienen del análisis con identificadores internos; la vista principal usa nombres de ruta."""
-    texto = re.sub(r"\s*según I\d+/E\d+", "", texto)
-    texto = re.sub(r"\s*Su clase física es relativa a las 20 rutas estudiadas[^.]*\.", "", texto)
-    texto = re.sub(r"\bR\d{3}\b", lambda m: "«" + nombres.get(m.group(0), "otra ruta") + "»", texto)
-    return (texto.replace("un DEM de 30 m", "un modelo de elevación de 30 m de resolución")
-                 .replace("No forma parte del índice de esfuerzo.", "No forma parte de la categoría de dificultad física."))
-
-
 def num(valor, decimales: int = 2) -> str:
     return vz.numero(valor, decimales)
 
@@ -346,21 +399,9 @@ def rango_km(lista, nivel) -> str:
     return f"{vz.numero(min(d), 2)}–{vz.numero(max(d), 2)} km" if d else "—"
 
 
-def aviso_corto(fila, verificacion) -> str:
-    """Texto breve para la tarjeta: solo si hay un aviso de acceso, trazado o alta montaña pendiente de confirmar."""
-    filas = [r for r in verificacion if r["clave"] == fila["id_ruta"] and r["tipo"] in ("destacada", "advertencia", "nombre_acceso")]
-    if any(r["tipo"] == "destacada" for r in filas):
-        return "Alta montaña: revisa los avisos de la ficha."
-    if any(r["tipo"] == "nombre_acceso" for r in filas):
-        return "Punto de inicio por verificar: revisa la ficha."
-    if filas:
-        return "Falta confirmar acceso o trazado: revisa la ficha."
-    return ""
-
-
-def tarjeta(fila, verificacion, seleccionada=False) -> str:
+def tarjeta(fila, seleccionada=False) -> str:
     return vz.tarjeta_ruta(fila["nombre_ruta"], fila["lugar"], fila["nivel"], fila["distancia_total_km"], fila["ascenso_total_m"],
-                           tipo_texto(fila), aviso_corto(fila, verificacion), seleccionada)
+                           tipo_texto(fila), seleccionada=seleccionada)
 
 
 def ir_a_detalle(id_ruta: str):
@@ -377,6 +418,7 @@ def abrir_ruta(id_ruta: str):
 
 def volver_a_la_lista():
     st.session_state.pop("ruta_detalle", None)
+    st.session_state["seccion"] = SECCIONES[0]
     st.session_state["subir_al_inicio"] = True
 
 
@@ -515,14 +557,18 @@ if st.session_state.get("seccion", SECCIONES[0]) == SECCIONES[0] and not st.sess
 
 if st.session_state.get("seccion") not in SECCIONES:
     st.session_state["seccion"] = SECCIONES[0]
-seccion = st.segmented_control("Sección", list(SECCIONES), key="seccion", label_visibility="collapsed") or SECCIONES[0]
+if st.session_state.get("ruta_detalle") in por_id:
+    # La ficha tiene su propio regreso a la lista; el menú de secciones pertenece a la vista principal.
+    st.session_state["seccion"] = SECCIONES[0]
+    seccion = SECCIONES[0]
+else:
+    seccion = st.segmented_control("Sección", list(SECCIONES), key="seccion", label_visibility="collapsed") or SECCIONES[0]
 
 
 # ================================================================== ficha de una ruta
 def ficha(fila):
     id_ruta = fila["id_ruta"]
     perfil = vr.cargar_perfil(id_ruta)
-    acceso = vr.verificar_acceso(fila, (perfil[0]["lat"], perfil[0]["lon"]), verificacion)
     st.subheader(fila["nombre_ruta"])
     st.caption(f"{fila['lugar']} · destino: {fila['destino_exacto']} · {tipo_texto(fila)}")
     st.markdown(vz.insignia_nivel(fila["nivel"], fila["sensible"]), unsafe_allow_html=True)
@@ -532,9 +578,6 @@ def ficha(fila):
         st.caption("Este nivel puede variar si se revisan las medidas de la ruta.")
     elif fila["cerca_de_frontera"]:
         st.caption("El esfuerzo de esta ruta se parece al de rutas de otro nivel.")
-    for texto_destacado in vr.advertencias_destacadas(id_ruta, verificacion):
-        st.warning(humanizar(texto_destacado, nombres))
-
     try:
         visor_html = vr.construir_visor_html(datos_visor(id_ruta, fila))
     except (OSError, ValueError, KeyError) as error:
@@ -554,20 +597,19 @@ def ficha(fila):
         ("altitud", num(fila["elevacion_max_m"], 0), "m", "Altitud máxima"),
     ]), unsafe_allow_html=True)
 
-    st.markdown("#### Avisos de esta ruta")
-    st.caption("Son independientes de la categoría: una ruta Fácil puede tener altitud, acceso restringido o terreno exigente.")
-    if acceso["nota"]:
-        st.warning(humanizar(acceso["nota"], nombres))
-    separados = vr.avisos_separados(id_ruta, fila, inventario, verificacion)
-    st.markdown(vz.avisos_ruta(
-        [humanizar(aviso, nombres) for aviso in separados["altitud"]],
-        [humanizar(aviso, nombres) for aviso in separados["acceso"]],
-        [humanizar(aviso, nombres) for aviso in separados["caracter_tecnico"]],
-    ), unsafe_allow_html=True)
-    if separados["otros"]:
-        st.markdown("**Otros avisos de verificación**")
-        for aviso in separados["otros"]:
-            st.markdown(f"- {humanizar(aviso, nombres)}")
+    st.markdown("#### Antes de ir")
+    nota_visita = iv.ficha(id_ruta)
+    if nota_visita:
+        if id_ruta == "R001":
+            st.warning(nota_visita["detalle"])
+        else:
+            st.info(nota_visita["detalle"])
+        if nota_visita.get("url"):
+            st.markdown(f"[Consulta la información de {nota_visita['fuente']}]({nota_visita['url']})")
+    else:
+        st.write("Revisa el clima y las indicaciones del lugar antes de salir.")
+    st.caption("La altura máxima se muestra arriba. El nivel Fácil, Moderada o Difícil describe el esfuerzo de caminar; "
+               "el terreno y las condiciones de visita pueden requerir otros cuidados.")
 
     st.markdown("#### Descargas")
     d = st.columns(2)
@@ -621,7 +663,7 @@ def ficha(fila):
     if len(id_fuente) > 90:
         id_fuente = id_fuente[:60].replace("|", " | ") + f"… ({len(id_fuente.split('|'))} segmentos en total)"
     dem, filtrado = vr.fuente_elevacion(id_ruta)
-    with st.expander("Datos técnicos, fuentes y licencias"):
+    with st.expander("Fuentes y datos del mapa"):
         st.markdown(
             f"- **Inclinación:** media {num(fila['pendiente_media_abs_pct'], 1)} %; el 5 % de los tramos más empinados supera "
             f"{num(fila['pendiente_p95_abs_pct'], 1)} %\n"
@@ -631,15 +673,8 @@ def ficha(fila):
             f"- **Enlace de la fuente:** {ficha_inv.get('url_fuente', '—')}\n"
             f"- **Licencia del trazado:** {ficha_inv.get('licencia_nombre', '—')} ({ficha_inv.get('licencia_url', '—')})\n"
             f"- **Elevación:** {dem}\n"
-            f"- **Filtrado del perfil:** {filtrado}\n"
-            f"- **Calidad preliminar:** {ficha_inv.get('calidad_preliminar', '—')} · decisión: {ficha_inv.get('decision', '—')}\n"
-            f"- **Compatibilidad con trekking no técnico:** {ficha_inv.get('motivo_compatibilidad', '—')}"
+            f"- **Filtrado del perfil:** {filtrado}"
         )
-        originales = vr.advertencias(id_ruta, verificacion)
-        if originales:
-            st.markdown("**Texto original de los avisos (con identificadores internos)**")
-            for aviso in originales:
-                st.markdown(f"- {aviso}")
 
 
 # ================================================================== sección: explorar rutas
@@ -685,7 +720,7 @@ def explorar():
         columnas = st.columns(4)
         for columna, r in zip(columnas, visibles[inicio:inicio + 4]):
             with columna:
-                st.markdown(tarjeta(r, verificacion).replace('class="tarjeta"', 'class="tarjeta fija"'), unsafe_allow_html=True)
+                st.markdown(tarjeta(r).replace('class="tarjeta"', 'class="tarjeta fija"'), unsafe_allow_html=True)
                 st.button("Ver ruta", key=f"ver_{r['id_ruta']}", on_click=abrir_ruta, args=(r["id_ruta"],), width="stretch",
                           help=f"Mapa, perfil, avisos y descargas de {r['nombre_ruta']}")
     if len(visibles) < len(lista):
@@ -696,7 +731,8 @@ def explorar():
 # ================================================================== sección: comparar alternativas
 def comparar():
     st.markdown("#### Comparar alternativas al mismo destino")
-    st.write("Solo se comparan rutas que llegan al mismo destino exacto. Cumbres, miradores o cascadas cercanos no se mezclan para fabricar opciones.")
+    st.write("Elige un destino para ver los recorridos que llegan a ese mismo punto. Así puedes comparar cuánto caminarías "
+             "y cuánto subirías por cada camino. Una cumbre y un mirador cercano se muestran por separado si no son la misma llegada.")
     grupos = {}
     for r in rutas:
         grupos.setdefault((r["lugar"], r["destino_exacto"]), []).append(r)
@@ -710,7 +746,27 @@ def comparar():
     alternativas = [dict(r) for r in varios[etiqueta]]
     vr.validar_comparacion(alternativas)
     alternativas.sort(key=lambda r: (r["horas"], r["nombre_ruta"]))
-    st.markdown(vz.rejilla([tarjeta(r, verificacion) for r in alternativas], columnas=min(3, len(alternativas))), unsafe_allow_html=True)
+    distancias = [float(r["distancia_total_km"]) for r in alternativas]
+    subidas = [float(r["ascenso_total_m"]) for r in alternativas]
+    st.markdown("##### ¿Qué cambia entre estos caminos?")
+    lectura = []
+    for r in alternativas:
+        distancia = float(r["distancia_total_km"])
+        subida = float(r["ascenso_total_m"])
+        distancia_relativa = ("la menor distancia" if distancia == min(distancias) else
+                              "la mayor distancia" if distancia == max(distancias) else "una distancia intermedia")
+        subida_relativa = ("la menor subida acumulada" if subida == min(subidas) else
+                           "la mayor subida acumulada" if subida == max(subidas) else "una subida intermedia")
+        lectura.append(
+            f"- **{escape(r['nombre_ruta'])}:** {num(distancia)} km en total y {num(subida, 0)} m de subida; "
+            f"tiene {distancia_relativa} y {subida_relativa} entre estas opciones. "
+            f"Su punto más alto está a unos {num(r['elevacion_max_m'], 0)} m."
+        )
+    st.markdown("\n".join(lectura))
+    st.caption("La distancia incluye el regreso cuando la ruta es de ida y vuelta. La subida suma todos los ascensos: "
+               "no significa que todo el sendero tenga la misma inclinación. La altura máxima describe el lugar, "
+               "pero no determina por sí sola el nivel de esfuerzo ni la seguridad.")
+    st.markdown(vz.rejilla([tarjeta(r) for r in alternativas], columnas=min(3, len(alternativas))), unsafe_allow_html=True)
     st.caption("Compara las opciones que llegan al mismo lugar. El nivel resume el esfuerzo de la caminata; revisa también el acceso, el estado del sendero "
                "y tu condición física.")
     barras = [dict(r, etiqueta=r["nombre_ruta"]) for r in alternativas]
@@ -732,6 +788,17 @@ def comparar():
     ]
     st.dataframe(tabla, hide_index=True, width="stretch")
     st.caption("«Puede variar» indica que el nivel podría cambiar al revisar las medidas de la ruta.")
+    with st.expander("Antes de salir: qué revisar y llevar"):
+        st.markdown(
+            "- **Acceso y estado:** confirma con el administrador si el sendero está abierto, sus horarios y si requiere entrada o permiso. "
+            "Abre la ficha de cada opción para leer sus avisos.\n"
+            "- **Tiempo y terreno:** revisa el pronóstico y los avisos oficiales. Escoge calzado, abrigo, protección solar "
+            "y ropa para lluvia según las condiciones que encuentres.\n"
+            "- **Agua y comida:** lleva suficiente para la duración y las condiciones de tu caminata. "
+            "La página no puede fijar una cantidad de botellas válida para todas las personas y rutas.\n"
+            "\nEstas son pautas generales de preparación, no una garantía de acceso o seguridad. "
+            "Fuente: [Montaña Segura, Senderismo con seguridad](https://montanasegura.com/senderismo-con-seguridad/)."
+        )
     st.markdown("**Ver una alternativa en detalle**")
     columnas = st.columns(len(alternativas))
     for columna, r in zip(columnas, alternativas):
