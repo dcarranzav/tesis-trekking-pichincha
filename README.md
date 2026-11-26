@@ -1,4 +1,4 @@
-# Tesis: clasificación y recomendación de rutas de trekking en Pichincha
+# Tesis: análisis de datos geoespaciales para la caracterización y clasificación del esfuerzo físico estimado de rutas de trekking seleccionadas en la provincia de Pichincha
 
 Este repositorio construye un conjunto reproducible de rutas de trekking no técnico en Pichincha y una página para explorar y comparar recorridos al mismo destino. Desde el 10 de noviembre, la página muestra tres grupos de **esfuerzo físico relativo** (Fácil, Moderada y Difícil) asignados por **K-means k=3** sobre distancia total y subida acumulada de las 20 rutas. Son etiquetas experimentales relativas a esta muestra; no son una evaluación MIDE, una escala de dificultad técnica, una certificación de seguridad ni una recomendación de salida. La regla de marcha anterior queda como contraste.
 
