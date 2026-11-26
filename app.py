@@ -51,7 +51,7 @@ ESTILO = """
 .bienvenida-esp{height:6vh}
 .bienvenida{padding:.3rem 0 0}
 .bienvenida .b-sello{font-size:.74rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.7;margin:0 0 .5rem}
-.bienvenida .b-titulo{font-size:1.35rem;font-weight:750;line-height:1.15;margin:0 0 .5rem;letter-spacing:-.01em}
+.bienvenida .b-titulo{font-size:1.25rem;font-weight:650;line-height:1.35;margin:0 0 .85rem;letter-spacing:0;text-wrap:balance}
 .bienvenida .b-lema{font-size:1rem;line-height:1.5;opacity:.9;margin:0 0 1.1rem}
 .bienvenida .b-datos{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem;padding:0;margin:0 0 .9rem}
 .bienvenida .b-datos li{border:1px solid var(--borde);border-radius:8px;padding:.55rem .65rem;display:flex;flex-direction:column;gap:.1rem;margin:0}
