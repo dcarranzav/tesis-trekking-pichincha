@@ -56,7 +56,7 @@ class AppStreamlitReal(unittest.TestCase):
         self.assertIn("fondo-cambio", "".join(str(e.value) for e in entrada.markdown))
         pagina = nueva(modo_visual="Claro")
         self.assertFalse(pagina.exception, [e.value for e in pagina.exception])
-        self.assertIn("#f2f6f3", "".join(str(e.value) for e in pagina.markdown))
+        self.assertIn("#e2f2f1", "".join(str(e.value) for e in pagina.markdown))
 
     def test_arranque_sin_excepciones_con_portada_sin_aviso_de_desarrollo(self):
         at = nueva()
@@ -140,7 +140,7 @@ class AppStreamlitReal(unittest.TestCase):
             self.assertIsNone(OTROS.search(v), seccion)
 
     def test_ruta_sensible_muestra_el_aviso_y_las_demas_no(self):
-        frase = "Este nivel puede variar si se revisan las medidas de la ruta"
+        frase = "Este nivel puede variar si cambian los supuestos del cálculo"
         self.assertIn(frase, texto(nueva(ruta_detalle="R003")))
         self.assertNotIn(frase, texto(nueva(ruta_detalle="R011")))
 

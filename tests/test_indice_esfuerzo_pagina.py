@@ -171,7 +171,7 @@ class PaginaConStreamlitSimulado(unittest.TestCase):
         from test_app_humo import ejecutar
         t = ejecutar(valores={"ruta_detalle": "R001"}).textos()
         self.assertIn("4 679 m", t)
-        self.assertIn("No forma parte de la categoría de dificultad física", t)
+        self.assertIn("El nivel Fácil, Moderada o Difícil describe el esfuerzo de caminar", t)
         self.assertNotIn("índice de esfuerzo", t)
 
 

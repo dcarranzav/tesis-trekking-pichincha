@@ -16,6 +16,12 @@ RAIZ = Path(__file__).resolve().parents[1]
 TABLA = RAIZ / "07_resultados" / "tablas" / "dataset_clasificacion_rutas.csv"
 TRAZADOS = RAIZ / "03_datos_intermedios" / "trazados"
 
+# Atribución y licencia de los datos de OpenStreetMap que viajan dentro de cada descarga.
+ATRIBUCION_OSM = "Datos © colaboradores de OpenStreetMap"
+LICENCIA_ODBL = "Open Database License (ODbL) 1.0"
+URL_LICENCIA_ODBL = "https://opendatacommons.org/licenses/odbl/1-0/"
+URL_COPYRIGHT_OSM = "https://www.openstreetmap.org/copyright"
+
 
 def cargar_catalogo(tabla: Path = TABLA) -> list[dict[str, str]]:
     with tabla.open(encoding="utf-8-sig", newline="") as archivo:
@@ -61,18 +67,48 @@ def cargar_trazado(id_ruta: str, carpeta: Path = TRAZADOS) -> tuple[dict, list[t
 
 
 def gpx_desde_puntos(id_ruta: str, nombre: str, puntos: list[tuple[float, float]]) -> bytes:
-    """Exporta únicamente geometría 2D; no inventa elevación ni tiempos."""
+    """Exporta únicamente geometría 2D; no inventa elevación ni tiempos.
+
+    Añade metadatos de atribución y licencia ODbL antes del trazado (GPX 1.1:
+    metadata va antes de trk). Los puntos del trazado no se modifican.
+    """
     if len(puntos) < 2:
         raise ValueError("Se requieren al menos dos puntos")
     espacio = "http://www.topografix.com/GPX/1/1"
     ET.register_namespace("", espacio)
     raiz = ET.Element(f"{{{espacio}}}gpx", version="1.1", creator="Tesis trekking Pichincha")
+    meta = ET.SubElement(raiz, f"{{{espacio}}}metadata")
+    ET.SubElement(meta, f"{{{espacio}}}name").text = f"{id_ruta} - {nombre}"
+    ET.SubElement(meta, f"{{{espacio}}}desc").text = (
+        f"{ATRIBUCION_OSM}, disponibles bajo la {LICENCIA_ODBL} ({URL_LICENCIA_ODBL}). "
+        "Trazado 2D sin elevaciones ni tiempos; no es una grabación hecha sobre el terreno."
+    )
+    derechos = ET.SubElement(meta, f"{{{espacio}}}copyright", author="Colaboradores de OpenStreetMap")
+    ET.SubElement(derechos, f"{{{espacio}}}license").text = URL_LICENCIA_ODBL
+    enlace = ET.SubElement(meta, f"{{{espacio}}}link", href=URL_COPYRIGHT_OSM)
+    ET.SubElement(enlace, f"{{{espacio}}}text").text = "Derechos de autor y licencia de OpenStreetMap"
     track = ET.SubElement(raiz, f"{{{espacio}}}trk")
     ET.SubElement(track, f"{{{espacio}}}name").text = f"{id_ruta} - {nombre}"
+    ET.SubElement(track, f"{{{espacio}}}cmt").text = f"{ATRIBUCION_OSM}. {LICENCIA_ODBL}."
     segmento = ET.SubElement(track, f"{{{espacio}}}trkseg")
     for lat, lon in puntos:
         ET.SubElement(segmento, f"{{{espacio}}}trkpt", lat=str(lat), lon=str(lon))
     return ET.tostring(raiz, encoding="utf-8", xml_declaration=True)
+
+
+def geojson_descarga(id_ruta: str, carpeta: Path = TRAZADOS) -> bytes:
+    """GeoJSON de descarga: el trazado documentado más miembros de atribución y licencia.
+
+    RFC 7946 admite miembros adicionales en el objeto raíz. La geometría y las
+    propiedades de la entidad no se tocan.
+    """
+    datos, _ = cargar_trazado(id_ruta, carpeta)
+    salida = dict(datos)
+    salida["attribution"] = ATRIBUCION_OSM
+    salida["license"] = LICENCIA_ODBL
+    salida["license_url"] = URL_LICENCIA_ODBL
+    salida["copyright_url"] = URL_COPYRIGHT_OSM
+    return json.dumps(salida, ensure_ascii=False).encode("utf-8")
 
 
 def recorrido_para_animacion(

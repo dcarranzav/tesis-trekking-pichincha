@@ -544,6 +544,7 @@ def mostrar_privacidad():
         **Tus derechos:** puedes solicitar acceso, rectificación, eliminación, oposición, limitación o
         portabilidad de tus datos, y presentar un reclamo, escribiendo al correo del responsable.
         También puedes acudir a la [Superintendencia de Protección de Datos Personales](https://www.spdp.gob.ec/).
+        Este aviso se basa en la [Ley Orgánica de Protección de Datos Personales del Ecuador](https://spdp.gob.ec/wp-content/uploads/2024/12/03.pdf.pdf).
         Cambiar el apodo modifica el saludo de esta sesión; para retirar el apodo de la sesión actual,
         cierra o recarga la pestaña. Esto no borra los posibles registros técnicos de los proveedores externos.
 
@@ -638,7 +639,7 @@ def ficha(fila):
     st.caption("El nivel de esfuerzo es orientativo: compara la distancia y la subida de las rutas de esta página. "
                "Revisa también el terreno, el acceso y el clima antes de salir.")
     if fila["sensible"]:
-        st.caption("Este nivel puede variar si se revisan las medidas de la ruta.")
+        st.caption("Este nivel puede variar si cambian los supuestos del cálculo (medidas de altura, peso de las variables o variables añadidas).")
     elif fila["cerca_de_frontera"]:
         st.caption("El esfuerzo de esta ruta se parece al de rutas de otro nivel.")
     try:
@@ -681,7 +682,7 @@ def ficha(fila):
 
     st.markdown("#### Descargas")
     d = st.columns(2)
-    d[0].download_button("Descargar datos del mapa (GeoJSON)", data=vr.ruta_trazado(id_ruta).read_bytes(),
+    d[0].download_button("Descargar datos del mapa (GeoJSON)", data=vr.geojson_descarga(id_ruta),
                          file_name=f"{id_ruta}_trazado.geojson", mime="application/geo+json", width="stretch")
     d[1].download_button("Descargar ruta para GPS (GPX)",
                          data=vr.gpx_ida(id_ruta, fila["nombre_ruta"]),
@@ -696,8 +697,9 @@ def ficha(fila):
             "no indica cómo está el sendero ni si es adecuado para ti."
         )
         if fila["sensible"]:
-            st.caption("Las medidas de subida y pendiente proceden de mapas de elevación y pueden cambiar al revisarse. "
-                       "Por eso este nivel podría variar.")
+            st.caption("El nivel de esta ruta cambió en alguna de las pruebas de sensibilidad del proyecto: usar las alturas "
+                       "del mapa sin suavizar, dar más peso a la distancia o a la subida, o añadir la pendiente media. "
+                       "Por eso podría variar.")
 
     with st.expander("Clima estimado cerca del recorrido (opcional)"):
         st.caption(
@@ -855,7 +857,7 @@ def comparar():
         for r in alternativas
     ]
     st.dataframe(tabla, hide_index=True, width="stretch")
-    st.caption("«Puede variar» indica que el nivel podría cambiar al revisar las medidas de la ruta.")
+    st.caption("«Puede variar» indica que el nivel cambió en alguna prueba de sensibilidad del proyecto. Su ausencia no garantiza que el nivel sea estable.")
     with st.expander("Antes de salir: qué revisar y llevar"):
         st.markdown(
             "- **Acceso y estado:** confirma con el administrador si el sendero está abierto, sus horarios y si requiere entrada o permiso. "
@@ -931,8 +933,10 @@ def metodologia():
         )
     sensibles = [r for r in rutas if r["sensible"]]
     with st.expander("¿Por qué algunas rutas dicen «puede variar»?"):
-        st.write("La subida y la pendiente se estiman con mapas de altura. Si esas medidas se revisan, algunas rutas "
-                 "podrían cambiar de nivel. En cada ficha marcamos los casos que necesitan más cautela.")
+        st.write("La marca «puede variar» señala las rutas cuyo nivel cambió en alguna de las pruebas de sensibilidad del proyecto: "
+                 "usar las alturas del mapa sin suavizar, dar más peso a la distancia o a la subida, o añadir la pendiente media. "
+                 "No significa que las demás rutas sean estables: con otros supuestos, como otra escala para las variables, "
+                 "también podrían cambiar. En cada ficha marcamos los casos señalados por esas pruebas.")
         st.markdown("**Rutas con esa indicación:** " + ", ".join(sorted(r["nombre_ruta"] for r in sensibles)) + ".")
 
 
@@ -951,4 +955,11 @@ st.caption(
     "Datos del trazado © colaboradores de OpenStreetMap (ODbL 1.0) · Elevación: Copernicus DEM GLO-30 (Unión Europea/ESA) · "
     "Mapas base: © OpenStreetMap contributors e imágenes satelitales © Esri, Maxar y Earthstar Geographics · Visor: Leaflet (BSD-2). "
     "Consulta acceso, clima y condiciones oficiales antes de salir; esta página no evalúa seguridad ni aptitud personal."
+)
+st.caption(
+    "Elevación: produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH "
+    "2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. "
+    "Las organizaciones a cargo del programa Copernicus, por ley o por delegación, no asumen responsabilidad "
+    "por ningún uso de Copernicus WorldDEM-30. "
+    "[Licencia de Copernicus DEM GLO-30](https://documentation.dataspace.copernicus.eu/APIs/SentinelHub/Data/DEM/resources/license/License-COPDEM-30.pdf)."
 )

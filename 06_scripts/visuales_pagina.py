@@ -93,7 +93,7 @@ def insignia_nivel(nivel: str, sensible: bool = False, rotulo: bool = True) -> s
         raise ValueError("Nivel desconocido")
     color = COLOR_NIVEL[nivel]
     pre = '<span class="ins-pre">Nivel de esfuerzo:</span> ' if rotulo else ""
-    sens = ('<span class="ins-sens" title="Este nivel puede variar al revisar las medidas de la ruta">'
+    sens = ('<span class="ins-sens" title="Este nivel puede variar si cambian los supuestos del cálculo">'
             'puede variar</span>') if sensible else ""
     return (f'<span class="insignia" style="--c:{color}">{_barras_nivel(nivel)}{pre}<b>{escape(nivel)}</b></span>{sens}')
 

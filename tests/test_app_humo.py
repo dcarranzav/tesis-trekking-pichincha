@@ -158,7 +158,7 @@ class AppHumo(unittest.TestCase):
         self.assertEqual(oscuro.opciones["modo_visual"], ["Oscuro", "Claro"])
         claro = ejecutar(valores={"modo_visual": "Claro"}, registrado=False)
         css_claro = "".join(a[0] for a, _ in claro.llamadas_de("markdown") if a[0].startswith("<style>"))
-        self.assertIn("#f2f6f3", css_claro)
+        self.assertIn("#e2f2f1", css_claro)
         self.assertIn("rgba(255,255,255,.91)", css_claro)
 
     def test_modo_claro_tambien_esta_disponible_despues_de_entrar(self):

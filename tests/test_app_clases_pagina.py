@@ -94,7 +94,7 @@ class TresNiveles(unittest.TestCase):
             self.assertIn(fila["nombre_ruta"], visible)
 
     def test_aviso_de_categoria_sensible_solo_en_las_seis_rutas(self):
-        frase = "Este nivel puede variar si se revisan las medidas de la ruta"
+        frase = "Este nivel puede variar si cambian los supuestos del cálculo"
         for fila in vr.cargar_catalogo():
             if fila["estado_modelado"] != vr.ELEGIBLE:
                 continue
@@ -111,13 +111,13 @@ class TresNiveles(unittest.TestCase):
         self.assertIn("Ninguna ruta coincide", vacio.textos())
         self.assertEqual(vacio.llamadas_de("iframe"), [])
 
-    def test_las_tarjetas_comparten_estructura_y_aviso_solo_cuando_corresponde(self):
+    def test_las_tarjetas_comparten_estructura_sin_avisos_de_visita(self):
         st = ejecutar(valores={"mostrar_todas": True})
         for t in st.tarjetas():
             for parte in ('class="t-lugar"', 'class="t-nombre"', 't-nivel', 'class="t-datos"', 'class="t-tipo"', 'class="t-aviso"'):
                 self.assertIn(parte, t)
         con_aviso = [t for t in st.tarjetas() if re.search(r'class="t-aviso">[^<]', t)]
-        self.assertEqual(len(con_aviso), 12)
+        self.assertEqual(len(con_aviso), 0)
 
     def test_rucu_pichincha_conserva_el_aviso_de_alta_montana_separado_de_la_categoria(self):
         st = ejecutar(valores={"ruta_detalle": "R001"})
@@ -127,7 +127,7 @@ class TresNiveles(unittest.TestCase):
         self.assertNotIn("clase física", avisos[0])
         t = st.textos()
         self.assertIn("Difícil", st.html())
-        self.assertIn("independientes de la categoría", t)
+        self.assertIn("describe el esfuerzo de caminar", t)
 
     def test_la_explicacion_kmeans_esta_en_la_ficha_sin_umbrales_de_horas(self):
         st = ejecutar(valores={"ruta_detalle": "R003"})

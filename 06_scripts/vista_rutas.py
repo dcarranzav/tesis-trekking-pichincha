@@ -23,6 +23,7 @@ from datos_mapa_dashboard import (
     TABLA,
     cargar_catalogo,
     cargar_trazado,
+    geojson_descarga,
     gpx_desde_puntos,
     ruta_trazado,
 )
