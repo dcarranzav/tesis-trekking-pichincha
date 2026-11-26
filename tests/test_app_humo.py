@@ -195,7 +195,7 @@ class AppHumo(unittest.TestCase):
         botones = [k.get("key") for a, k in st.llamadas_de("button")]
         self.assertIn("guardar_alias", botones)
         html = st.html()
-        self.assertIn("Rutas de trekking en Pichincha", html)
+        self.assertIn("Análisis de datos geoespaciales para la caracterización y clasificación del esfuerzo físico estimado", html)
         self.assertNotIn("No necesitas cuenta ni contraseña", st.textos())
         self.assertIsNone(EMOJI.search(html + st.textos()))
 

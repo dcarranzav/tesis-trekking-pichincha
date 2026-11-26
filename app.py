@@ -51,7 +51,7 @@ ESTILO = """
 .bienvenida-esp{height:6vh}
 .bienvenida{padding:.3rem 0 0}
 .bienvenida .b-sello{font-size:.74rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.7;margin:0 0 .5rem}
-.bienvenida .b-titulo{font-size:1.75rem;font-weight:750;line-height:1.15;margin:0 0 .5rem;letter-spacing:-.01em}
+.bienvenida .b-titulo{font-size:1.35rem;font-weight:750;line-height:1.15;margin:0 0 .5rem;letter-spacing:-.01em}
 .bienvenida .b-lema{font-size:1rem;line-height:1.5;opacity:.9;margin:0 0 1.1rem}
 .bienvenida .b-datos{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem;padding:0;margin:0 0 .9rem}
 .bienvenida .b-datos li{border:1px solid var(--borde);border-radius:8px;padding:.55rem .65rem;display:flex;flex-direction:column;gap:.1rem;margin:0}
@@ -571,7 +571,7 @@ if not st.session_state["alias_sesion"]:
             st.markdown(
                 """<div class="bienvenida">
 <p class="b-sello">Proyecto de titulación · PUCE</p>
-<p class="b-titulo">Rutas de trekking en Pichincha</p>
+<p class="b-titulo">Análisis de datos geoespaciales para la caracterización y clasificación del esfuerzo físico estimado de rutas de trekking seleccionadas en la provincia de Pichincha</p>
 <p class="b-lema">Consulta qué tan exigente es físicamente cada ruta antes de planificar tu caminata.</p>
 <ul class="b-datos">
 <li><b>20</b><span>rutas estudiadas</span></li>
